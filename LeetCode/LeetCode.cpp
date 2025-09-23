@@ -30,4 +30,14 @@ int main()
 	//m.menuCalPoints();
 	//m.menuTriangleType();
 	//m.menuIsValidParentheses();
+	//m.menuRomanToInt();
+	//m.menuLongestCommonPrefix();
+	//m.menuPlusOne();
+	//m.menuDeleteDuplicatesListNode();
+	//m.menuMergeTwoLists();
+	//m.menuCanPlaceFlowers();
+	//m.menuKidsWithCandies();
+	//m.menuProductExceptSelf();
+	//m.menuReverseVowels();
+	m.menuClimbStairs();
 }

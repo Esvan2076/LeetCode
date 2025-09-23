@@ -1,4 +1,5 @@
 #pragma once
+#include "ListNode.h"
 #include <string>
 #include <vector>
 
@@ -33,4 +34,15 @@ public:
 	std::string triangleType(std::vector<int>& nums);
 	bool isValidParentheses(std::string);
 	bool isValidParenthesesOp(const std::string&);
+	int romanToInt(std::string s);
+	std::string longestCommonPrefix(std::vector<std::string>& strs);
+	std::vector<int> plusOne(std::vector<int>& digits);
+	ListNode* deleteDuplicates(ListNode* head);
+	ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
+	std::string mergeAlternately(std::string word1, std::string word2);
+	bool canPlaceFlowers(std::vector<int>& flowerbed, int n);
+	std::vector<bool> kidsWithCandies(std::vector<int>& candies, int extraCandies);
+	std::vector<int> productExceptSelf(std::vector<int>& nums);
+	std::string reverseVowels(std::string s);
+	int climbStairs(int n);
 };

@@ -132,6 +132,7 @@
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ListNode.h" />
     <ClInclude Include="Mate.h" />
     <ClInclude Include="Menu.h" />
   </ItemGroup>

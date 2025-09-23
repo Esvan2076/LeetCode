@@ -1,13 +1,18 @@
 #include "Mate.h"
+#include "ListNode.h"
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
+#include <iostream>
+#include <string>
+#include <unordered_map>
 
 void printNums(std::vector<int>& nums);
 void printStack(const std::vector<char>& stack);
 bool isOpeningBracket(char c);
 bool isMatchingPair(char open, char close);
+ListNode* findNext(ListNode* node);
 
 int Mate::sumNum(int num1, int num2) {
 	return num1 + num2;
@@ -552,4 +557,264 @@ bool isMatchingPair(char open, char close) {
 	case '{': return close == '}';
 	default:  return false;
 	}
+}
+
+int Mate::romanToInt(std::string s) {
+	std::unordered_map<char, int> roman = {
+		{'I', 1},
+		{'V', 5},
+		{'X', 10},
+		{'L', 50},
+		{'C', 100},
+		{'D', 500},
+		{'M', 1000}
+	};
+	int numberInInt = 0;
+	for (int i = 0; i < s.size(); i++) {
+		if (roman[s[i]] < roman[s[i + 1]]) {
+			numberInInt += roman[s[i + 1]] - roman[s[i]];
+			i++;
+		}
+		else {
+			numberInInt += roman[s[i]];
+		}
+	}
+	return numberInInt;
+}
+
+std::string Mate::longestCommonPrefix(std::vector<std::string>& strs) {
+	std::vector<std::string>::iterator it = min_element(
+		strs.begin(),
+		strs.end(),
+		[](const std::string& a, const std::string& b) {
+			return a.size() < b.size();
+		}
+	);
+
+	std::string shortest = *it;
+
+	std::string prefix = "";
+	char c = 0;
+	bool fail = false;
+	for (int i = 0; i < shortest.size(); i++) {
+		fail = false;
+		for (int j = 0; j < strs.size(); j++) {
+			if (shortest[i] != strs[j][i]) {
+				fail = true;
+				break;
+			}
+		}
+		if (!fail) {
+			prefix += shortest[i];
+		}
+		else {
+			break;
+		}
+	}
+	return prefix;
+}
+
+std::vector<int> Mate::plusOne(std::vector<int>& digits) {
+	std::vector<int> res;
+	int digSize = digits.size();
+	int num = 0;
+	int pivot = 1;
+	for (int i = (digSize - 1); i >= 0; i--) {
+		num = digits[i] + pivot;
+		if (num >= 10) {
+			pivot = 1;
+			res.push_back(0);
+		}
+		else {
+			pivot = 0;
+			res.push_back(num);
+		}
+	}
+	if (pivot) {
+		res.push_back(1);
+	}
+	std::reverse(res.begin(), res.end());
+	return res;
+}
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+ListNode* Mate::deleteDuplicates(ListNode* head) {
+	// ListNode* result = new ListNode();
+	ListNode* tail = head;
+	while (true) {
+		if (!tail) {
+			return head;
+		}
+		tail->next = findNext(tail);
+		tail = tail->next;
+	}
+}
+
+ListNode* findNext(ListNode* node) {
+	if (node->next == nullptr) {
+		return nullptr;
+	}
+	else if (node->val != node->next->val) {
+		return node->next;
+	}
+	return findNext(node->next);
+}
+
+ListNode* Mate::mergeTwoLists(ListNode* list1, ListNode* list2) {
+	if (!list1) return list2;
+	if (!list2) return list1;
+
+	if (list1->val > list2->val) {
+		std::swap(list1, list2);
+	}
+
+	ListNode* head = list1;
+	ListNode* pivot = nullptr;
+	while (list1 && list2) {
+
+		while (list1 && list1->val <= list2->val) {
+			pivot = list1;
+			list1 = list1->next;
+		}
+
+		pivot->next = list2;
+
+		std::swap(list1, list2);
+	}
+	return head;
+}
+
+std::string Mate::mergeAlternately(std::string word1, std::string word2) {
+	int size1 = word1.size();
+	int size2 = word2.size();
+	int sizeMax = std::max(size1, size2);
+
+	std::string merge = "";
+
+	int i = 0;
+	while (true) {
+		if (i < size1) {
+			merge += word1[i];
+		}
+		if (i < size2) {
+			merge += word2[i];
+		}
+		if (i >= sizeMax) {
+			break;
+		}
+
+		i++;
+	}
+
+	return merge;
+}
+
+bool Mate::canPlaceFlowers(std::vector<int>& flowerbed, int n) {
+	int flowerbedSize = flowerbed.size();
+	int placeFlowers = 0;
+	if (flowerbedSize == 0) {
+		return false;
+	}
+	if (flowerbedSize == 1) {
+		if (flowerbed[flowerbedSize - 1] == 0) {
+			placeFlowers++;
+		}
+		return placeFlowers >= n;
+	}
+
+	if (flowerbed[0] == 0 && flowerbed[1] == 0) {
+		flowerbed[0] = 1;
+		placeFlowers++;
+	}
+	for (int i = 2; i < flowerbedSize - 1; i++) {
+		if (flowerbed[i - 1] == 0 && flowerbed[i] == 0 && flowerbed[i + 1] == 0) {
+			flowerbed[i] = 1;
+			placeFlowers++;
+		}
+
+	}
+	if (flowerbed[flowerbedSize - 1] == 0 && flowerbed[flowerbedSize - 2] == 0) {
+		flowerbed[flowerbedSize - 1] = 1;
+		placeFlowers++;
+	}
+	return placeFlowers >= n;
+}
+
+std::vector<bool> Mate::kidsWithCandies(std::vector<int>& candies, int extraCandies) {
+	int max = 0;
+	std::vector<bool> result;
+	for (int num : candies) {
+		if (num > max) {
+			max = num;
+		}
+	}
+	for (int num : candies) {
+		if ((num + extraCandies) >= max) {
+			result.push_back(true);
+		}
+		else {
+			result.push_back(false);
+		}
+	}
+	return result;
+
+}
+
+std::vector<int> Mate::productExceptSelf(std::vector<int>& nums) {
+	int size = nums.size();
+	std::vector<int> res(size, 1);
+	int prefix = 1;
+	int postfix = 1;
+	for (int i = 0; i < size; i++) {
+		res[i] = prefix;
+		prefix *= nums[i];
+	}
+	for (int i = size - 1; i >= 0; i--) {
+		res[i] *= postfix;
+		postfix *= nums[i];
+	}
+	return res;
+}
+
+std::string Mate::reverseVowels(std::string s) {
+	std::vector<int> vowelsPositions;
+	std::string vowels = "aeiouAEIOU";
+	std::string vowelsInS = "";
+	int i = 0;
+	for (char c : s) {
+		if (vowels.find(c) != std::string::npos) {
+			vowelsInS += c;
+			vowelsPositions.push_back(i);
+		}
+		i++;
+	}
+	std::reverse(vowelsInS.begin(), vowelsInS.end());
+	for (int j = 0; j < vowelsInS.size(); j++) {
+		s[vowelsPositions[j]] = vowelsInS[j];
+	}
+	return  s;
+}
+
+int Mate::climbStairs(int n) {
+	if (n <= 3) return n;
+
+	int first = 1;
+	int second = 2;
+	int third = 3;
+
+	for (int i = 3; i < n + 1; i++) {
+		third = first + second;
+		first = second;
+		second = third;
+	}
+	return third;
 }

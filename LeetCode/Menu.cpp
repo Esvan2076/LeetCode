@@ -390,3 +390,234 @@ void Menu::menuIsValidParentheses() {
     bool res = m.isValidParentheses(s);
     std::cout << "Result: " << res;
 }
+
+void Menu::menuRomanToInt() {
+    Mate m;
+    std::string s;
+    std::cout << "13. Roman to Integer\n";
+    std::cout << "Give a string of Roman numbers: ";
+    std::cin >> s;
+    int res = m.romanToInt(s);
+    std::cout << "Result: " << res;
+}
+
+void Menu::menuLongestCommonPrefix() {
+    Mate m;
+    std::string s;
+    int num = 0;
+    std::cout << "14. Longest Common Prefix\n";
+    std::cout << "How many words: ";
+    std::cin >> num;
+    std::vector < std::string > words(num);
+    for (int i = 0; i < num; i++) {
+        std::cout << "Word: " << i + 1 << ": ";
+        std::cin >> words[i];
+    }
+
+    std::string res = m.longestCommonPrefix(words);
+    std::cout << "Result: " << res;
+}
+
+void Menu::menuPlusOne() {
+    Mate m;
+    int num = 0;
+    std::cout << "66. Plus One\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num;
+    std::vector<int> digits(num);
+    for (int i = 0; i < num; i++) {
+        std::cout << "Number: " << i + 1 << ": ";
+        std::cin >> digits[i];
+    }
+
+    std::vector<int> res = m.plusOne(digits);
+    std::cout << "Result: " << std::endl;
+    for (int n : res) {
+        std::cout << n;
+    }
+}
+
+void Menu::menuDeleteDuplicatesListNode() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "83. Remove Duplicates from Sorted List\n";
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head) {            // // primer nodo
+            head = tail = node;
+        }
+        else {                // // push-back
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    ListNode* headResult = m.deleteDuplicates(head);
+
+    std::cout << "Result: ";
+    for (ListNode* p = headResult; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuMergeTwoLists() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head1 = nullptr;
+    ListNode* tail1 = nullptr;
+
+    ListNode* head2 = nullptr;
+    ListNode* tail2 = nullptr;
+
+    std::cout << "21. Merge Two Sorted Lists\n";
+
+    std::cout << "List 1: " << std::endl;
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head1) {            // // primer nodo
+            head1 = tail1 = node;
+        }
+        else {                // // push-back
+            tail1->next = node;
+            tail1 = node;
+        }
+    }
+
+    std::cout << "List 2: " << std::endl;
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head2) {            // // primer nodo
+            head2 = tail2 = node;
+        }
+        else {                // // push-back
+            tail2->next = node;
+            tail2 = node;
+        }
+    }
+
+    ListNode* headResult = m.mergeTwoLists(head1, head2);
+
+    std::cout << "Result: ";
+    for (ListNode* p = headResult; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuCanPlaceFlowers() {
+    Mate m;
+    int num = 0;
+    std::cout << "605. Can Place Flowers\n";
+    std::cout << "How many positions: ";
+    std::cin >> num;
+    std::vector<int> flowerbed(num);
+    for (int i = 0; i < num; i++) {
+        std::cout << "Position: " << i + 1 << ": ";
+        std::cin >> flowerbed[i];
+    }
+    std::cout << "How many flowers: ";
+    std::cin >> num;
+    bool res = m.canPlaceFlowers(flowerbed, num);
+    std::cout << "Result: " << res << std::endl;
+}
+
+void Menu::menuKidsWithCandies() {
+    Mate m;
+    int num = 0;
+    std::cout << "1431. Kids With the Greatest Number of Candies\n";
+    std::cout << "How many kids: ";
+    std::cin >> num;
+    std::vector<int> candies(num);
+    for (int i = 0; i < num; i++) {
+        std::cout << "Position: " << i + 1 << ": ";
+        std::cin >> candies[i];
+    }
+    std::cout << "How many extra candies: ";
+    std::cin >> num;
+    std::vector<bool> res = m.kidsWithCandies(candies, num);
+    std::cout << "Result: " << std::endl;
+    for (bool n : res) {
+        std::cout << n << "-";
+    }
+}
+
+void Menu::menuProductExceptSelf() {
+    Mate m;
+    int num = 0;
+    std::cout << "238. Product of Array Except Self\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num;
+    std::vector<int> digits(num);
+    for (int i = 0; i < num; i++) {
+        std::cout << "Number: " << i + 1 << ": ";
+        std::cin >> digits[i];
+    }
+
+    std::vector<int> res = m.productExceptSelf(digits);
+    std::cout << "Result: " << std::endl;
+    for (int n : res) {
+        std::cout << n << "-";
+    }
+}
+
+void Menu::menuReverseVowels() {
+    Mate m;
+    std::string text;
+    std::cout << "345. Reverse Vowels of a String\n";
+    std::cout << "Give me a word: ";
+    std::cin >> text;
+    std::string res = m.reverseVowels(text);
+    std::cout << res;
+}
+
+void Menu::menuClimbStairs() {
+    Mate m;
+    int num = 0;
+    std::cout << "70. Climbing Stairs\n";
+    std::cout << "Give me the amount of steps: ";
+    std::cin >> num;
+    int res = m.climbStairs(num);
+    std::cout << res;
+}

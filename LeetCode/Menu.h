@@ -29,5 +29,15 @@ public:
 	void menuCalPoints();
 	void menuTriangleType();
 	void menuIsValidParentheses();
+	void menuRomanToInt();
+	void menuLongestCommonPrefix();
+	void menuPlusOne();
+	void menuDeleteDuplicatesListNode();
+	void menuMergeTwoLists();
+	void menuCanPlaceFlowers();
+	void menuKidsWithCandies();
+	void menuProductExceptSelf();
+	void menuReverseVowels();
+	void menuClimbStairs();
 };
 
