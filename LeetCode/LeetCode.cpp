@@ -39,5 +39,6 @@ int main()
 	//m.menuKidsWithCandies();
 	//m.menuProductExceptSelf();
 	//m.menuReverseVowels();
-	m.menuClimbStairs();
+	//m.menuClimbStairs();
+	m.menuReverseWords();
 }

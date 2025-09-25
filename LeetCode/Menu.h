@@ -39,5 +39,6 @@ public:
 	void menuProductExceptSelf();
 	void menuReverseVowels();
 	void menuClimbStairs();
+	void menuReverseWords();
 };
 

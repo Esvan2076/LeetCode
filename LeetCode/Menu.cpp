@@ -621,3 +621,13 @@ void Menu::menuClimbStairs() {
     int res = m.climbStairs(num);
     std::cout << res;
 }
+
+void Menu::menuReverseWords() {
+    Mate m;
+    std::string text;
+    std::cout << "151. Reverse Words in a String\n";
+    std::cout << "Give me a sentence: ";
+    getline(std::cin, text);
+    std::string res = m.reverseWords(text);
+    std::cout << res;
+}

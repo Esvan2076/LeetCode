@@ -811,10 +811,43 @@ int Mate::climbStairs(int n) {
 	int second = 2;
 	int third = 3;
 
-	for (int i = 3; i < n + 1; i++) {
+	for (int i = 3; i < n + 1; i++) {	
 		third = first + second;
 		first = second;
 		second = third;
 	}
 	return third;
+}
+
+std::string Mate::reverseWords(std::string s) {
+	std::string res = "";
+	int size = s.size();
+	int helper = 0;
+	for (int i = size - 1; i >= 0; i--) {
+
+		if (s[i] == ' ') {
+			while (i >= 0 && s[i] == ' ') {
+				i--;
+			}
+			i++;
+		}
+		else {
+			helper = i;
+
+			while (i >= 0 && s[i] != ' ') {
+				i--;
+			}
+
+			helper -= i;
+			i++;
+
+			res += s.substr(i, helper) + " ";
+		}
+	}
+
+	if (res[res.size() - 1] == ' ') {
+		return res.substr(0, res.size() - 1);
+	}
+
+	return res;
 }

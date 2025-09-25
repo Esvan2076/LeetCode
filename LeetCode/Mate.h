@@ -45,4 +45,5 @@ public:
 	std::vector<int> productExceptSelf(std::vector<int>& nums);
 	std::string reverseVowels(std::string s);
 	int climbStairs(int n);
+	std::string reverseWords(std::string s);
 };
