@@ -631,3 +631,30 @@ void Menu::menuReverseWords() {
     std::string res = m.reverseWords(text);
     std::cout << res;
 }
+
+void Menu::menuIsUgly() {
+    Mate m;
+    int num = 0;
+    std::cout << "263. Ugly Number\n";
+    std::cout << "Give me a number: ";
+    std::cin >> num;
+    bool ans = m.isUgly(num);
+    std::cout << ans;
+}
+
+void Menu::menuPascalsTriangle() {
+    Mate m;
+    int num = 0;
+    std::cout << "118. Pascal's Triangle\n";
+    std::cout << "Give me a number: ";
+    std::cin >> num;
+    std::vector<std::vector<int>> triangle = m.generate(num);
+    std::cout << "Triangle: \n";
+    for (std::vector <int> row : triangle) {
+        std::cout << "[ ";
+        for (int num : row) {
+            std::cout << "[" << num << "]";
+        }
+        std::cout << " ]\n";
+    }
+}

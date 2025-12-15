@@ -40,5 +40,7 @@ public:
 	void menuReverseVowels();
 	void menuClimbStairs();
 	void menuReverseWords();
+	void menuIsUgly();
+	void menuPascalsTriangle();
 };
 

@@ -40,5 +40,7 @@ int main()
 	//m.menuProductExceptSelf();
 	//m.menuReverseVowels();
 	//m.menuClimbStairs();
-	m.menuReverseWords();
+	//m.menuReverseWords();
+	//m.menuIsUgly();
+	m.menuPascalsTriangle();
 }

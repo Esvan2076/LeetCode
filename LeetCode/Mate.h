@@ -46,4 +46,6 @@ public:
 	std::string reverseVowels(std::string s);
 	int climbStairs(int n);
 	std::string reverseWords(std::string s);
+	bool isUgly(int n);
+	std::vector<std::vector<int>> generate(int numRows);
 };

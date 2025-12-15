@@ -9,6 +9,7 @@
 #include <unordered_map>
 
 void printNums(std::vector<int>& nums);
+void printRow(std::vector<int>& nums);
 void printStack(const std::vector<char>& stack);
 bool isOpeningBracket(char c);
 bool isMatchingPair(char open, char close);
@@ -850,4 +851,59 @@ std::string Mate::reverseWords(std::string s) {
 	}
 
 	return res;
+}
+
+bool Mate::isUgly(int n) {
+	int primes[3] = { 2,3,5 };
+	int i = 0;
+	if (n == 0) {
+		return false;
+	}
+	while (i <= 2) {
+		if (n == 1) {
+			return true;
+		}
+		else {
+			if (n % primes[i] == 0) {
+				n /= primes[i];
+			}
+			else {
+				i++;
+			}
+		}
+	}
+	return false;
+}
+
+void printRow(std::vector<int>& nums) {
+	std::cout << "[ ";
+	for (int& num : nums) {
+		std::cout << "[" << num << "]";
+	}
+	std::cout << " ]" << "\n";
+}
+
+std::vector<std::vector<int>> Mate::generate(int numRows) {
+	std::vector<std::vector<int>> triangle;
+	triangle.reserve(numRows);
+	triangle.push_back({ 1 });
+	if (numRows == 1) {
+		return triangle;
+	}
+	triangle.push_back({ 1,1 });
+
+	std::vector<int> row;
+	for (int i = 1; i < (numRows - 1); i++)
+	{
+		row = {};
+		row.push_back(1);
+		int limit = triangle[i].size() - 1;
+		for (int j = 0; j < limit; j++) {
+			int num = triangle[i][j] + triangle[i][j + 1];
+			row.push_back(num);
+		}
+		row.push_back(1);
+		triangle.push_back(row);
+	}
+	return triangle;
 }
