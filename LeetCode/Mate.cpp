@@ -907,3 +907,66 @@ std::vector<std::vector<int>> Mate::generate(int numRows) {
 	}
 	return triangle;
 }
+
+int Mate::majorityElement(std::vector<int>& nums) {
+	std::unordered_map<int, int> map;
+	int n = (nums.size() / 2);
+
+	for (int num : nums) {
+		map[num]++;
+		if (map[num] > n) {
+			return num;
+		}
+	}
+
+	return -1;
+}
+
+std::vector<int> Mate::majorityElementII(std::vector<int>& nums) {
+	//Primer Idea
+	//std::vector<int> res;
+	//res.reserve(2);
+	//std::unordered_map<int, int> answer;
+	//std::unordered_map<int, int> map;
+	//int n = (nums.size() / 3);
+	//int h = 0;
+
+	//for (int num : nums) {
+	//	map[num]++;
+	//	if (map[num] > n) {
+	//		answer[num]++;
+	//		h++;
+	//		if (h >= 2) {
+	//			break;
+	//		}
+	//	}
+	//}
+
+	//for (const auto& pos : answer) {
+	//	res.push_back(pos.first);
+	//}
+
+	//return res;
+
+	//Segunda Idea
+	//Undimos en lo más profundo para que no vuelva a salir :)
+	std::vector<int> res;
+	res.reserve(2);
+	std::unordered_map<int, int> map;
+	int n = (nums.size() / 3);
+	int h = 0;
+
+	for (int num : nums) {
+		map[num]++;
+		if (map[num] > n) {
+			res.push_back(num);
+			map[num] = std::numeric_limits<int>::min();
+			h++;
+			if (h >= 2) {
+				break;
+			}
+		}
+	}
+
+	return res;
+}

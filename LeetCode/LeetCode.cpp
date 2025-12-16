@@ -42,5 +42,7 @@ int main()
 	//m.menuClimbStairs();
 	//m.menuReverseWords();
 	//m.menuIsUgly();
-	m.menuPascalsTriangle();
+	//m.menuPascalsTriangle();
+	//m.menuMajorityElement();
+	m.menuMajorityElementII();
 }

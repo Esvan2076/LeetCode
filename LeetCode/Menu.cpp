@@ -658,3 +658,42 @@ void Menu::menuPascalsTriangle() {
         std::cout << " ]\n";
     }
 }
+
+void Menu::menuMajorityElement() {
+    Mate m;
+    int num1 = 0;
+    int num2 = 0;
+    std::cout << "169. Majority Element\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    std::vector<int> nums;
+    nums.reserve(num1);
+    for (int j = 0; j < num1; j++) {
+        std::cout << "Num" << j + 1 << ": ";
+        std::cin >> num2;
+        nums.push_back(num2);
+    }
+    int res = m.majorityElement(nums);
+    std::cout << "Result: " << res;
+}
+
+void Menu::menuMajorityElementII() {
+    Mate m;
+    int num1 = 0;
+    int num2 = 0;
+    std::cout << "229. Majority Element II\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    std::vector<int> nums;
+    nums.reserve(num1);
+    for (int j = 0; j < num1; j++) {
+        std::cout << "Num" << j + 1 << ": ";
+        std::cin >> num2;
+        nums.push_back(num2);
+    }
+    std::vector<int> res = m.majorityElementII(nums);
+    std::cout << "Result: " << std::endl;
+    for (int n : res) {
+        std::cout << n << " - ";
+    }
+}

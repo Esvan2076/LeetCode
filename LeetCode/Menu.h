@@ -42,5 +42,7 @@ public:
 	void menuReverseWords();
 	void menuIsUgly();
 	void menuPascalsTriangle();
+	void menuMajorityElement();
+	void menuMajorityElementII();
 };
 

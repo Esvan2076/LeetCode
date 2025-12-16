@@ -48,4 +48,6 @@ public:
 	std::string reverseWords(std::string s);
 	bool isUgly(int n);
 	std::vector<std::vector<int>> generate(int numRows);
+	int majorityElement(std::vector<int>& nums);
+	std::vector<int> majorityElementII(std::vector<int>& nums);
 };
