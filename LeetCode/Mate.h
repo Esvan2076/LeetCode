@@ -50,4 +50,5 @@ public:
 	std::vector<std::vector<int>> generate(int numRows);
 	int majorityElement(std::vector<int>& nums);
 	std::vector<int> majorityElementII(std::vector<int>& nums);
+	int repeatedNTimes(std::vector<int>& nums);
 };

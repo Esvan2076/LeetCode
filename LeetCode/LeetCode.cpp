@@ -44,5 +44,6 @@ int main()
 	//m.menuIsUgly();
 	//m.menuPascalsTriangle();
 	//m.menuMajorityElement();
-	m.menuMajorityElementII();
+	//m.menuMajorityElementII();
+	m.menuRepeatedNTimes();
 }

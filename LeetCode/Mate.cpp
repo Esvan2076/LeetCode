@@ -970,3 +970,15 @@ std::vector<int> Mate::majorityElementII(std::vector<int>& nums) {
 
 	return res;
 }
+
+int Mate::repeatedNTimes(std::vector<int>& nums) {
+	std::unordered_map<int, int> map;
+	int helper = (nums.size() / 2);
+	for (int i = 0; i < nums.size(); i++) {
+		map[nums[i]]++;
+		if (map[nums[i]] == helper) {
+			return nums[i];
+		}
+	}
+	return nums[0];
+}

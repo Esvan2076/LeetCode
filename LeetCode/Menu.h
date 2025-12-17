@@ -44,5 +44,6 @@ public:
 	void menuPascalsTriangle();
 	void menuMajorityElement();
 	void menuMajorityElementII();
+	void menuRepeatedNTimes();
 };
 

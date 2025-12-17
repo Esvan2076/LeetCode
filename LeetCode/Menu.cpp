@@ -697,3 +697,21 @@ void Menu::menuMajorityElementII() {
         std::cout << n << " - ";
     }
 }
+
+void Menu::menuRepeatedNTimes() {
+    Mate m;
+    int num1 = 0;
+    int num2 = 0;
+    std::cout << "961. N-Repeated Element in Size 2N Array\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    std::vector<int> nums;
+    nums.reserve(num1);
+    for (int j = 0; j < num1; j++) {
+        std::cout << "Num" << j + 1 << ": ";
+        std::cin >> num2;
+        nums.push_back(num2);
+    }
+    int res = m.repeatedNTimes(nums);
+    std::cout << "Result: " << res << std::endl;
+}
