@@ -51,4 +51,6 @@ public:
 	int majorityElement(std::vector<int>& nums);
 	std::vector<int> majorityElementII(std::vector<int>& nums);
 	int repeatedNTimes(std::vector<int>& nums);
+	bool isPathCrossing(std::string path);
+	int isPrefixOfWord(std::string sentence, std::string searchWord);
 };

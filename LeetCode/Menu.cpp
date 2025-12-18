@@ -715,3 +715,28 @@ void Menu::menuRepeatedNTimes() {
     int res = m.repeatedNTimes(nums);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuIsPathCrossing() {
+    Mate m;
+    std::string text;
+    std::cout << "1496. Path Crossing\n";
+    std::cout << "Give me a path: [N][S][E][W]" << std::endl;
+    std::cout << "> ";
+    std::cin >> text;
+    bool res = m.isPathCrossing(text);
+    std::cout << res;
+}
+
+void Menu::menuIsPrefixOfWord() {
+    Mate m;
+    std::string sentence;
+    std::string prefix;
+    int num = 0;
+    std::cout << "1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence\n";
+    std::cout << "Give a sentence you want to check: ";
+    getline(std::cin, sentence);
+    std::cout << "Give the prefix you want to search: ";
+    getline(std::cin, prefix);
+    int res = m.isPrefixOfWord(sentence, prefix);
+    std::cout << "Result: " << res;
+}

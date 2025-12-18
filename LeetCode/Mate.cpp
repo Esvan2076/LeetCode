@@ -4,8 +4,8 @@
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
-#include <iostream>
-#include <string>
+#include <print>
+#include <map>
 #include <unordered_map>
 
 void printNums(std::vector<int>& nums);
@@ -981,4 +981,73 @@ int Mate::repeatedNTimes(std::vector<int>& nums) {
 		}
 	}
 	return nums[0];
+}
+
+bool Mate::isPathCrossing(std::string path) {
+	std::map<std::pair<int, int>, int> coord;
+	std::pair<int, int> current = {0, 0};
+	coord[current]++;
+	for (char& c : path) {
+		switch (c) {
+		case 'N':
+			current.second++;
+			break;
+		case 'S':
+			current.second--;
+			break;
+		case 'E':
+			current.first++;
+			break;
+		case 'W':
+			current.first--;
+			break;
+		default:
+			break;
+		}
+		coord[current]++;
+		if (coord[current] > 1) {
+			return true;
+		}
+	}
+	return false;
+}
+
+int Mate::isPrefixOfWord(std::string sentence, std::string searchWord) {
+	int j = 0;
+	int numWord = 1;
+	bool sub;
+	for (int i = 0; i < sentence.size(); i++) {
+		if (sentence[i] == ' ') {
+			//numWord++;
+			//i++;
+			//while (sentence[i] == ' ') {
+			//	i++;
+			//}
+			//i--;
+			numWord++;
+			continue;
+		}
+		j = 0;
+		sub = 1;
+		while (j < searchWord.size()) {
+			std::cout << "Entro 1" << std::endl;
+			if (sentence[i + j] != searchWord[j]) {
+				std::cout << "Entro 2" << std::endl;
+				sub = 0;
+				break;
+			}
+			j++;
+		}
+		i += j;
+		if (sub) {
+			return numWord;
+		}
+		while (sentence[i] != ' ' && i < sentence.size()) {
+			i++;
+		}
+		i--;
+		std::cout << sentence[i] << std::endl;
+		std::cout << "NumWord: " << numWord << std::endl;
+	}
+	return -1;
 }

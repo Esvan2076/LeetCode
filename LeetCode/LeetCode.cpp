@@ -45,5 +45,7 @@ int main()
 	//m.menuPascalsTriangle();
 	//m.menuMajorityElement();
 	//m.menuMajorityElementII();
-	m.menuRepeatedNTimes();
+	//m.menuRepeatedNTimes();
+	//m.menuIsPathCrossing();
+	m.menuIsPrefixOfWord();
 }

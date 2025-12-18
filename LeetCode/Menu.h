@@ -45,5 +45,7 @@ public:
 	void menuMajorityElement();
 	void menuMajorityElementII();
 	void menuRepeatedNTimes();
+	void menuIsPathCrossing();
+	void menuIsPrefixOfWord();
 };
 
