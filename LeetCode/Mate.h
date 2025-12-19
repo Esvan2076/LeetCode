@@ -53,4 +53,6 @@ public:
 	int repeatedNTimes(std::vector<int>& nums);
 	bool isPathCrossing(std::string path);
 	int isPrefixOfWord(std::string sentence, std::string searchWord);
+	std::vector<int> findEvenNumbers(std::vector<int>& digits);
+	std::vector<std::string> findWords(std::vector<std::string>& words);
 };

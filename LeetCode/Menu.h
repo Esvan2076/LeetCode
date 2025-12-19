@@ -47,5 +47,7 @@ public:
 	void menuRepeatedNTimes();
 	void menuIsPathCrossing();
 	void menuIsPrefixOfWord();
+	void menuFindEvenNumbers();
+	void menuFindWords();
 };
 

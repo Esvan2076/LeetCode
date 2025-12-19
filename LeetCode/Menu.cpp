@@ -740,3 +740,45 @@ void Menu::menuIsPrefixOfWord() {
     int res = m.isPrefixOfWord(sentence, prefix);
     std::cout << "Result: " << res;
 }
+
+void Menu::menuFindEvenNumbers() {
+    Mate m;
+    int num1 = 0;
+    int num2 = 0;
+    std::cout << "2094. Finding 3-Digit Even Numbers\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    std::vector<int> nums;
+    nums.reserve(num1);
+    for (int j = 0; j < num1; j++) {
+        std::cout << "Num" << j + 1 << ": ";
+        std::cin >> num2;
+        nums.push_back(num2);
+    }
+    std::vector<int> res = m.findEvenNumbers(nums);
+    std::cout << "Results: " << std::endl;
+    for (int n : res) {
+        std::cout << n << " - ";
+    }
+}
+
+void Menu::menuFindWords() {
+    Mate m;
+    std::string s;
+    int num = 0;
+    std::cout << "500. Keyboard Row\n";
+    std::cout << "How many words: ";
+    std::cin >> num;
+    std::vector <std::string> words;
+    words.reserve(num);
+    for (int i = 0; i < num; i++) {
+        std::cout << "Word: " << i + 1 << ": ";
+        std::cin >> s;
+        words.push_back(s);
+    }
+    std::vector<std::string> res = m.findWords(words);
+    std::cout << "Result: " << std::endl;
+    for (std::string val : res) {
+        std::cout << val << " ";
+    }
+}

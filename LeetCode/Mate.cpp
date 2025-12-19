@@ -8,12 +8,16 @@
 #include <map>
 #include <unordered_map>
 
+//using namespace std;
+
 void printNums(std::vector<int>& nums);
 void printRow(std::vector<int>& nums);
 void printStack(const std::vector<char>& stack);
 bool isOpeningBracket(char c);
 bool isMatchingPair(char open, char close);
 ListNode* findNext(ListNode* node);
+std::vector<std::string> listToLowerCase(std::vector<std::string>& list);
+bool charInList(std::string& list, char& c);
 
 int Mate::sumNum(int num1, int num2) {
 	return num1 + num2;
@@ -1050,4 +1054,107 @@ int Mate::isPrefixOfWord(std::string sentence, std::string searchWord) {
 		std::cout << "NumWord: " << numWord << std::endl;
 	}
 	return -1;
+}
+
+std::vector<int> Mate::findEvenNumbers(std::vector<int>& digits) {
+	std::vector<int> res;
+	int num = 0;
+	int digit = 0;
+	bool allDigits = true;
+	bool isInDigits = true;
+	for (int i = 100; i <= 998; i += 2) {
+		allDigits = true;
+		num = i;
+		std::vector<int> temp = digits;
+		while (num > 0) {
+			digit = num % 10;
+			num /= 10;
+			isInDigits = 0;
+			for (int j = 0; j < temp.size(); j++) {
+				if (digit == temp[j]) {
+					isInDigits = true;
+					temp.erase(temp.begin() + j);
+					break;
+				}
+			}
+			if (!isInDigits) {
+				allDigits = false;
+				break;
+			}
+		}
+		if (allDigits) {
+			res.push_back(i);
+		}
+	}
+	return res;
+}
+
+std::vector<std::string> Mate::findWords(std::vector<std::string>& words) {
+	std::vector<std::string> wordsCopy;
+	wordsCopy = listToLowerCase(words);
+
+	std::vector<std::string> rows;
+	rows.reserve(3);
+	rows.push_back("qwertyuiop");
+	rows.push_back("asdfghjkl");
+	rows.push_back("zxcvbnm");
+
+	std::vector<int> res;
+	std::vector<std::string> resList;
+
+	bool inRow = false;
+	for (int i = 0; i < wordsCopy.size(); i++) {
+		std::string& word = wordsCopy[i];
+		for (int j = 0; j < rows.size(); j++) {
+			inRow = false;
+			for (char& c : word) {
+				if (charInList(rows[j], c)) {
+					inRow = true;
+				}
+				else {
+					inRow = false;
+					break;
+				}
+			}
+			if (inRow) {
+				break;
+			}
+		}
+		if (inRow) {
+			res.push_back(i);
+		}
+	}
+
+	wordsCopy = {};
+	for (int& n : res) {
+		wordsCopy.push_back(words[n]);
+	}
+	return wordsCopy;
+}
+
+std::vector<std::string> listToLowerCase(std::vector<std::string>& list) {
+	std::vector<std::string> wordsCopy;
+
+	for (std::string& temp : list) {
+		std::string n = "";
+		for (char c : temp) {
+			int num = c;
+			if (c >= 65 and c <= 90) {
+				c += 32;
+			}
+			n += c;
+		}
+		wordsCopy.push_back(n);
+	}
+
+	return wordsCopy;
+}
+
+bool charInList(std::string& list, char& c) {
+	for (char& v : list) {
+		if (v == c) {
+			return true;
+		}
+	}
+	return false;
 }

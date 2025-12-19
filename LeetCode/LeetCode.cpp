@@ -47,5 +47,7 @@ int main()
 	//m.menuMajorityElementII();
 	//m.menuRepeatedNTimes();
 	//m.menuIsPathCrossing();
-	m.menuIsPrefixOfWord();
+	//m.menuIsPrefixOfWord();
+	//m.menuFindEvenNumbers();
+	m.menuFindWords();
 }
