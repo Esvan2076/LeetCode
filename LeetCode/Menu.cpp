@@ -837,3 +837,58 @@ void Menu::menuIsSubsequence() {
     std::cout << "Result: ";
     std::cout << res;
 }
+
+void Menu::menuDiStringMatch() {
+    Mate m;
+    std::string s;
+    std::cout << "942. DI String Match\n";
+    std::cout << "Give me a string: ";
+    getline(std::cin, s);
+    std::vector<int> res = m.diStringMatch(s);
+    std::cout << "Result: \n\t";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuSortArrayByParityII() {
+    Mate m;
+    int num1;
+    int num2;
+    std::vector<int> numbers;
+    std::cout << "922. Sort Array By Parity II\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (int j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::vector<int> res = m.sortArrayByParityII(numbers);
+    std::cout << "Result: \n\t";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuSortArrayByParity() {
+    Mate m;
+    int num1;
+    int num2;
+    std::vector<int> numbers;
+    std::cout << "905. Sort Array By Parity\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (int j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::vector<int> res = m.sortArrayByParity(numbers);
+    std::cout << "Result: \n\t";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}

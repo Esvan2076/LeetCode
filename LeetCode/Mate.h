@@ -58,4 +58,7 @@ public:
 	void reverseString(std::vector<char>& s);
 	std::vector<int> twoSum(std::vector<int>& numbers, int target);
 	bool isSubsequence(std::string s, std::string t);
+	std::vector<int> diStringMatch(std::string s);
+	std::vector<int> sortArrayByParityII(std::vector<int>& nums);
+	std::vector<int> sortArrayByParity(std::vector<int>& nums);
 };

@@ -52,5 +52,8 @@ int main()
 	//m.menuFindWords();
 	//m.menuReverseString();
 	//m.menuTwoSum();
-	m.menuIsSubsequence();
+	//m.menuIsSubsequence();
+	//m.menuDiStringMatch();
+	//m.menuSortArrayByParityII();
+	m.menuSortArrayByParity();
 }

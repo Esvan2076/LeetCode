@@ -52,5 +52,8 @@ public:
 	void menuReverseString();
 	void menuTwoSum();
 	void menuIsSubsequence();
+	void menuDiStringMatch();
+	void menuSortArrayByParityII();
+	void menuSortArrayByParity();
 };
 

@@ -1199,3 +1199,57 @@ bool Mate::isSubsequence(std::string s, std::string t) {
 	}
 	return pointS == s.size();
 }
+
+std::vector<int> Mate::diStringMatch(std::string s) {
+	int max = s.size();
+	int min = 0;
+	int i = 0;
+	std::vector<int> res;
+	res.reserve(s.size() + 1);
+	while (max >= min) {
+		if (s[i] == 'I') {
+			res.push_back(min);
+			min++;
+		}
+		else {
+			res.push_back(max);
+			max--;
+		}
+		i++;
+	}
+	return res;
+}
+
+std::vector<int> Mate::sortArrayByParityII(std::vector<int>& nums) {
+	int odd = 1;
+	int even = 0;
+	std::vector<int> res(nums.size());
+	for (int i = 0; i < nums.size(); i++) {
+		if ((nums[i] % 2) == 0) {
+			res[even] = nums[i];
+			even += 2;
+		}
+		else {
+			res[odd] = nums[i];
+			odd += 2;
+		}
+	}
+	return res;
+}
+
+std::vector<int> Mate::sortArrayByParity(std::vector<int>& nums) {
+	size_t size = nums.size();
+	std::vector<int> res(size);
+	int right = (size - 1), left = 0;
+	for (int& ref : nums) {
+		if ((ref % 2) == 0) {
+			res[left] = ref;
+			left++;
+		}
+		else {
+			res[right] = ref;
+			right--;
+		}
+	}
+	return res;
+}
