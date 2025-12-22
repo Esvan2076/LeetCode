@@ -1158,3 +1158,44 @@ bool charInList(std::string& list, char& c) {
 	}
 	return false;
 }
+
+void Mate:: reverseString(std::vector<char>& s) {
+	int left = 0;
+	int right = (s.size() - 1);
+	char helper = ' ';
+	while (right > left) {
+		//std::swap(s[left], s[right]);
+		helper = s[right];
+		s[right] = s[left];
+		s[left] = helper;
+		left++;
+		right--;
+	}
+}
+
+std::vector<int> Mate::twoSum(std::vector<int>& numbers, int target) {
+	int left = 0;
+	int right = numbers.size() - 1;
+	int sum = 0;
+	while (right > left) {
+		sum = numbers[left] + numbers[right];
+		if (target == sum) break;
+		if (target > sum) {
+			left++;
+		}
+		else {
+			right--;
+		}
+	}
+	return { ++left, ++right };
+}
+
+bool Mate::isSubsequence(std::string s, std::string t) {
+	int pointS = 0;
+	for (char& c : t) {
+		if (s[pointS] == c) {
+			pointS++;
+		}
+	}
+	return pointS == s.size();
+}

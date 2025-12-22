@@ -782,3 +782,58 @@ void Menu::menuFindWords() {
         std::cout << val << " ";
     }
 }
+
+void Menu::menuReverseString() {
+    Mate m;
+    std::string text;
+    std::vector<char> s;
+    std::cout << "344. Reverse String\n";
+    std::cout << "Give me a string: ";
+    getline(std::cin, text);
+    s.reserve(text.size());
+    for (char& c : text) {
+        s.push_back(c);
+    }
+    m.reverseString(s);
+    std::cout << "Results: ";
+    for (char& c : s) {
+        std::cout << c;
+    }
+}
+
+void Menu::menuTwoSum() {
+    Mate m;
+    int num1;
+    int num2;
+    std::vector<int> numbers;
+    std::cout << "167. Two Sum II - Input Array Is Sorted\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (int j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "What is the target: ";
+    std::cin >> num1;
+    std::vector<int> res = m.twoSum(numbers, num1);
+    std::cout << "Result: \n\t";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuIsSubsequence() {
+    Mate m;
+    std::string s;
+    std::string t;
+    std::cout << "392. Is Subsequence\n";
+    std::cout << "Give me a string: ";
+    getline(std::cin, s);
+    std::cout << "Give me another string: ";
+    getline(std::cin, t);
+    bool res = m.isSubsequence(s, t);
+    std::cout << "Result: ";
+    std::cout << res;
+}

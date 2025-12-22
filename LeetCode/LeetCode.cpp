@@ -49,5 +49,8 @@ int main()
 	//m.menuIsPathCrossing();
 	//m.menuIsPrefixOfWord();
 	//m.menuFindEvenNumbers();
-	m.menuFindWords();
+	//m.menuFindWords();
+	//m.menuReverseString();
+	//m.menuTwoSum();
+	m.menuIsSubsequence();
 }

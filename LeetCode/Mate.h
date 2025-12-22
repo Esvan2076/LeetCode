@@ -55,4 +55,7 @@ public:
 	int isPrefixOfWord(std::string sentence, std::string searchWord);
 	std::vector<int> findEvenNumbers(std::vector<int>& digits);
 	std::vector<std::string> findWords(std::vector<std::string>& words);
+	void reverseString(std::vector<char>& s);
+	std::vector<int> twoSum(std::vector<int>& numbers, int target);
+	bool isSubsequence(std::string s, std::string t);
 };

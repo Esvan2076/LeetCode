@@ -49,5 +49,8 @@ public:
 	void menuIsPrefixOfWord();
 	void menuFindEvenNumbers();
 	void menuFindWords();
+	void menuReverseString();
+	void menuTwoSum();
+	void menuIsSubsequence();
 };
 
