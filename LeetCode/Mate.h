@@ -61,4 +61,5 @@ public:
 	std::vector<int> diStringMatch(std::string s);
 	std::vector<int> sortArrayByParityII(std::vector<int>& nums);
 	std::vector<int> sortArrayByParity(std::vector<int>& nums);
+	std::vector<int> findIndices(std::vector<int>& nums, int indexDifference, int valueDifference);
 };

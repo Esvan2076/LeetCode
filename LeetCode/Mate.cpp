@@ -1253,3 +1253,20 @@ std::vector<int> Mate::sortArrayByParity(std::vector<int>& nums) {
 	}
 	return res;
 }
+
+std::vector<int> Mate::findIndices(std::vector<int>& nums, int indexDifference, int valueDifference) {
+	int n = nums.size();
+
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if ((std::abs(i - j) >= indexDifference)) {
+
+				if (std::abs(nums[i] - nums[j]) >= valueDifference) {
+					return { i, j };
+				}
+			}
+		}
+	}
+
+	return { -1, -1 };
+}

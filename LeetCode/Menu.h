@@ -55,5 +55,6 @@ public:
 	void menuDiStringMatch();
 	void menuSortArrayByParityII();
 	void menuSortArrayByParity();
+	void menuFindIndices();
 };
 

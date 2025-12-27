@@ -892,3 +892,28 @@ void Menu::menuSortArrayByParity() {
         std::cout << num << "\t";
     }
 }
+
+void Menu::menuFindIndices() {
+    Mate m;
+    int num1;
+    int num2;
+    std::vector<int> numbers;
+    std::cout << "2903. Find Indices With Index and Value Difference I\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (int j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "Give me the Index Difference: ";
+    std::cin >> num1;
+    std::cout << "Give me the Value Difference: ";
+    std::cin >> num2;
+    std::vector<int> res = m.findIndices(numbers, num1, num2);
+    std::cout << "Result: \n";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}

@@ -55,5 +55,6 @@ int main()
 	//m.menuIsSubsequence();
 	//m.menuDiStringMatch();
 	//m.menuSortArrayByParityII();
-	m.menuSortArrayByParity();
+	//m.menuSortArrayByParity();
+	m.menuFindIndices();
 }
