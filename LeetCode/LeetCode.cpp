@@ -56,5 +56,9 @@ int main()
 	//m.menuDiStringMatch();
 	//m.menuSortArrayByParityII();
 	//m.menuSortArrayByParity();
-	m.menuFindIndices();
+	//m.menuFindIndices();
+	//m.menuCountPairs();
+	//m.menuMakeSmallestPalindrome();
+	//m.menuMergeArrays();
+	m.menuGetCommon();
 }

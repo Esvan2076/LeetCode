@@ -917,3 +917,101 @@ void Menu::menuFindIndices() {
         std::cout << num << "\t";
     }
 }
+
+void Menu::menuCountPairs() {
+    Mate m;
+    int num1;
+    int num2;
+    std::vector<int> numbers;
+    std::cout << "2824. Count Pairs Whose Sum is Less than Target\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (int j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "What is the target: ";
+    std::cin >> num1;
+    int res = m.countPairs(numbers, num1);
+    std::cout << "Result: \n";
+    std::cout << res << "\t";
+}
+
+void Menu::menuMakeSmallestPalindrome() {
+    Mate m;
+    std::string text;
+    std::cout << "2697. Lexicographically Smallest Palindrome\n";
+    std::cout << "Give me a word: ";
+    std::cin >> text;
+    std::string res = m.makeSmallestPalindrome(text);
+    std::cout << res;
+}
+
+void Menu::menuMergeArrays() {
+    Mate m;
+    int count, id, val;
+
+    std::vector<std::vector<int>> nums1, nums2;
+
+    std::cout << "2570. Merge Two 2D Arrays by Summing Values\n";
+
+    std::cout << "How many pairs in nums1: ";
+    std::cin >> count;
+    for (size_t i = 0; i < count; ++i) {
+        std::cout << "Pair " << i + 1 << std::endl;
+        std::cout << "Id: " << std::endl;
+        std::cin >> id;
+        std::cout << "Value: " << std::endl;
+        std::cin >> val;
+        nums1.push_back({ id, val });
+    }
+
+    std::cout << "How many pairs in nums2: ";
+    std::cin >> count;
+    for (size_t i = 0; i < count; ++i) {
+        std::cout << "Pair " << i + 1 << std::endl;
+        std::cout << "Id: " << std::endl;
+        std::cin >> id;
+        std::cout << "Value: " << std::endl;
+        std::cin >> val;
+        nums2.push_back({ id, val });
+    }
+
+    std::vector<std::vector<int>> res = m.mergeArrays(nums1, nums2);
+
+    std::cout << "Result:\n";
+    for (const auto& pair : res) {
+        std::cout << "[" << pair[0] << ", " << pair[1] << "]\n";
+    }
+}
+
+void Menu::menuGetCommon() {
+    Mate m;
+    int count, num;
+    std::vector<int> nums1, nums2;
+
+    std::cout << "2540. Minimum Common Value\n";
+
+    std::cout << "How many numbers in nums1: ";
+    std::cin >> count;
+    nums1.reserve(count);
+    for (int i = 0; i < count; ++i) {
+        std::cout << "Num1[" << i << "]: ";
+        std::cin >> num;
+        nums1.push_back(num);
+    }
+
+    std::cout << "How many numbers in nums2: ";
+    std::cin >> count;
+    nums2.reserve(count);
+    for (int i = 0; i < count; ++i) {
+        std::cout << "Num2[" << i << "]: ";
+        std::cin >> num;
+        nums2.push_back(num);
+    }
+
+    int res = m.getCommon(nums1, nums2);
+    std::cout << "Result: " << res << "\n";
+}

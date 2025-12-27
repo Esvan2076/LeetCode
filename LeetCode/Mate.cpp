@@ -1258,15 +1258,89 @@ std::vector<int> Mate::findIndices(std::vector<int>& nums, int indexDifference, 
 	int n = nums.size();
 
 	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			if ((std::abs(i - j) >= indexDifference)) {
-
-				if (std::abs(nums[i] - nums[j]) >= valueDifference) {
-					return { i, j };
-				}
+		for (int j = (i + indexDifference); j < n; j++) {
+			int value = std::abs(nums[i] - nums[j]);
+			if (value >= valueDifference) {
+				return { i, j };
 			}
 		}
 	}
 
 	return { -1, -1 };
+}
+
+int Mate::countPairs(std::vector<int>& nums, int target) {
+	int res = 0;
+	size_t s = nums.size();
+	for (size_t i = 0; i < s; ++i) {
+		for (size_t j = (i + 1); j < s; ++j) {
+			int value = nums[i] + nums[j];
+			if (value < target) {
+				res++;
+			}
+		}
+	}
+	return res;
+}
+
+std::string Mate::makeSmallestPalindrome(std::string s) {
+	int left = 0, right = s.size() - 1;
+	while (left < right) {
+		if (s[left] > s[right]) {
+			s[left] = s[right];
+		}
+		else if (s[left] < s[right]){
+			s[right] = s[left];
+		}
+		++left;
+		--right;
+	}
+	return s;
+}
+
+std::vector<std::vector<int>> Mate::mergeArrays(std::vector<std::vector<int>>& nums1, std::vector<std::vector<int>>& nums2) {
+	std::vector<std::vector<int>> res;
+	res.reserve(nums1.size() + nums2.size());
+	std::map<int, int> map;
+	for (std::vector<int>& num : nums1) {
+		map[num[0]] += num[1];
+	}
+	for (std::vector<int>& num : nums2) {
+		map[num[0]] += num[1];
+	}
+
+	for (const auto& num : map) {
+		std::vector<int> temp(2);
+		temp[0] = num.first;
+		temp[1] = num.second;
+		res.push_back(temp);
+		//res.push_back({num.first, num.second});
+	}
+	return res;
+}
+
+int Mate::getCommon(std::vector<int>& nums1, std::vector<int>& nums2) {
+	int res = -1;
+	size_t pOne = 0, pTwo = 0;
+	size_t sOne = nums1.size();
+	size_t sTwo = nums2.size();
+	while (true) {
+		if (pOne >= sOne) {
+			break;
+		}
+		if (pTwo >= sTwo) {
+			break;
+		}
+
+		if (nums1[pOne] > nums2[pTwo]) {
+			++pTwo;
+		}
+		else if (nums1[pOne] < nums2[pTwo]) {
+			++pOne;
+		}
+		else {
+			return nums1[pOne];
+		}
+	}
+	return res;
 }

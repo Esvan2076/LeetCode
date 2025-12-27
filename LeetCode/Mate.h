@@ -62,4 +62,8 @@ public:
 	std::vector<int> sortArrayByParityII(std::vector<int>& nums);
 	std::vector<int> sortArrayByParity(std::vector<int>& nums);
 	std::vector<int> findIndices(std::vector<int>& nums, int indexDifference, int valueDifference);
+	int countPairs(std::vector<int>& nums, int target);
+	std::string makeSmallestPalindrome(std::string s);
+	std::vector<std::vector<int>> mergeArrays(std::vector<std::vector<int>>& nums1, std::vector<std::vector<int>>& nums2);
+	int getCommon(std::vector<int>& nums1, std::vector<int>& nums2);
 };

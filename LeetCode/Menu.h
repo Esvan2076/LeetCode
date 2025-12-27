@@ -56,5 +56,9 @@ public:
 	void menuSortArrayByParityII();
 	void menuSortArrayByParity();
 	void menuFindIndices();
+	void menuCountPairs();
+	void menuMakeSmallestPalindrome();
+	void menuMergeArrays();
+	void menuGetCommon();
 };
 
