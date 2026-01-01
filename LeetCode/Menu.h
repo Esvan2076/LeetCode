@@ -60,5 +60,6 @@ public:
 	void menuMakeSmallestPalindrome();
 	void menuMergeArrays();
 	void menuGetCommon();
+	void menuContainsNearbyDuplicate();
 };
 

@@ -1015,3 +1015,23 @@ void Menu::menuGetCommon() {
     int res = m.getCommon(nums1, nums2);
     std::cout << "Result: " << res << "\n";
 }
+
+void Menu::menuContainsNearbyDuplicate() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "219. Contains Duplicate II\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "What is K: ";
+    std::cin >> num1;
+    int res = m.containsNearbyDuplicate(numbers, num1);
+    std::cout << "Result: \n";
+    std::cout << res << "\t";
+}

@@ -7,6 +7,7 @@
 #include <print>
 #include <map>
 #include <unordered_map>
+#include <unordered_set>
 
 //using namespace std;
 
@@ -1343,4 +1344,36 @@ int Mate::getCommon(std::vector<int>& nums1, std::vector<int>& nums2) {
 		}
 	}
 	return res;
+}
+
+bool Mate::containsNearbyDuplicate(std::vector<int>& nums, int k) {
+	//std::unordered_map<int, int> window;
+
+	//for (size_t i = 0; i < nums.size(); ++i) {
+	//	int temp = (i - k);
+	//	if (temp > 0) {
+	//		temp--;
+	//		window.erase(nums[temp]);
+	//	}
+	//	if (window.count(nums[i])) {
+	//		return true;
+	//	}
+	//	window[nums[i]] = 1;
+	//}
+
+	//return false;
+	std::unordered_set<int> window;
+
+	for (size_t i = 0; i < nums.size(); ++i) {
+		if (i > k) {
+			window.erase(nums[i - k - 1]);
+		}
+
+		if (window.count(nums[i])) {
+			return true;
+		}
+
+		window.insert(nums[i]);
+	}
+	return false;
 }

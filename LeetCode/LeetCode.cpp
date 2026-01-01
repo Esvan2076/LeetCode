@@ -60,5 +60,6 @@ int main()
 	//m.menuCountPairs();
 	//m.menuMakeSmallestPalindrome();
 	//m.menuMergeArrays();
-	m.menuGetCommon();
+	//m.menuGetCommon();
+	m.menuContainsNearbyDuplicate();
 }

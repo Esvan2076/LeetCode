@@ -66,4 +66,5 @@ public:
 	std::string makeSmallestPalindrome(std::string s);
 	std::vector<std::vector<int>> mergeArrays(std::vector<std::vector<int>>& nums1, std::vector<std::vector<int>>& nums2);
 	int getCommon(std::vector<int>& nums1, std::vector<int>& nums2);
+	bool containsNearbyDuplicate(std::vector<int>& nums, int k);
 };
