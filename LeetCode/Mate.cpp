@@ -196,9 +196,7 @@ std::string Mate::toLowerCase(std::string s) {
 	int i = 0;
 	for (char c : s) {
 		if (c >= 65 and c <= 90) {
-			std::cout << "Position: " << i << "\t" << s[i] << "\n";
 			s[i] = s[i] + 32;
-			std::cout << s[i] << "\n";
 		}
 		i++;
 	}
@@ -1376,4 +1374,91 @@ bool Mate::containsNearbyDuplicate(std::vector<int>& nums, int k) {
 		window.insert(nums[i]);
 	}
 	return false;
+}
+
+int Mate::findLHS(std::vector<int>& nums) {
+	std::unordered_map<int, int> map;
+
+	int best = 0, sum = 0;
+
+	for (const int& num : nums) {
+		map[num]++;
+
+		if (map.count(num + 1)) {
+			sum = map[num] + map[num + 1];
+			best = std::max(best, sum);
+		}
+
+		if (map.count(num - 1)) {
+			sum = map[num] + map[num - 1];
+			best = std::max(best, sum);
+		}
+	}
+
+	return best;
+}
+
+double Mate::findMaxAverage(std::vector<int>& nums, int k) {
+	double best = 0, cur = 0;
+
+	for (size_t i = 0; i < k; ++i) {
+		cur += nums[i];
+	}
+	best = cur;
+
+    size_t j = 0;
+    for (size_t i = k; i < nums.size(); ++i) {
+        cur += nums[i];
+        cur -= nums[j];
+
+        best = std::max(best, cur);
+        j++;
+    }
+
+	return best / k;
+}
+
+std::vector<int> Mate::decrypt(std::vector<int>& code, int k) {
+	int n = code.size();
+	std::vector<int> res(n, 0);
+
+	if (k == 0) return res;
+
+	for (int i = 0; i < n; ++i) {
+		int sum = 0;
+
+		for (int j = 1; j <= std::abs(k); ++j) {
+			int idx = 0;
+			if (k > 0) {
+				idx = (i + j) % n;
+			}
+			else {
+				idx = (i - j + n) % n;
+			}
+			sum += code[idx];
+		}
+
+		res[i] = sum;
+	}
+
+	return res;
+}
+
+void Mate::rotate(std::vector<int>& nums, int k) {
+	int n = nums.size();
+
+	std::vector<int> res;
+	res.reserve(n);
+
+	k = k % n;
+	for (int i = 0; i < n; ++i) {
+		int idx = (i + n - k) % n;
+		res.push_back(nums[idx]);
+	}
+	nums = std::move(res);
+}
+
+std::string Mate::longestNiceSubstring(std::string s) {
+
+	return "";
 }

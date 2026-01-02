@@ -67,4 +67,9 @@ public:
 	std::vector<std::vector<int>> mergeArrays(std::vector<std::vector<int>>& nums1, std::vector<std::vector<int>>& nums2);
 	int getCommon(std::vector<int>& nums1, std::vector<int>& nums2);
 	bool containsNearbyDuplicate(std::vector<int>& nums, int k);
+	int findLHS(std::vector<int>& nums);
+	double findMaxAverage(std::vector<int>& nums, int k);
+	std::vector<int> decrypt(std::vector<int>& code, int k);
+	void rotate(std::vector<int>& nums, int k);
+	std::string longestNiceSubstring(std::string s);
 };

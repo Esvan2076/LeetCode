@@ -1035,3 +1035,97 @@ void Menu::menuContainsNearbyDuplicate() {
     std::cout << "Result: \n";
     std::cout << res << "\t";
 }
+
+void Menu::menuFindLHS() {
+    Mate m;
+    int num1;
+    int num2;
+    std::vector<int> numbers;
+    std::cout << "594. Longest Harmonious Subsequence\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (int j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    int res = m.findLHS(numbers);
+    std::cout << "Result: \n";
+    std::cout << res;
+}
+
+void Menu::menuFindMaxAverage() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "643. Maximum Average Subarray I\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "What is K: ";
+    std::cin >> num1;
+    double res = m.findMaxAverage(numbers, num1);
+    std::cout << "Result: \n";
+    std::cout << res << "\t";
+}
+
+void Menu::menuDecrypt() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "1652. Defuse the Bomb\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "What is K: ";
+    std::cin >> num1;
+    std::vector<int> res = m.decrypt(numbers, num1);
+    std::cout << "Result: \n";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuRotate() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "189. Rotate Array\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "What is K: ";
+    std::cin >> num1;
+    m.rotate(numbers, num1);
+    std::cout << "Result: \n";
+    for (int& num : numbers) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuLongestNiceSubstring() {
+    Mate m;
+    std::string s;
+    std::cout << "1763. Longest Nice Substring\n";
+    std::cout << "Give me a string: ";
+    getline(std::cin, s);
+    std::string res = m.longestNiceSubstring(s);
+    std::cout << "Result: ";
+    std::cout << res;
+}

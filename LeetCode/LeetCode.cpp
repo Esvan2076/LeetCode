@@ -61,5 +61,10 @@ int main()
 	//m.menuMakeSmallestPalindrome();
 	//m.menuMergeArrays();
 	//m.menuGetCommon();
-	m.menuContainsNearbyDuplicate();
+	//m.menuContainsNearbyDuplicate();
+	//m.menuFindLHS();
+	//m.menuFindMaxAverage();
+	//m.menuDecrypt();
+	//m.menuRotate();
+	m.menuLongestNiceSubstring();
 }

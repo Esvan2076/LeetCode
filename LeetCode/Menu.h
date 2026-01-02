@@ -61,5 +61,10 @@ public:
 	void menuMergeArrays();
 	void menuGetCommon();
 	void menuContainsNearbyDuplicate();
+	void menuFindLHS();
+	void menuFindMaxAverage();
+	void menuDecrypt();
+	void menuRotate();
+	void menuLongestNiceSubstring();
 };
 
