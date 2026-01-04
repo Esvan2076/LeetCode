@@ -66,5 +66,6 @@ public:
 	void menuDecrypt();
 	void menuRotate();
 	void menuLongestNiceSubstring();
+	void menuCountGoodSubstrings();
+	void menuMaximumStrongPairXor();
 };
-

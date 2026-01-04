@@ -66,5 +66,6 @@ int main()
 	//m.menuFindMaxAverage();
 	//m.menuDecrypt();
 	//m.menuRotate();
-	m.menuLongestNiceSubstring();
+	//m.menuCountGoodSubstrings();
+	m.menuMaximumStrongPairXor();
 }

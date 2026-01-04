@@ -1459,6 +1459,85 @@ void Mate::rotate(std::vector<int>& nums, int k) {
 }
 
 std::string Mate::longestNiceSubstring(std::string s) {
+	int n = s.size();
+	int bestStart = 0;
+	int bestLen = 0;
 
-	return "";
+	for (int i = 0; i < n; ++i) {
+		int lowerMask = 0;
+		int upperMask = 0;
+
+		for (int j = i; j < n; ++j) {
+			char c = s[j];
+			if (c >= 'a' && c <= 'z') {
+				lowerMask |= (1 << (c - 'a'));
+			}
+			else {
+				upperMask |= (1 << (c - 'A'));
+			}
+
+			if ((lowerMask ^ upperMask) == 0) {
+				int len = j - i + 1;
+				if (len > bestLen) {
+					bestLen = len;
+					bestStart = i;
+				}
+			}
+		}
+	}
+	return s.substr(bestStart, bestLen);
+}
+
+int Mate::countGoodSubstrings(std::string s) {
+	std::unordered_map<char, short> map;
+	map.reserve(3);
+	int res = 0;
+
+	for (short i = 0; i < 3; ++i) {
+		map[s[i]]++;
+	}
+
+	for (short i = 0; i + 3 < s.size(); ++i) {
+		if (map.size() >= 3) res++;
+
+		if (map[s[i]] == 1) {
+			map.erase(s[i]);
+		}
+		else {
+			map[s[i]]--;
+		}
+		map[s[i + 3]]++;
+	}
+	if (map.size() >= 3) {
+		res++;
+	}
+
+	return res;
+}
+
+int Mate::maximumStrongPairXor(std::vector<int>& nums) {
+	int idxY = 0, idxZ = 0;
+	int n = nums.size();
+	int best = 0;
+	while (idxY < n) {
+
+		std::cout << "Idx Y: " << idxY << " " << nums[idxY] << std::endl;
+		std::cout << "Idx Z: " << idxZ << " " << nums[idxZ] << std::endl;
+
+		if (std::abs(nums[idxY] - nums[idxZ]) <= std::min(nums[idxY], nums[idxZ])) {
+			std::cout << "Xor: " << (nums[idxY] ^ nums[idxZ]) << std::endl;
+			if (best != std::max(best, nums[idxY] ^ nums[idxZ])) {
+				std::cout << "NUEVO BEST" << std::endl;
+			}
+			best = std::max(best, nums[idxY] ^ nums[idxZ]);
+		}
+
+		if (idxY > idxZ) {
+			idxZ++;
+		}
+		else {
+			idxY++;
+		}
+	}
+	return best;
 }

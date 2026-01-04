@@ -1129,3 +1129,32 @@ void Menu::menuLongestNiceSubstring() {
     std::cout << "Result: ";
     std::cout << res;
 }
+
+void Menu::menuCountGoodSubstrings() {
+    Mate m;
+    std::string s;
+    std::cout << "1876. Substrings of Size Three with Distinct Characters\n";
+    std::cout << "Give me a string: ";
+    getline(std::cin, s);
+    int res = m.countGoodSubstrings(s);
+    std::cout << "Result: ";
+    std::cout << res;
+}
+
+void Menu::menuMaximumStrongPairXor() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "2932. Maximum Strong Pair XOR I\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    int res = m.maximumStrongPairXor(numbers);
+    std::cout << "Result: ";
+    std::cout << res;
+}

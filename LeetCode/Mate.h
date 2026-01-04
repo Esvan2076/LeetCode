@@ -72,4 +72,6 @@ public:
 	std::vector<int> decrypt(std::vector<int>& code, int k);
 	void rotate(std::vector<int>& nums, int k);
 	std::string longestNiceSubstring(std::string s);
+	int countGoodSubstrings(std::string s);
+	int maximumStrongPairXor(std::vector<int>& nums);
 };
