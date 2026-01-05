@@ -74,4 +74,11 @@ public:
 	std::string longestNiceSubstring(std::string s);
 	int countGoodSubstrings(std::string s);
 	int maximumStrongPairXor(std::vector<int>& nums);
+	std::vector<int> buildArray(std::vector<int>& nums);
+	int minimumOperations(std::vector<int>& nums);
+	std::vector<int> recoverOrder(std::vector<int>& order, std::vector<int>& friends);
+	std::vector<int> getConcatenation(std::vector<int>& nums);
+	int finalValueAfterOperations(std::vector<std::string>& operations);
+	std::vector<double> convertTemperature(double celsius);
+	std::vector<int> minOperations(std::string boxes);
 };

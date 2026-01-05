@@ -1158,3 +1158,134 @@ void Menu::menuMaximumStrongPairXor() {
     std::cout << "Result: ";
     std::cout << res;
 }
+
+void Menu::menuBuildArray() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "1920. Build Array from Permutation\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::vector<int> res = m.buildArray(numbers);
+    std::cout << "Result: \n";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuMinimumOperations() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "3190. Find Minimum Operations to Make All Elements Divisible by Three\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    int res = m.minimumOperations(numbers);
+    std::cout << "Result: ";
+    std::cout << res;
+}
+
+void Menu::menuRecoverOrder() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> nums1, nums2;
+    std::cout << "3668. Restore Finishing Order\n";
+    std::cout << "How many numbers in Nums1: ";
+    std::cin >> num1;
+    nums1.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        nums1.push_back(num2);
+    }
+    std::cout << "How many numbers in Nums2: ";
+    std::cin >> num1;
+    nums2.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        nums2.push_back(num2);
+    }
+    std::vector<int> res = m.recoverOrder(nums1, nums2);
+    std::cout << "Result: \n";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuGetConcatenation() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> nums;
+    std::cout << "1929. Concatenation of Array\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    nums.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        nums.push_back(num2);
+    }
+    std::vector<int> res = m.getConcatenation(nums);
+    std::cout << "Result: \n";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuFinalValueAfterOperations() {
+    Mate m;
+    int num1;
+    std::string s;
+    std::vector<std::string> ins;
+    std::cout << "2011. Final Value of Variable After Performing Operations\n";
+    std::cout << "How many Operations: ";
+    std::cin >> num1;
+    ins.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Operation " << j + 1 << ": ";
+        getline(std::cin, s);
+        ins.push_back(s);
+    }
+    int res = m.finalValueAfterOperations(ins);
+    std::cout << "Result: ";
+    std::cout << res;
+}
+
+void Menu::menuConvertTemperature() {
+    Mate m;
+    double num1;
+    std::cout << "2469. Convert the Temperature\n";
+    std::cout << "Give me a temperatura in Celsius: ";
+    std::cin >> num1;
+    std::vector<double> res = m.convertTemperature(num1);
+    std::cout << "Result: " << std::endl;
+    std::cout << "Kelvin: " << res[0];
+    std::cout << " Fahrenheit: " << res[1];
+}
+
+void Menu::menuMinOperations() {
+    Mate m;
+    std::string s;
+    std::cout << "1769. Minimum Number of Operations to Move All Balls to Each Box\n";
+    std::cout << "Give me a string: ";
+    std::cout << "Example 001001 ";
+    getline(std::cin, s);
+    std::vector<int> res = m.minOperations(s);
+    std::cout << "Result: \n";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}

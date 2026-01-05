@@ -1541,3 +1541,129 @@ int Mate::maximumStrongPairXor(std::vector<int>& nums) {
 	}
 	return best;
 }
+
+std::vector<int> Mate::buildArray(std::vector<int>& nums) {
+	int n = nums.size();
+
+	std::vector<int> ans;
+	ans.reserve(n);
+
+	for (size_t i = 0; i < n; ++i) {
+		ans.push_back(nums[nums[i]]);
+	}
+
+	return ans;
+}
+
+int Mate::minimumOperations(std::vector<int>& nums) {
+	int res = 0;
+	for (int& num : nums) {
+		if (num % 3 != 0) {
+			res++;
+		}
+	}
+	return res;
+}
+
+std::vector<int> Mate::recoverOrder(std::vector<int>& order, std::vector<int>& friends) {
+	//int sizeF = friends.size();
+	//std::vector<int> ans;
+	//ans.reserve(sizeF);
+
+	//for (size_t i = 0; i < order.size(); ++i) {
+	//	for (size_t j = i; j < sizeF; ++j) {
+	//		if (order[i] == friends[j]) {
+	//			ans.push_back(order[i]);
+	//		}
+	//	}
+	//}
+	//return ans;
+	std::unordered_set<int> set(friends.begin(), friends.end());
+	std::vector<int> res;
+	res.reserve(friends.size());
+
+	for (int& n : order) {
+		if (set.count(n)) {
+			res.push_back(n);
+		}
+	}
+
+	return res;
+}
+
+std::vector<int> Mate::getConcatenation(std::vector<int>& nums) {
+	std::vector<int> res;
+	int n = nums.size() * 2;
+	res.reserve(n);
+
+	for (int& num : nums) {
+		res.push_back(num);
+	}
+
+	for (int& num : nums) {
+		res.push_back(num);
+	}
+
+	return res;
+}
+
+int Mate::finalValueAfterOperations(std::vector<std::string>& operations) {
+	//std::unordered_map<std::string, short> map;
+	//map.reserve(4);
+
+	//map["++X"] = 1, map["X++"] = 1;
+	//map["--X"] = -1, map["X--"] = -1;
+
+	int res = 0;
+	//for (std::string& s : operations) {
+	//	res += map[s];
+	//}
+
+	for (std::string& s : operations) {
+		res += (s == "X++" or s == "++X") ? 1 : -1;
+	}
+
+	return res;
+}
+
+std::vector<double> Mate::convertTemperature(double celsius) {
+	//std::vector<double> res;
+	//res.reserve(2);
+
+	//res.push_back(celsius + 273.15);
+	//res.push_back(celsius * 1.80 + 32.00);
+
+	//return res;
+	return { (celsius + 273.15), (celsius * 1.80 + 32.00) };
+}
+
+std::vector<int> Mate::minOperations(std::string boxes) {
+	size_t n = boxes.size();
+	std::vector<int> ans;
+	ans.reserve(n);
+
+	//for (size_t i = 0; i < n; ++i) {
+	//	int temp = 0;
+	//	for (size_t j = i + 1; j < n; ++j) {
+	//		if (boxes[j] == '1') {
+	//			temp += i - j;
+	//		}
+	//	}
+	//	for (size_t j = 0; j < i; ++i) {
+	//		if (boxes[j] == '1') {
+	//			temp += i;
+	//		}
+	//	}
+	//	ans.push_back(temp);
+	//}
+
+	for (int i = 0; i < n; ++i) {
+		int temp = 0;
+		for (int j = 0; j < n; ++j) {
+			temp += std::abs(i - j);
+		}
+		ans.push_back(temp);
+	}
+
+	return ans;
+}

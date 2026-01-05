@@ -68,4 +68,11 @@ public:
 	void menuLongestNiceSubstring();
 	void menuCountGoodSubstrings();
 	void menuMaximumStrongPairXor();
+	void menuBuildArray();
+	void menuMinimumOperations();
+	void menuRecoverOrder();
+	void menuGetConcatenation();
+	void menuFinalValueAfterOperations();
+	void menuConvertTemperature();
+	void menuMinOperations();
 };

@@ -67,5 +67,10 @@ int main()
 	//m.menuDecrypt();
 	//m.menuRotate();
 	//m.menuCountGoodSubstrings();
-	m.menuMaximumStrongPairXor();
+	//m.menuBuildArray();
+	//m.menuMinimumOperations();
+	//m.menuRecoverOrder();
+	//m.menuGetConcatenation();
+	//m.menuConvertTemperature();
+	m.menuMinOperations();
 }
