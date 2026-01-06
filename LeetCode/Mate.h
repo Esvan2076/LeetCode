@@ -81,4 +81,7 @@ public:
 	int finalValueAfterOperations(std::vector<std::string>& operations);
 	std::vector<double> convertTemperature(double celsius);
 	std::vector<int> minOperations(std::string boxes);
+	std::string defangIPaddr(std::string address);
+	std::vector<int> getSneakyNumbers(std::vector<int>& nums);
+	bool isStrictlyPalindromic(int n);
 };

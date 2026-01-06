@@ -75,4 +75,7 @@ public:
 	void menuFinalValueAfterOperations();
 	void menuConvertTemperature();
 	void menuMinOperations();
+	void menuDefangIPaddr();
+	void menuGetSneakyNumbers();
+	void menuIsStrictlyPalindromic();
 };

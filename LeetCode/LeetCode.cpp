@@ -72,5 +72,8 @@ int main()
 	//m.menuRecoverOrder();
 	//m.menuGetConcatenation();
 	//m.menuConvertTemperature();
-	m.menuMinOperations();
+	//m.menuMinOperations();
+	//m.menuDefangIPaddr(); 
+	//m.menuGetSneakyNumbers();
+	m.menuIsStrictlyPalindromic();
 }

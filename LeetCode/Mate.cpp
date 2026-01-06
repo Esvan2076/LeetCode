@@ -19,6 +19,8 @@ bool isMatchingPair(char open, char close);
 ListNode* findNext(ListNode* node);
 std::vector<std::string> listToLowerCase(std::vector<std::string>& list);
 bool charInList(std::string& list, char& c);
+std::string toNumericBase(int num, int base);
+bool isPalindromic(std::string& s);
 
 int Mate::sumNum(int num1, int num2) {
 	return num1 + num2;
@@ -1666,4 +1668,67 @@ std::vector<int> Mate::minOperations(std::string boxes) {
 	}
 
 	return ans;
+}
+
+std::string Mate::defangIPaddr(std::string address) {
+	std::string res;
+	for (char c : address) {
+		if (c == '.') {
+			res += "[.]";
+		}
+		else
+		{
+			res += c;
+		}
+	}
+	return res;
+}
+
+std::vector<int> Mate::getSneakyNumbers(std::vector<int>& nums) {
+	std::unordered_set<int> set;
+	std::vector<int> res;
+	res.reserve(2);
+
+	for (int num : nums) {
+		if (set.count(num)) {
+			res.push_back(num);
+			continue;
+		}
+		set.insert(num);
+	}
+	return res;
+}
+
+std::string toNumericBase(int num, int base) {
+	std::string s;
+
+	while (num > 0) {
+		s += num % base;
+		num /= base;
+	}
+	
+	return s;
+}
+
+bool isPalindromic(std::string& s) {
+	int n = s.size() - 1;
+	for (size_t i = 0; i <= n; ++i) {
+		if (s[i] == s[n - i]) {
+			continue;
+		}
+		return false;
+	}
+	return true;
+}
+
+bool Mate::isStrictlyPalindromic(int n) {
+	std::string helper;
+	for (int i = 2; i + 2 <= n; i++) {
+		helper = toNumericBase(n, i);
+		if (isPalindromic(helper)) {
+			continue;
+		}
+		return false;
+	}
+	return true;
 }

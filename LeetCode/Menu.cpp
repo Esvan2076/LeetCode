@@ -1289,3 +1289,45 @@ void Menu::menuMinOperations() {
         std::cout << num << "\t";
     }
 }
+
+void Menu::menuDefangIPaddr() {
+    Mate m;
+    std::string s;
+    std::cout << "1108. Defanging an IP Address\n";
+    std::cout << "Give me an IP: ";
+    std::cout << "Example: 255.100.50.0\n";
+    getline(std::cin, s);
+    std::string res = m.defangIPaddr(s);
+    std::cout << "Result: \n";
+    std::cout << res;
+}
+
+void Menu::menuGetSneakyNumbers() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> nums;
+    std::cout << "3289. The Two Sneaky Numbers of Digitville\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    nums.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        nums.push_back(num2);
+    }
+    std::vector<int> res = m.getSneakyNumbers(nums);
+    std::cout << "Result: \n";
+    for (int& num : res) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuIsStrictlyPalindromic() {
+    Mate m;
+    int num;
+    std::cout << "2396. Strictly Palindromic Number\n";
+    std::cout << "Give me a number: ";
+    std::cin >> num;
+    bool res = m.isStrictlyPalindromic(num);
+    std::cout << res;
+}
