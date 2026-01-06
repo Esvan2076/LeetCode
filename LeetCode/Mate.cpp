@@ -1732,3 +1732,75 @@ bool Mate::isStrictlyPalindromic(int n) {
 	}
 	return true;
 }
+
+std::vector<int> Mate::pivotArray(std::vector<int>& nums, int pivot) {
+	size_t n = nums.size();
+	std::vector<int> left, right, middle;
+	left.reserve(n);
+	right.reserve(n);
+	middle.reserve(n);
+
+	for (int num : nums) {
+		if (num == pivot) {
+			middle.push_back(num);
+		}
+		else if (num > pivot) {
+			right.push_back(num);
+		}
+		else
+		{
+			left.push_back(num);
+		}
+	}
+
+	left.insert(left.end(), middle.begin(), middle.end());
+	left.insert(left.end(), right.begin(), right.end());
+
+	return left;
+}
+
+int Mate::numIdenticalPairs(std::vector<int>& nums) {
+	size_t n = nums.size();
+	std::sort(nums.begin(), nums.end());
+	int res = 0;
+
+	for (size_t i = 0; i < n; ++i) {
+		for (size_t j = i + 1; j < n; ++j) {
+			if (nums[i] != nums[j]) {
+				break;
+			}
+			res++;
+		}
+	}
+
+	return res;
+}
+
+ListNode* Mate::mergeNodes(ListNode* head) {
+	ListNode* newHead = nullptr;
+	ListNode* newTail = nullptr;
+
+	ListNode* tail = head->next;
+	int sum = 0;
+	std::cout << std::endl;
+	while (tail) {
+		sum = 0;
+		std::cout << "Valor: " << tail->val << std::endl;
+		do {
+			sum += tail->val;
+			tail = tail->next;
+		} while (tail->val != 0);
+
+		ListNode* node = new ListNode(sum);
+		if (newHead) {
+			newTail->next = node;
+			newTail = newTail->next;
+		}
+		else {
+			newHead = newTail = node;
+		}
+
+		tail = tail->next;
+	}
+	return newHead;
+}

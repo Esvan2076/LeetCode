@@ -75,5 +75,8 @@ int main()
 	//m.menuMinOperations();
 	//m.menuDefangIPaddr(); 
 	//m.menuGetSneakyNumbers();
-	m.menuIsStrictlyPalindromic();
+	//m.menuIsStrictlyPalindromic();
+	//m.menuPivotArray();
+	//m.menuNumIdenticalPairs();
+	m.menuMergeNodes();
 }

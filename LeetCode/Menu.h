@@ -78,4 +78,7 @@ public:
 	void menuDefangIPaddr();
 	void menuGetSneakyNumbers();
 	void menuIsStrictlyPalindromic();
+	void menuPivotArray();
+	void menuNumIdenticalPairs();
+	void menuMergeNodes();
 };

@@ -84,4 +84,7 @@ public:
 	std::string defangIPaddr(std::string address);
 	std::vector<int> getSneakyNumbers(std::vector<int>& nums);
 	bool isStrictlyPalindromic(int n);
+	std::vector<int> pivotArray(std::vector<int>& nums, int pivot);
+	int numIdenticalPairs(std::vector<int>& nums);
+	ListNode* mergeNodes(ListNode* head);
 };

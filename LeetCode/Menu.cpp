@@ -1331,3 +1331,83 @@ void Menu::menuIsStrictlyPalindromic() {
     bool res = m.isStrictlyPalindromic(num);
     std::cout << res;
 }
+
+void Menu::menuPivotArray() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "2161. Partition Array According to Given Pivot\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    std::cout << "What is Pivot: ";
+    std::cin >> num1;
+    m.pivotArray(numbers, num1);
+    std::cout << "Result: \n";
+    for (int& num : numbers) {
+        std::cout << num << "\t";
+    }
+}
+
+void Menu::menuNumIdenticalPairs() {
+    Mate m;
+    int num1, num2;
+    std::vector<int> numbers;
+    std::cout << "1512. Number of Good Pairs\n";
+    std::cout << "How many numbers: ";
+    std::cin >> num1;
+    numbers.reserve(num1);
+    for (size_t j = 0; j < num1; ++j) {
+        std::cout << "Num " << j + 1 << ": ";
+        std::cin >> num2;
+        numbers.push_back(num2);
+    }
+    int res = m.numIdenticalPairs(numbers);
+    std::cout << "Result: ";
+    std::cout << res;
+}
+
+void Menu::menuMergeNodes() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "2181. Merge Nodes in Between Zeros\n";
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head) {            // // primer nodo
+            head = tail = node;
+        }
+        else {                // // push-back
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    ListNode* headResult = m.mergeNodes(head);
+
+    std::cout << "Result: ";
+    for (ListNode* p = headResult; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}
