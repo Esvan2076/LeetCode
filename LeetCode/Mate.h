@@ -87,4 +87,6 @@ public:
 	std::vector<int> pivotArray(std::vector<int>& nums, int pivot);
 	int numIdenticalPairs(std::vector<int>& nums);
 	ListNode* mergeNodes(ListNode* head);
+	ListNode* insertGreatestCommonDivisors(ListNode* head);
+	ListNode* mergeInBetween(ListNode* list1, int a, int b, ListNode* list2);
 };

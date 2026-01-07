@@ -8,6 +8,7 @@
 #include <map>
 #include <unordered_map>
 #include <unordered_set>
+#include <numeric>
 
 //using namespace std;
 
@@ -1803,4 +1804,46 @@ ListNode* Mate::mergeNodes(ListNode* head) {
 		tail = tail->next;
 	}
 	return newHead;
+}
+
+ListNode* Mate::insertGreatestCommonDivisors(ListNode* head) {
+	ListNode* tail = head;
+
+	while (tail->next) {
+		ListNode* next = tail->next;
+		int num = std::gcd(next->val, tail->val);
+
+		ListNode* nodo = new ListNode(num);
+
+		tail->next = nodo;
+		nodo->next = next;
+
+		tail = next;
+	}
+	return head;
+}
+
+ListNode* Mate::mergeInBetween(ListNode* list1, int a, int b, ListNode* list2) {
+	int i = 1;
+	ListNode* p1;
+	ListNode* p2;
+	for (ListNode* tail = list1; tail; tail = tail->next) {
+		if (i == a) {
+			p1 = tail;
+		}
+		if (i == b) {
+			p2 = tail->next->next;
+		}
+		i++;
+	}
+
+	p1->next = list2;
+
+	ListNode* tail2 = list2;
+	while (tail2->next) {
+		tail2 = tail2->next;
+	}
+	tail2->next = p2;
+
+	return list1;
 }

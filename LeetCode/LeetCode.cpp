@@ -78,5 +78,7 @@ int main()
 	//m.menuIsStrictlyPalindromic();
 	//m.menuPivotArray();
 	//m.menuNumIdenticalPairs();
-	m.menuMergeNodes();
+	//m.menuMergeNodes();
+	//m.menuInsertGreatestCommonDivisors();
+	m.menuMergeInBetween();
 }

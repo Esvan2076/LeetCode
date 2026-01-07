@@ -1411,3 +1411,115 @@ void Menu::menuMergeNodes() {
     }
     std::cout << '\n';
 }
+
+void Menu::menuInsertGreatestCommonDivisors() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "2807. Insert Greatest Common Divisors in Linked List\n";
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head) {            // // primer nodo
+            head = tail = node;
+        }
+        else {                // // push-back
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    ListNode* headResult = m.insertGreatestCommonDivisors(head);
+
+    std::cout << "Result: ";
+    for (ListNode* p = headResult; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuMergeInBetween() {
+    Mate m;
+    int num = 0, option = 0;
+
+    // ---- list1 ----
+    ListNode* list1 = nullptr;
+    ListNode* tail1 = nullptr;
+
+    std::cout << "1669. Merge In Between Linked Lists\n";
+    std::cout << "Create list1:\n";
+    while (true) {
+        std::cout << "-----MENU list1-----\n";
+        std::cout << "1. Add Node\n";
+        std::cout << "2. Done\n";
+        std::cout << "--------------------\n";
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        ListNode* node = new ListNode(num);
+        if (!list1) {
+            list1 = tail1 = node;
+        }
+        else {
+            tail1->next = node;
+            tail1 = node;
+        }
+    }
+
+    int a = 0, b = 0;
+    std::cout << "Give me a: ";
+    std::cin >> a;
+    std::cout << "Give me b: ";
+    std::cin >> b;
+
+    // ---- list2 ----
+    ListNode* list2 = nullptr;
+    ListNode* tail2 = nullptr;
+
+    std::cout << "Create list2:\n";
+    while (true) {
+        std::cout << "-----MENU list2-----\n";
+        std::cout << "1. Add Node\n";
+        std::cout << "2. Done\n";
+        std::cout << "--------------------\n";
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        ListNode* node = new ListNode(num);
+        if (!list2) {
+            list2 = tail2 = node;
+        }
+        else {
+            tail2->next = node;
+            tail2 = node;
+        }
+    }
+
+    ListNode* result = m.mergeInBetween(list1, a, b, list2);
+
+    std::cout << "Result: ";
+    for (ListNode* p = result; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}

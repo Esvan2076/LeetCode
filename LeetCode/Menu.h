@@ -81,4 +81,6 @@ public:
 	void menuPivotArray();
 	void menuNumIdenticalPairs();
 	void menuMergeNodes();
+	void menuInsertGreatestCommonDivisors();
+	void menuMergeInBetween();
 };
