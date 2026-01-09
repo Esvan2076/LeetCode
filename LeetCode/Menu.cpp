@@ -1560,6 +1560,8 @@ void Menu::menuGetDecimalValue() {
     std::cout << res;
 }
 
+#include <iomanip> // setw
+
 void Menu::menuSpiralMatrixIV() {
     Mate m;
     int rows = 0, cols = 0;
@@ -1598,11 +1600,13 @@ void Menu::menuSpiralMatrixIV() {
 
     std::vector<std::vector<int>> ans = m.spiralMatrix(rows, cols, head);
 
-    std::cout << "Result: ";
-    for (ListNode* p = result; p; p = p->next) {
-        std::cout << p->val << '-';
+    std::cout << "\nResult matrix (" << rows << "x" << cols << "):\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << std::setw(5) << ans[i][j];
+        }
+        std::cout << '\n';
     }
-    std::cout << '\n';
 }
 
 void Menu::menuPairSum() {
@@ -1679,4 +1683,176 @@ void Menu::menuMiddleNode() {
         std::cout << p->val << '-';
     }
     std::cout << '\n';
+}
+
+void Menu::menuMinOperations() {
+    Mate m;
+    int n, k, x;
+    std::vector<int> nums;
+
+    std::cout << "3512. Minimum Operations to Make Array Sum Divisible by K\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::cout << "Give me k: ";
+    std::cin >> k;
+
+    int res = m.minOperations(nums, k);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuScoreOfString() {
+    Mate m;
+    std::string s;
+
+    std::cout << "3110. Score of a String\n";
+    std::cout << "Give me a string: ";
+    std::cin >> s;
+
+    int res = m.scoreOfString(s);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuMaxDistinct() {
+    Mate m;
+    std::string s;
+
+    std::cout << "3760. Maximum Substrings With Distinct Start\n";
+    std::cout << "Give me a string: ";
+    std::cin >> s;
+
+    int res = m.maxDistinct(s);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuTransformArray() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums;
+
+    std::cout << "3467. Transform Array by Parity\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::vector<int> res = m.transformArray(nums);
+    std::cout << "Result: \n";
+    for (int v : res) {
+        std::cout << v << '\t';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuNumJewelsInStones() {
+    Mate m;
+    std::string jewels, stones;
+
+    std::cout << "771. Jewels and Stones\n";
+    std::cout << "Give me jewels: ";
+    std::cin >> jewels;
+    std::cout << "Give me stones: ";
+    std::cin >> stones;
+
+    int res = m.numJewelsInStones(jewels, stones);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuAlternatingSum() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums;
+
+    std::cout << "3701. Compute Alternating Sum\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.alternatingSum(nums);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuReversePrefix() {
+    Mate m;
+    std::string s;
+    int k;
+
+    std::cout << "3794. Reverse String Prefix\n";
+    std::cout << "Give me a string: ";
+    std::cin >> s;
+    std::cout << "Give me k: ";
+    std::cin >> k;
+
+    std::string res = m.reversePrefix(s, k);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuShuffleArray() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums;
+
+    std::cout << "1470. Shuffle the Array\n";
+    std::cout << "Give me n: ";
+    std::cin >> n;
+
+    nums.reserve(n * 2);
+    for (int i = 0; i < n * 2; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::vector<int> res = m.shuffle(nums, n);
+    std::cout << "Result: \n";
+    for (int v : res) {
+        std::cout << v << '\t';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuFindClosestPerson() {
+    Mate m;
+    int x, y, z;
+
+    std::cout << "3516. Find Closest Person\n";
+    std::cout << "Give me x: ";
+    std::cin >> x;
+    std::cout << "Give me y: ";
+    std::cin >> y;
+    std::cout << "Give me z: ";
+    std::cin >> z;
+
+    int res = m.findClosest(x, y, z);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuMaxFreqSum() {
+    Mate m;
+    std::string s;
+
+    std::cout << "3541. Find Most Frequent Vowel and Consonant\n";
+    std::cout << "Give me a string: ";
+    std::cin >> s;
+
+    int res = m.maxFreqSum(s);
+    std::cout << "Result: " << res << '\n';
 }

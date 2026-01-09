@@ -93,4 +93,14 @@ public:
 	std::vector<std::vector<int>> spiralMatrix(int m, int n, ListNode* head);
 	int pairSum(ListNode* head);
 	ListNode* middleNode(ListNode* head);
+	int minOperations(std::vector<int>& nums, int k);
+	int scoreOfString(std::string s);
+	int maxDistinct(std::string s);
+	std::vector<int> transformArray(std::vector<int>& nums);
+	int numJewelsInStones(std::string jewels, std::string stones);
+	int alternatingSum(std::vector<int>& nums);
+	std::string reversePrefix(std::string s, int k);
+	std::vector<int> shuffle(std::vector<int>& nums, int n);
+	int findClosest(int x, int y, int z);
+	int maxFreqSum(std::string s);
 };

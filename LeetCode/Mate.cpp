@@ -1968,3 +1968,143 @@ ListNode* Mate::middleNode(ListNode* head) {
 	
 	return tail;
 }
+
+int Mate::minOperations(std::vector<int>& nums, int k) {
+	int total = 0;
+	for (size_t i = 0; i < nums.size(); ++i) {
+		total += nums[i];
+	}
+
+	return total % k;
+}
+
+int Mate::scoreOfString(std::string s) {
+	int res = 0;
+	for (size_t i = 1; i < s.size(); ++i) {
+		res += std::abs(s[i - 1] - s[i]);
+	}
+	return res;
+}
+
+int Mate::maxDistinct(std::string s) {
+	std::unordered_set<int> set;
+	set.reserve(s.size());
+
+	for (char c : s) {
+		set.insert(c);
+	}
+	return set.size();
+}
+
+std::vector<int> Mate::transformArray(std::vector<int>& nums) {
+	int evens = 0, odds = 0;
+	for (size_t i = 0; i < nums.size(); ++i) {
+		if (nums[i] % 2 == 0) {
+			evens++;
+			continue;
+		}
+		odds++;
+	}
+
+	std::vector<int> res(evens, 0);
+	res.reserve(odds + evens);
+
+	for (int n = 0; n < odds; ++n) {
+		res.push_back(1);
+	}
+
+	return res;
+}
+
+int Mate::numJewelsInStones(std::string jewels, std::string stones) {
+	int res = 0;
+	std::unordered_map<char, int> mapStones;
+
+	for (char& c : stones) {
+		mapStones[c]++;
+	}
+
+	for (char& c : jewels) {
+		res += mapStones[c];
+	}
+
+	return res;
+}
+
+int Mate::alternatingSum(std::vector<int>& nums) {
+	int res = 0;
+	for (size_t i = 0; i < nums.size(); i += 2) {
+		res += nums[i];
+	}
+	for (size_t i = 1; i < nums.size(); i += 2) {
+		res -= nums[i];
+	}
+	return res;
+}
+
+std::string Mate::reversePrefix(std::string s, int k) {
+	std::string res;
+	--k;
+	for (int i = k; i >= 0; --i) {
+		res += s[i];
+	}
+
+	for (int i = k + 1; i < s.size(); ++i) {
+		res += s[i];
+	}
+
+	return res;
+}
+
+std::vector<int> Mate::shuffle(std::vector<int>& nums, int n) {
+	std::vector<int> res(n * 2);
+
+	for (int i = 0; i < n; ++i) {
+		res[i * 2] = nums[i];
+	}
+
+	for (int i = n, j = 1; i < nums.size(); ++i, j += 2) {
+		res[j] = nums[i];
+	}
+
+	return res;
+}
+
+int Mate::findClosest(int x, int y, int z) {
+	int u = std::abs(z - x);
+	int i = std::abs(z - y);
+
+	if (i > u) {
+		return 1;
+	}
+	else if (i < u) {
+		return 2;
+	}
+	return 0;
+}
+
+int Mate::maxFreqSum(std::string s) {
+	std::unordered_map<char, int> vows;
+	vows['a'] = 1;
+	vows['e'] = 1;
+	vows['i'] = 1;
+	vows['o'] = 1;
+	vows['u'] = 1;
+
+	std::unordered_map<char, int> cons;
+
+	int bestVow = 0, bestCon = 0;
+	for (char& c : s) {
+		if (vows.count(c)) {
+			vows[c]++;
+			bestVow = std::max(bestVow, vows[c]);
+		}
+		else {
+			cons[c]++;
+			bestCon = std::max(bestCon, cons[c]);
+		}
+	}
+	if (bestVow) bestVow--;
+
+	return bestCon + bestVow;
+}

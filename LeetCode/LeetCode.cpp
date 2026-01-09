@@ -84,5 +84,15 @@ int main()
 	//m.menuGetDecimalValue();
 	//m.menuSpiralMatrixIV();
 	//m.menuPairSum();
-	m.menuMiddleNode();
+	//m.menuMiddleNode();
+	//m.menuMinOperations();
+	//m.menuScoreOfString();
+	//m.menuMaxDistinct();
+	//m.menuTransformArray();
+	//m.menuNumJewelsInStones();
+	//m.menuAlternatingSum();
+	//m.menuReversePrefix();
+	//m.menuShuffleArray();
+	//m.menuFindClosestPerson();
+	m.menuMaxFreqSum();
 }

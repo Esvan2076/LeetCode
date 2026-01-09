@@ -87,4 +87,14 @@ public:
 	void menuSpiralMatrixIV();
 	void menuPairSum();
 	void menuMiddleNode();
+	void menuMinOperations();
+	void menuScoreOfString();
+	void menuMaxDistinct();
+	void menuTransformArray();
+	void menuNumJewelsInStones();
+	void menuAlternatingSum();
+	void menuReversePrefix();
+	void menuShuffleArray();
+	void menuFindClosestPerson();
+	void menuMaxFreqSum();
 };
