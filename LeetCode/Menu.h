@@ -83,4 +83,8 @@ public:
 	void menuMergeNodes();
 	void menuInsertGreatestCommonDivisors();
 	void menuMergeInBetween();
+	void menuGetDecimalValue();
+	void menuSpiralMatrixIV();
+	void menuPairSum();
+	void menuMiddleNode();
 };

@@ -89,4 +89,8 @@ public:
 	ListNode* mergeNodes(ListNode* head);
 	ListNode* insertGreatestCommonDivisors(ListNode* head);
 	ListNode* mergeInBetween(ListNode* list1, int a, int b, ListNode* list2);
+	int getDecimalValue(ListNode* head);
+	std::vector<std::vector<int>> spiralMatrix(int m, int n, ListNode* head);
+	int pairSum(ListNode* head);
+	ListNode* middleNode(ListNode* head);
 };

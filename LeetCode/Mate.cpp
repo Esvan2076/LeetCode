@@ -1825,8 +1825,8 @@ ListNode* Mate::insertGreatestCommonDivisors(ListNode* head) {
 
 ListNode* Mate::mergeInBetween(ListNode* list1, int a, int b, ListNode* list2) {
 	int i = 1;
-	ListNode* p1;
-	ListNode* p2;
+	ListNode* p1 = nullptr;
+	ListNode* p2 = nullptr;
 	for (ListNode* tail = list1; tail; tail = tail->next) {
 		if (i == a) {
 			p1 = tail;
@@ -1846,4 +1846,125 @@ ListNode* Mate::mergeInBetween(ListNode* list1, int a, int b, ListNode* list2) {
 	tail2->next = p2;
 
 	return list1;
+}
+
+int Mate::getDecimalValue(ListNode* head) {
+	ListNode* tail = head;
+	std::string s;
+	while (tail) {
+		s += tail->val;
+		tail = tail->next;
+	}
+	std::cout << s << std::endl;
+
+	size_t n = s.size() - 1;
+	int res = 0;
+	for (size_t i = 0, e = n; i <= n; ++i, --e) {
+		std::cout << s[i] << " " << e << " " << std::pow(2, e) << std::endl;
+
+		int pow = std::pow(2, e);
+		res += s[i] * pow;
+	}
+	return res;
+}
+
+std::vector<std::vector<int>> Mate::spiralMatrix(int rows, int cols, ListNode* head) {
+	std::vector<std::vector<int>> matrix(rows);
+
+	for (std::vector<int>& col : matrix) {
+		col.resize(cols, -1);
+	}
+
+	int left = 0, top = 0;
+	int bottom = rows - 1;
+	int right = cols - 1;
+
+	ListNode* tail = head;
+	bool end = false;
+	while (right >= left and bottom >= top) {
+		for (int j = left; j <= right; ++j) {
+			if (!tail) {
+				end = true;
+				break;
+			}
+			matrix[top][j] = tail->val;
+			tail = tail->next;
+		}
+		if (end) break;
+		++top;
+
+		for (int j = top; j <= bottom; ++j) {
+			if (!tail) {
+				end = true;
+				break;
+			}
+			matrix[j][right] = tail->val;
+			tail = tail->next;
+		}
+		if (end) break;
+		--right;
+
+		if (top > bottom) break;
+		for (int j = right; j >= left; --j) {
+			if (!tail) {
+				end = true;
+				break;
+			}
+			matrix[bottom][j] = tail->val;
+			tail = tail->next;
+		}
+		if (end) break;
+		--bottom;
+
+		if (left > right) break;
+		for (int j = bottom; j >= top; --j) {
+			if (!tail) {
+				end = true;
+				break;
+			}
+			matrix[j][left] = tail->val;
+			tail = tail->next;
+		}
+		if (end) break;
+		++left;
+	}
+
+	return matrix;
+}
+
+int Mate::pairSum(ListNode* head) {
+	int best = 0, n = 0;
+
+	for (ListNode* tail = head; tail; tail = tail->next) n++;
+
+	ListNode* tail = head;
+	int size = n / 2;
+
+	std::unordered_map<int, int> map;
+	for (int i = 0; i < size; ++i) {
+		map[i] += tail->val;
+		tail = tail->next;
+	}
+
+	for (int i = size - 1; i >= 0; --i) {
+		map[i] += tail->val;
+		best = std::max(best, map[i]);
+		tail = tail->next;
+	}
+
+	return best;
+}
+
+ListNode* Mate::middleNode(ListNode* head) {
+	int n = 0;
+	for (ListNode* tail = head; tail; tail = tail->next) ++n;
+
+	n = n / 2;
+
+	ListNode* tail = head;
+	for (size_t i = 0; i < n; ++i) {
+		tail = tail->next;
+	}
+	
+	return tail;
 }

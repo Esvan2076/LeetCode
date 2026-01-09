@@ -1523,3 +1523,160 @@ void Menu::menuMergeInBetween() {
     }
     std::cout << '\n';
 }
+
+void Menu::menuGetDecimalValue() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "1290. Convert Binary Number in a Linked List to Integer\n";
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head) {            // // primer nodo
+            head = tail = node;
+        }
+        else {                // // push-back
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    int res = m.getDecimalValue(head);
+    std::cout << "Result: ";
+    std::cout << res;
+}
+
+void Menu::menuSpiralMatrixIV() {
+    Mate m;
+    int rows = 0, cols = 0;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "2326. Spiral Matrix IV\n";
+    std::cout << "Give me m (rows): ";
+    std::cin >> rows;
+    std::cout << "Give me n (cols): ";
+    std::cin >> cols;
+
+    std::cout << "Create linked list (values for head):\n";
+    while (true) {
+        std::cout << "-----MENU-----\n";
+        std::cout << "1. Add Node\n";
+        std::cout << "2. Done\n";
+        std::cout << "--------------\n";
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        ListNode* node = new ListNode(num);
+        if (!head) {
+            head = tail = node;
+        }
+        else {
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    std::vector<std::vector<int>> ans = m.spiralMatrix(rows, cols, head);
+
+    std::cout << "Result: ";
+    for (ListNode* p = result; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuPairSum() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "2130. Maximum Twin Sum of a Linked List\n";
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head) {            // // primer nodo
+            head = tail = node;
+        }
+        else {                // // push-back
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    int res = m.pairSum(head);
+    std::cout << "Result: ";
+    std::cout << res;
+}
+
+void Menu::menuMiddleNode() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "876. Middle of the Linked List\n";
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head) {            // // primer nodo
+            head = tail = node;
+        }
+        else {                // // push-back
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    ListNode* result = m.middleNode(head);
+
+    std::cout << "Result: ";
+    for (ListNode* p = result; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}

@@ -80,5 +80,9 @@ int main()
 	//m.menuNumIdenticalPairs();
 	//m.menuMergeNodes();
 	//m.menuInsertGreatestCommonDivisors();
-	m.menuMergeInBetween();
+	//m.menuMergeInBetween();
+	//m.menuGetDecimalValue();
+	//m.menuSpiralMatrixIV();
+	//m.menuPairSum();
+	m.menuMiddleNode();
 }
