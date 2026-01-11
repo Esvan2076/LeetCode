@@ -22,6 +22,7 @@ std::vector<std::string> listToLowerCase(std::vector<std::string>& list);
 bool charInList(std::string& list, char& c);
 std::string toNumericBase(int num, int base);
 bool isPalindromic(std::string& s);
+std::string toBinary(int num);
 
 int Mate::sumNum(int num1, int num2) {
 	return num1 + num2;
@@ -2107,4 +2108,178 @@ int Mate::maxFreqSum(std::string s) {
 	if (bestVow) bestVow--;
 
 	return bestCon + bestVow;
+}
+
+std::string toBinary(int num) {
+	std::string bin;
+	if (num == 0) return "0";
+	while (num > 0) {
+		char c = (num % 2) + 48;
+		bin = c + bin;
+		num /= 2;
+	}
+	return bin;
+}
+
+int Mate::minBitFlips(int start, int goal) {
+	std::string strStart = toBinary(start);
+	std::string strGoal = toBinary(goal);
+
+	int sGoal = strGoal.size();
+	int sStart = strStart.size();
+}
+
+std::vector<int> Mate::leftRightDifference(std::vector<int>& nums) {
+	size_t n = nums.size();
+
+	std::vector<int> leftSum;
+	std::vector<int> rightSum;
+
+	leftSum.reserve(n);
+	rightSum.reserve(n);
+
+	leftSum.push_back(0);
+	int temp = 0;
+	for (size_t i = 0; i < (n - 1); ++i) {
+		temp += nums[i];
+		leftSum.push_back(temp);
+	}
+
+	temp = 0;
+	for (size_t i = (n - 1); i >= 1; --i) {
+		temp += nums[i];
+		rightSum.push_back(temp);
+	}
+	std::reverse(rightSum.begin(), rightSum.end());
+
+	rightSum.push_back(0);
+
+	for (size_t i = 0; i < n; ++i) {
+		leftSum[i] = std::abs(leftSum[i] - rightSum[i]);
+	}
+
+	return leftSum;
+}
+
+int Mate::sum(int num1, int num2) {
+	return num1 + num2;
+}
+
+std::string Mate::interpret(std::string command) {
+	std::string res;
+
+	for (size_t i = 0; i < command.size(); ++i) {
+		if (command[i] == 'G') {
+			res += 'G';
+		}
+		else if (command[i + 1] == ')') {
+			res += 'o';
+			++i;
+		}
+		else {
+			res += "al";
+			i += 3;
+		}
+	}
+
+	return res;
+}
+
+std::vector<std::string> Mate::validStrings(int n) {
+	std::vector<std::string> res;
+
+	int max = std::pow(2, n);
+
+	int size = toBinary(max).size() - 1;
+
+	bool valid, zero;
+	for (int i = 0; i < max; ++i) {
+		std::string temp = toBinary(i);
+		while (temp.size() < size) {
+			temp = '0' + temp;
+		}
+		valid = true;
+		zero = false;
+		for (char c : temp) {
+			if (c == 48) {
+				if (zero) {
+					valid = false;
+					break;
+				}
+				else {
+					zero = true;
+				}
+			}
+			else {
+				zero = false;
+			}
+		}
+		if (valid) {
+			res.push_back(temp);
+		}
+	}
+
+	return res;
+}
+
+int Mate::smallestEvenMultiple(int n) {
+	return (n % 2 == 0) ? n : 2 * n;
+}
+
+int Mate::reverseDegree(std::string s) {
+	int res = 0, val = 0;
+
+	int i = 0;
+	for (char c : s) {
+		i++;
+		val = (122 - c) + 1;
+		res += val * i;
+	}
+
+	return res;
+}
+
+int Mate::countConsistentStrings(std::string allowed, std::vector<std::string>& words) {
+	std::unordered_set<char> set;
+
+	for (char& c : allowed) {
+		set.insert(c);
+	}
+
+	bool allow;
+	int res = 0;
+	for (std::string& s : words) {
+		allow = true;
+		for (char& c : s) {
+			if (!set.count(c)) {
+				allow = false;
+				break;
+			}
+		}
+		if (allow) {
+			res++;
+		}
+	}
+
+	return res;
+}
+
+std::string Mate::convertDateToBinary(std::string date) {
+	std::string res;
+
+	std::string helper = date.substr(0, 4);
+	int num = std::stoi(helper);
+	res += toBinary(num);
+	res += '-';
+
+	helper = date.substr(5, 7);
+	num = std::stoi(helper);
+	res += toBinary(num);
+	res += '-';
+
+	helper = date.substr(8, 10);
+	num = std::stoi(helper);
+	res += toBinary(num);
+
+	return res;
 }

@@ -1856,3 +1856,138 @@ void Menu::menuMaxFreqSum() {
     int res = m.maxFreqSum(s);
     std::cout << "Result: " << res << '\n';
 }
+
+void Menu::menuMinBitFlips() {
+    Mate m;
+    int start = 0, goal = 0;
+    std::cout << "2220. Minimum Bit Flips to Convert Number\n";
+    std::cout << "Give me start: ";
+    std::cin >> start;
+    std::cout << "Give me goal: ";
+    std::cin >> goal;
+    int res = m.minBitFlips(start, goal);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuLeftRightDifference() {
+    Mate m;
+    int num = 0, option = 0;
+
+    std::vector<int> nums;
+    std::cout << "2574. Left and Right Sum Differences\n";
+
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Number" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the number: ";
+        std::cin >> num;
+        nums.push_back(num);
+    }
+
+    std::vector<int> res = m.leftRightDifference(nums);
+
+    std::cout << "Result: ";
+    for (int x : res) {
+        std::cout << x << '-';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuSum() {
+    Mate m;
+    int num1 = 0, num2 = 0;
+    std::cout << "2235. Add Two Integers\n";
+    std::cout << "Give me num1: ";
+    std::cin >> num1;
+    std::cout << "Give me num2: ";
+    std::cin >> num2;
+    int res = m.sum(num1, num2);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuInterpret() {
+    Mate m;
+    std::string command;
+    std::cout << "1678. Goal Parser Interpretation\n";
+    std::cout << "Give me the command: ";
+    std::cin >> command;
+    std::string res = m.interpret(command);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuValidStrings() {
+    Mate m;
+    int n = 0;
+    std::cout << "3211. Generate Binary Strings Without Adjacent Zeros\n";
+    std::cout << "Give me n: ";
+    std::cin >> n;
+    std::vector<std::string> res = m.validStrings(n);
+    std::cout << "Result: " << std::endl;
+    for (std::string& s : res) {
+        std::cout << s << std::endl;
+    }
+}
+
+void Menu::menuSmallestEvenMultiple() {
+    Mate m;
+    int n = 0;
+    std::cout << "2413. Smallest Even Multiple\n";
+    std::cout << "Give me n: ";
+    std::cin >> n;
+    int res = m.smallestEvenMultiple(n);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuReverseDegree() {
+    Mate m;
+    std::string s;
+    std::cout << "3498. Reverse Degree of a String\n";
+    std::cout << "Give me the string: ";
+    std::cin >> s;
+    int res = m.reverseDegree(s);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuCountConsistentStrings() {
+    Mate m;
+    std::string allowed;
+    int option = 0;
+    std::string word;
+
+    std::vector<std::string> words;
+
+    std::cout << "1684. Count the Number of Consistent Strings\n";
+    std::cout << "Give me allowed: ";
+    std::cin >> allowed;
+
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Word" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the word: ";
+        std::cin >> word;
+        words.push_back(word);
+    }
+
+    int res = m.countConsistentStrings(allowed, words);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuConvertDateToBinary() {
+    Mate m;
+    std::string date;
+    std::cout << "3280. Convert Date to Binary\n";
+    std::cout << "Give me the date (yyyy-mm-dd): ";
+    std::cin >> date;
+    std::string res = m.convertDateToBinary(date);
+    std::cout << "Result: " << res << '\n';
+}

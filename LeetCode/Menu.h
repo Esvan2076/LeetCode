@@ -97,4 +97,13 @@ public:
 	void menuShuffleArray();
 	void menuFindClosestPerson();
 	void menuMaxFreqSum();
+	void menuMinBitFlips();
+	void menuLeftRightDifference();
+	void menuSum();
+	void menuInterpret();
+	void menuValidStrings();
+	void menuSmallestEvenMultiple();
+	void menuReverseDegree();
+	void menuCountConsistentStrings();
+	void menuConvertDateToBinary();
 };

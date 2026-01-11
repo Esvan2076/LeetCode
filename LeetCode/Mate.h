@@ -103,4 +103,13 @@ public:
 	std::vector<int> shuffle(std::vector<int>& nums, int n);
 	int findClosest(int x, int y, int z);
 	int maxFreqSum(std::string s);
+	int minBitFlips(int start, int goal);
+	std::vector<int> leftRightDifference(std::vector<int>& nums);
+	int sum(int num1, int num2);
+	std::string interpret(std::string command);
+	std::vector<std::string> validStrings(int n);
+	int smallestEvenMultiple(int n);
+	int reverseDegree(std::string s);
+	int countConsistentStrings(std::string allowed, std::vector<std::string>& words);
+	std::string convertDateToBinary(std::string date);
 };

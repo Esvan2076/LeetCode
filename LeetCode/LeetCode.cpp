@@ -94,5 +94,24 @@ int main()
 	//m.menuReversePrefix();
 	//m.menuShuffleArray();
 	//m.menuFindClosestPerson();
-	m.menuMaxFreqSum();
+	//m.menuMaxFreqSum();
+	//m.menuMinBitFlips();
+	//m.menuLeftRightDifference();
+	//m.menuSum();
+	//m.menuInterpret();
+	//m.menuValidStrings();
+	//m.menuSmallestEvenMultiple();
+	//m.menuReverseDegree();
+	//m.menuCountConsistentStrings();
+	m.menuConvertDateToBinary();
 }
+
+//3280. Convert Date to Binary
+//1684. Count the Number of Consistent Strings
+//3498. Reverse Degree of a String
+//2413. Smallest Even Multiple
+//3211. Generate Binary Strings Without Adjacent Zeros
+//1678. Goal Parser Interpretation
+//2235. Add Two Integers
+//2574. Left and Right Sum Differences
+//2220. Minimum Bit Flips to Convert Number
