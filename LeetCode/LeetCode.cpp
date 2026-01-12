@@ -106,12 +106,8 @@ int main()
 	m.menuConvertDateToBinary();
 }
 
-//3280. Convert Date to Binary
-//1684. Count the Number of Consistent Strings
-//3498. Reverse Degree of a String
-//2413. Smallest Even Multiple
-//3211. Generate Binary Strings Without Adjacent Zeros
-//1678. Goal Parser Interpretation
-//2235. Add Two Integers
-//2574. Left and Right Sum Differences
-//2220. Minimum Bit Flips to Convert Number
+//3146. Permutation Difference between Two Strings
+//1282. Group the People Given the Group Size They Belong To
+//1365. How Many Numbers Are Smaller Than the Current Number
+//2037. Minimum Number of Moves to Seat Everyone
+//1221. Split a String in Balanced Strings
