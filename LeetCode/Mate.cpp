@@ -2283,3 +2283,88 @@ std::string Mate::convertDateToBinary(std::string date) {
 
 	return res;
 }
+
+int Mate::findPermutationDifference(std::string s, std::string t) {
+	std::unordered_map<char, int> map;
+
+	size_t n = s.size();
+	map.reserve(n);
+
+	for (size_t i = 0; i < n; ++i) {
+		map[s[i]] = i;
+	}
+
+	int res = 0;
+	for (int i = 0; i < n; ++i) {
+		res += std::abs(i - map[t[i]]);
+	}
+
+	return res;
+}
+
+std::vector<std::vector<int>> Mate::groupThePeople(std::vector<int>& groupSizes) {
+	std::unordered_map<int, std::vector<int>> map;
+	std::vector<std::vector<int>> res;
+
+	for (size_t i = 0; i < groupSizes.size(); ++i) {
+		map[groupSizes[i]].push_back(i);
+
+		if (map[groupSizes[i]].size() == groupSizes[i]) {
+			res.push_back(map[groupSizes[i]]);
+			map[groupSizes[i]].clear();
+		}
+	}
+	return res;
+}
+
+std::vector<int> Mate::smallerNumbersThanCurrent(std::vector<int>& nums) {
+	std::vector<int> res;
+	size_t n = nums.size();
+	res.reserve(n);
+
+	for (size_t i = 0; i < n; ++i) {
+		int temp = 0;
+		for (size_t j = 0; j < n; ++j) {
+			if (i == j) continue;
+
+			if (nums[i] > nums[j]) {
+				temp++;
+			}
+		}
+		res.push_back(temp);
+	}
+
+	return res;
+}
+
+int Mate::minMovesToSeat(std::vector<int>& seats, std::vector<int>& students) {
+	std::sort(seats.begin(), seats.end());
+	std::sort(students.begin(), students.end());
+
+	int res = 0;
+	for (size_t i = 0; i < students.size(); ++i) {
+		if (seats[i] != students[i]) {
+			res += std::abs(seats[i] - students[i]);
+		}
+	}
+	return res;
+}
+
+int Mate::balancedStringSplit(std::string s) {
+	int rs = 0, ls = 0;
+	int res = 0;
+	for (char c : s) {
+		if (c == 'R') {
+			rs++;
+		}
+		else {
+			ls++;
+		}
+
+		if (rs == ls) {
+			res++;
+			rs = 0, ls = 0;
+		}
+	}
+	return res;
+}

@@ -106,4 +106,9 @@ public:
 	void menuReverseDegree();
 	void menuCountConsistentStrings();
 	void menuConvertDateToBinary();
+	void menuFindPermutationDifference();
+	void menuGroupThePeople();
+	void menuSmallerNumbersThanCurrent();
+	void menuMinMovesToSeat();
+	void menuBalancedStringSplit();
 };

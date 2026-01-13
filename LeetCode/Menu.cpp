@@ -1991,3 +1991,106 @@ void Menu::menuConvertDateToBinary() {
     std::string res = m.convertDateToBinary(date);
     std::cout << "Result: " << res << '\n';
 }
+
+void Menu::menuFindPermutationDifference() {
+    Mate m;
+    std::string s, t;
+
+    std::cout << "3146. Permutation Difference between Two Strings\n";
+    std::cout << "Give me s: ";
+    std::cin >> s;
+    std::cout << "Give me t: ";
+    std::cin >> t;
+
+    int res = m.findPermutationDifference(s, t);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuGroupThePeople() {
+    Mate m;
+    int n, x;
+    std::vector<int> groupSizes;
+
+    std::cout << "1282. Group the People Given the Group Size They Belong To\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    groupSizes.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        groupSizes.push_back(x);
+    }
+
+    std::vector<std::vector<int>> res = m.groupThePeople(groupSizes);
+    std::cout << "Result: \n";
+    for (std::vector<int>& g : res) {
+        for (int id : g) {
+            std::cout << id << '-';
+        }
+        std::cout << '\n';
+    }
+}
+
+void Menu::menuSmallerNumbersThanCurrent() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums;
+
+    std::cout << "1365. How Many Numbers Are Smaller Than the Current Number\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::vector<int> res = m.smallerNumbersThanCurrent(nums);
+    std::cout << "Result: \n";
+    for (int v : res) {
+        std::cout << v << '\t';
+    }
+    std::cout << '\n';
+}
+
+void Menu::menuMinMovesToSeat() {
+    Mate m;
+    int n, x;
+    std::vector<int> seats, students;
+
+    std::cout << "2037. Minimum Number of Moves to Seat Everyone\n";
+    std::cout << "How many seats/students: ";
+    std::cin >> n;
+
+    seats.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Seat " << i + 1 << ": ";
+        std::cin >> x;
+        seats.push_back(x);
+    }
+
+    students.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Student " << i + 1 << ": ";
+        std::cin >> x;
+        students.push_back(x);
+    }
+
+    int res = m.minMovesToSeat(seats, students);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuBalancedStringSplit() {
+    Mate m;
+    std::string s;
+
+    std::cout << "1221. Split a String in Balanced Strings\n";
+    std::cout << "Give me a string: ";
+    std::cin >> s;
+
+    int res = m.balancedStringSplit(s);
+    std::cout << "Result: " << res << '\n';
+}

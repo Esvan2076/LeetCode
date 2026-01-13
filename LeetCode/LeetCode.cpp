@@ -103,11 +103,18 @@ int main()
 	//m.menuSmallestEvenMultiple();
 	//m.menuReverseDegree();
 	//m.menuCountConsistentStrings();
-	m.menuConvertDateToBinary();
+	//m.menuConvertDateToBinary();
+	//m.menuFindPermutationDifference();
+	//m.menuGroupThePeople();
+	//m.menuSmallerNumbersThanCurrent();
+	//m.menuMinMovesToSeat();
+	m.menuBalancedStringSplit();
+
+	return 0;
 }
 
-//3146. Permutation Difference between Two Strings
-//1282. Group the People Given the Group Size They Belong To
-//1365. How Many Numbers Are Smaller Than the Current Number
-//2037. Minimum Number of Moves to Seat Everyone
-//1221. Split a String in Balanced Strings
+//1863. Sum of All Subset XOR Totals
+//2044. Count Number of Maximum Bitwise-OR Subsets
+//1689. Partitioning Into Minimum Number Of Deci-Binary Numbers
+//2433. Find The Original Array of Prefix Xor
+//1720. Decode XORed Array

@@ -112,4 +112,9 @@ public:
 	int reverseDegree(std::string s);
 	int countConsistentStrings(std::string allowed, std::vector<std::string>& words);
 	std::string convertDateToBinary(std::string date);
+	int findPermutationDifference(std::string s, std::string t);
+	std::vector<std::vector<int>> groupThePeople(std::vector<int>& groupSizes);
+	std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums);
+	int minMovesToSeat(std::vector<int>& seats, std::vector<int>& students);
+	int balancedStringSplit(std::string s);
 };
