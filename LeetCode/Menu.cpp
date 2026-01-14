@@ -2094,3 +2094,62 @@ void Menu::menuBalancedStringSplit() {
     int res = m.balancedStringSplit(s);
     std::cout << "Result: " << res << '\n';
 }
+
+void Menu::menuMinPartitions() {
+    Mate m;
+    std::string n;
+    std::cout << "1689. Partitioning Into Minimum Number Of Deci-Binary Numbers\n";
+    std::cout << "Introduce el numero: ";
+    std::cin >> n;
+    std::cout << "Resultado: " << m.minPartitions(n) << std::endl;
+}
+
+void Menu::menuCountMaxOrSubsets() {
+    Mate m;
+    int size, val;
+    std::cout << "2044. Count Number of Maximum Bitwise-OR Subsets\n";
+    std::cout << "Cantidad de elementos: ";
+    std::cin >> size;
+    std::vector<int> nums;
+    for (int i = 0; i < size; i++) {
+        std::cin >> val;
+        nums.push_back(val);
+    }
+    std::cout << "Resultado: " << m.countMaxOrSubsets(nums) << std::endl;
+}
+
+void Menu::menuFindArray() {
+    Mate m;
+    int size, val;
+    std::cout << "2433. Find The Original Array of Prefix Xor\n";
+    std::cout << "Cantidad de elementos: ";
+    std::cin >> size;
+    std::vector<int> pref;
+    for (int i = 0; i < size; i++) {
+        std::cin >> val;
+        pref.push_back(val);
+    }
+    std::vector<int> res = m.findArray(pref);
+    std::cout << "Resultado: ";
+    for (int x : res) std::cout << x << " ";
+    std::cout << std::endl;
+}
+
+void Menu::menuDecode() {
+    Mate m;
+    int size, first, val;
+    std::cout << "1720. Decode XORed Array\n";
+    std::cout << "Primer elemento: ";
+    std::cin >> first;
+    std::cout << "Cantidad de elementos en encoded: ";
+    std::cin >> size;
+    std::vector<int> encoded;
+    for (int i = 0; i < size; i++) {
+        std::cin >> val;
+        encoded.push_back(val);
+    }
+    std::vector<int> res = m.decode(encoded, first);
+    std::cout << "Resultado: ";
+    for (int x : res) std::cout << x << " ";
+    std::cout << std::endl;
+}

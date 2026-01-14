@@ -108,13 +108,11 @@ int main()
 	//m.menuGroupThePeople();
 	//m.menuSmallerNumbersThanCurrent();
 	//m.menuMinMovesToSeat();
-	m.menuBalancedStringSplit();
+	//m.menuBalancedStringSplit();
+	//m.menuMinPartitions();
+	//m.menuCountMaxOrSubsets();
+	//m.menuFindArray();
+	m.menuDecode();
 
 	return 0;
 }
-
-//1863. Sum of All Subset XOR Totals
-//2044. Count Number of Maximum Bitwise-OR Subsets
-//1689. Partitioning Into Minimum Number Of Deci-Binary Numbers
-//2433. Find The Original Array of Prefix Xor
-//1720. Decode XORed Array

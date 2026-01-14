@@ -117,4 +117,8 @@ public:
 	std::vector<int> smallerNumbersThanCurrent(std::vector<int>& nums);
 	int minMovesToSeat(std::vector<int>& seats, std::vector<int>& students);
 	int balancedStringSplit(std::string s);
+	int minPartitions(std::string n);
+	int countMaxOrSubsets(std::vector<int>& nums);
+	std::vector<int> findArray(std::vector<int>& pref);
+	std::vector<int> decode(std::vector<int>& encoded, int first);
 };

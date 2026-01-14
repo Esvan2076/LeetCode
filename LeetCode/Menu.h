@@ -111,4 +111,8 @@ public:
 	void menuSmallerNumbersThanCurrent();
 	void menuMinMovesToSeat();
 	void menuBalancedStringSplit();
+	void menuMinPartitions();
+	void menuCountMaxOrSubsets();
+	void menuFindArray();
+	void menuDecode();
 };

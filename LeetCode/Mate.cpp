@@ -23,6 +23,7 @@ bool charInList(std::string& list, char& c);
 std::string toNumericBase(int num, int base);
 bool isPalindromic(std::string& s);
 std::string toBinary(int num);
+int dfsOrEqualMax(std::vector<int>& nums, int i, int max, int curr, int res);
 
 int Mate::sumNum(int num1, int num2) {
 	return num1 + num2;
@@ -2365,6 +2366,55 @@ int Mate::balancedStringSplit(std::string s) {
 			res++;
 			rs = 0, ls = 0;
 		}
+	}
+	return res;
+}
+
+int Mate::minPartitions(std::string n) {
+	int res = 0;
+	for (char c : n) {
+		int num = c - 48;
+		res = std::max(num, res);
+	}
+	return res;
+}
+
+int dfsOrEqualMax(std::vector<int>& nums, int i, int max, int curr, int res) {
+	if (i == nums.size()) {
+		if (curr == max) {
+			res++;
+		}
+		return res;
+	}
+	i++;
+	return dfsOrEqualMax(nums, i, max, curr | nums[i - 1], res) + dfsOrEqualMax(nums, i, max, curr, res);
+}
+
+int Mate::countMaxOrSubsets(std::vector<int>& nums) {
+	int max = 0;
+	for (int n : nums) max = max | n;
+	max = dfsOrEqualMax(nums, 0, max, 0, 0);
+	return max;
+}
+
+std::vector<int> Mate::findArray(std::vector<int>& pref) {
+	std::vector<int> res(pref.size(), 0);
+	int curr = pref[0];
+	res[0] = curr;
+	for (size_t i = 1; i < pref.size(); ++i) {
+		int prev = curr ^ pref[i];
+		curr = curr ^ prev;
+		res[i] = prev;
+	}
+	return res;
+}
+
+std::vector<int> Mate::decode(std::vector<int>& encoded, int first) {
+	size_t n = encoded.size();
+	std::vector<int> res(n + 1, 0);
+	res[0] = first;
+	for (size_t i = 0; i < n; ++i) {
+		res[i + 1] = res[i] ^ encoded[i];
 	}
 	return res;
 }
