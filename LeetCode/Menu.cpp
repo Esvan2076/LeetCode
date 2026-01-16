@@ -2153,3 +2153,69 @@ void Menu::menuDecode() {
     for (int x : res) std::cout << x << " ";
     std::cout << std::endl;
 }
+
+void Menu::menuCountNegatives() {
+    Mate m;
+    int rows, cols;
+    std::cout << "1351. Count Negative Numbers in a Sorted Matrix\n";
+    std::cout << "Rows: "; std::cin >> rows;
+    std::cout << "Cols: "; std::cin >> cols;
+    std::vector<std::vector<int>> grid(rows, std::vector<int>(cols));
+    for (int i = 0; i < rows; ++i)
+        for (int j = 0; j < cols; ++j)
+            std::cin >> grid[i][j];
+    std::cout << "Result: " << m.countNegatives(grid) << std::endl;
+}
+
+void Menu::menuRangeSumBST() {
+    Mate m;
+    int low, high;
+    // Simplificación: Árbol del ejemplo 1
+    TreeNode* root = new TreeNode(10);
+    root->left = new TreeNode(5, new TreeNode(3), new TreeNode(7));
+    root->right = new TreeNode(15, nullptr, new TreeNode(18));
+
+    std::cout << "938. Range Sum of BST\n";
+    std::cout << "Low: "; std::cin >> low;
+    std::cout << "High: "; std::cin >> high;
+    std::cout << "Result: " << m.rangeSumBST(root, low, high) << std::endl;
+}
+
+void Menu::menuMirrorDistance() {
+    Mate m;
+    int n;
+    std::cout << "3783. Mirror Distance of an Integer\n";
+    std::cout << "Give me n: "; std::cin >> n;
+    std::cout << "Result: " << m.mirrorDistance(n) << std::endl;
+}
+
+void Menu::menuFindThePrefixCommonArray() {
+    Mate m;
+    int n;
+    std::cout << "2657. Find the Prefix Common Array\n";
+    std::cout << "Size: "; std::cin >> n;
+    std::vector<int> A(n), B(n);
+    std::cout << "Array A: "; for (int i = 0; i < n; ++i) std::cin >> A[i];
+    std::cout << "Array B: "; for (int i = 0; i < n; ++i) std::cin >> B[i];
+    std::vector<int> res = m.findThePrefixCommonArray(A, B);
+    std::cout << "Result: ";
+    for (int x : res) std::cout << x << " ";
+    std::cout << std::endl;
+}
+
+void Menu::menuLargestLocal() {
+    Mate m;
+    int n;
+    std::cout << "2373. Largest Local Values in a Matrix\n";
+    std::cout << "Size (n x n): "; std::cin >> n;
+    std::vector<std::vector<int>> grid(n, std::vector<int>(n));
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            std::cin >> grid[i][j];
+    std::vector<std::vector<int>> res = m.largestLocal(grid);
+    std::cout << "Result:\n";
+    for (auto row : res) {
+        for (int val : row) std::cout << val << " ";
+        std::cout << std::endl;
+    }
+}

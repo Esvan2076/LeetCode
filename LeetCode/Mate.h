@@ -1,5 +1,6 @@
 #pragma once
 #include "ListNode.h"
+#include "TreeNode.h"
 #include <string>
 #include <vector>
 
@@ -121,4 +122,10 @@ public:
 	int countMaxOrSubsets(std::vector<int>& nums);
 	std::vector<int> findArray(std::vector<int>& pref);
 	std::vector<int> decode(std::vector<int>& encoded, int first);
+	int countNegatives(std::vector<std::vector<int>>& grid);
+	int recSumBST(TreeNode* root, int low, int high);
+	int rangeSumBST(TreeNode* root, int low, int high);
+	int mirrorDistance(int n);
+	std::vector<int> findThePrefixCommonArray(std::vector<int>& A, std::vector<int>& B);
+	std::vector<std::vector<int>> largestLocal(std::vector<std::vector<int>>& grid);
 };

@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <print>
+#include <array>
 #include <map>
 #include <unordered_map>
 #include <unordered_set>
@@ -2416,5 +2417,103 @@ std::vector<int> Mate::decode(std::vector<int>& encoded, int first) {
 	for (size_t i = 0; i < n; ++i) {
 		res[i + 1] = res[i] ^ encoded[i];
 	}
+	return res;
+}
+
+int Mate::countNegatives(std::vector<std::vector<int>>& grid) {
+	int res = 0;
+	for (std::vector<int> row : grid) {
+		for (int num : row) {
+			if (num < 0) res++;
+		}
+	}
+	return res;
+}
+
+int Mate::recSumBST(TreeNode* root, int low, int high) {
+	if (root == nullptr) {
+		return 0;
+	}
+
+	int currVal = 0;
+	if (root->val >= low and root->val <= high) {
+		currVal = root->val;
+	}
+
+	int leftVal = 0;
+	if (root->val > low) {
+		leftVal = recSumBST(root->left, low, high);
+	}
+
+	int rightVal = 0;
+	if (root->val < high) {
+		rightVal = recSumBST(root->right, low, high);
+	}
+
+	return currVal + leftVal + rightVal;
+}
+
+int Mate::rangeSumBST(TreeNode* root, int low, int high) {
+	int res = recSumBST(root, low, high);
+	return res;
+}
+
+int Mate::mirrorDistance(int n) {
+	std::string str = std::to_string(n);
+	std::string temp;
+
+	for (char c : str) {
+		temp = c + temp;
+	}
+
+	int reverse = std::stoi(temp);
+
+	return std::abs(n - reverse);
+}
+
+std::vector<int> Mate::findThePrefixCommonArray(std::vector<int>& A, std::vector<int>& B) {
+	std::array<int, 51> save;
+
+	std::vector<int> res;
+	res.reserve(A.size());
+
+	for (size_t i = 0; i < A.size(); ++i) {
+		save[A[i]]++;
+		save[B[i]]++;
+
+		int temp = 0;
+		for (int n : save) {
+			if (n > 1) {
+				temp++;
+			}
+		}
+		res.push_back(temp);
+	}
+	return res;
+}
+
+std::vector<std::vector<int>> Mate::largestLocal(std::vector<std::vector<int>>& grid) {
+	size_t n = grid.size();
+	size_t m = n - 2;
+
+	std::vector<std::vector<int>> res;
+	res.resize(m);
+
+	for (size_t i = 0; i < m; ++i) {
+		res[i].resize(m, 0);
+	}
+
+	for (size_t i = 0; i < m; ++i) {
+		for (size_t j = 0; j < m; ++j) {
+			int best = 0;
+			for (size_t k = i; k < (i + 3); ++k) {
+				for (size_t l = j; l < (j + 3); ++l) {
+					best = std::max(best, grid[k][l]);
+				}
+			}
+			res[i][j] = best;
+		}
+	}
+
 	return res;
 }

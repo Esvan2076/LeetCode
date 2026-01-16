@@ -112,12 +112,13 @@ int main()
 	//m.menuMinPartitions();
 	//m.menuCountMaxOrSubsets();
 	//m.menuFindArray();
-	m.menuDecode();
+	//m.menuFindArray();
+	//m.menuDecode();
+	//m.menuCountNegatives();
+	//m.menuRangeSumBST();
+	//m.menuMirrorDistance();
+	//m.menuFindThePrefixCommonArray();
+	m.menuLargestLocal();
 
 	return 0;
 }
-
-//1351. Count Negative Numbers in a Sorted Matrix
-//938. Range Sum of BST
-//3783. Mirror Distance of an Integer
-//2657. Find the Prefix Common Array of Two Arrays

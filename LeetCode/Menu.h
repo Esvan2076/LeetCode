@@ -115,4 +115,9 @@ public:
 	void menuCountMaxOrSubsets();
 	void menuFindArray();
 	void menuDecode();
+	void menuCountNegatives();
+	void menuRangeSumBST();
+	void menuMirrorDistance();
+	void menuFindThePrefixCommonArray();
+	void menuLargestLocal();
 };
