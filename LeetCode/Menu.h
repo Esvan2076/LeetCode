@@ -121,5 +121,8 @@ public:
 	void menuFindThePrefixCommonArray();
 	void menuLargestLocal();
 	void menuTruncateSentence();
-
+	void menuDecodeMessage();
+	void menuBstToGst();
+	void menuParkingSystem();
+	void menuMaxWidthOfVerticalArea();
 };

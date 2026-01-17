@@ -13,6 +13,8 @@
 
 //using namespace std;
 
+int currSum = 0;
+
 void printNums(std::vector<int>& nums);
 void printRow(std::vector<int>& nums);
 void printStack(const std::vector<char>& stack);
@@ -25,6 +27,7 @@ std::string toNumericBase(int num, int base);
 bool isPalindromic(std::string& s);
 std::string toBinary(int num);
 int dfsOrEqualMax(std::vector<int>& nums, int i, int max, int curr, int res);
+void bst(TreeNode* node);
 
 int Mate::sumNum(int num1, int num2) {
 	return num1 + num2;
@@ -2535,3 +2538,60 @@ std::string Mate::truncateSentence(std::string s, int k) {
 
 	return s;
 }
+
+std::string Mate::decodeMessage(std::string key, std::string message) {
+	std::unordered_map<char, char> map;
+	map.reserve(26);
+
+	int i = 0;
+	for (char c : key) {
+		if (c != ' ') {
+			if (map[c] != 0) {
+				continue;
+			}
+			map[c] = i + 97;
+			i++;
+		}
+	}
+	map[' '] = ' ';
+
+	std::string res;
+	res.reserve(message.size());
+
+	for (char c : message) {
+		res += map[c];
+	}
+
+	return res;
+}
+
+void bst(TreeNode* node) {
+	if (!node) return;
+
+	bst(node->right);
+
+	currSum += node->val;
+	node->val = currSum;
+
+	bst(node->left);
+}
+
+TreeNode* Mate::bstToGst(TreeNode* root) {
+	currSum = 0;
+	bst(root);
+	return root;
+}
+
+int Mate::maxWidthOfVerticalArea(std::vector<std::vector<int>>& points) {
+	std::sort(points.begin(), points.end());
+
+	int max = 0;
+
+	for (size_t i = 1; i < points.size(); ++i) {
+		int dif = points[i][0] - points[i - 1][0];
+		max = std::max(max, dif);
+	}
+
+	return max;
+}
+

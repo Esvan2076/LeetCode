@@ -7,6 +7,8 @@
 class Mate
 {
 public:
+	int currSum = 0;
+
 	int sumNum(int, int);
 	int addDigits(int);
 	int firstUniqCharFail(std::string);
@@ -129,4 +131,7 @@ public:
 	std::vector<int> findThePrefixCommonArray(std::vector<int>& A, std::vector<int>& B);
 	std::vector<std::vector<int>> largestLocal(std::vector<std::vector<int>>& grid);
 	std::string truncateSentence(std::string s, int k);
+	std::string decodeMessage(std::string key, std::string message);
+	TreeNode* bstToGst(TreeNode* root);
+	int maxWidthOfVerticalArea(std::vector<std::vector<int>>& points);
 };

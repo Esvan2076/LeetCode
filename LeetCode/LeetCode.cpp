@@ -119,7 +119,11 @@ int main()
 	//m.menuMirrorDistance();
 	//m.menuFindThePrefixCommonArray();
 	//m.menuLargestLocal();
-	m.menuTruncateSentence();
+	//m.menuTruncateSentence();
+	//m.menuDecodeMessage();
+	//m.menuBstToGst();
+	//m.menuParkingSystem();
+	m.menuMaxWidthOfVerticalArea();
 
 	return 0;
 }

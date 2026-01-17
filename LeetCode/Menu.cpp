@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "Mate.h"
+#include "ParkingSystem.h"
 
 void Menu::menuSumNum() {
     Mate m;
@@ -2235,4 +2236,54 @@ void Menu::menuTruncateSentence() {
 
     std::string res = m.truncateSentence(s, k);
     std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuDecodeMessage() {
+    Mate m;
+    std::string key, message;
+
+    std::cout << "2325. Decode the Message\n";
+    std::cout << "Give me a key: ";
+    getline(std::cin, key);
+
+    std::cout << "Give me a message: ";
+    std::cin >> message;
+
+    std::string res = m.decodeMessage(key, message);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuBstToGst() {
+    Mate m;
+    std::cout << "1038. Binary Search Tree to Greater Sum Tree\n";
+
+    TreeNode* root = new TreeNode(4);
+    root->left = new TreeNode(1, new TreeNode(0), new TreeNode(2, nullptr, new TreeNode(3)));
+    root->right = new TreeNode(6, new TreeNode(5), new TreeNode(7, nullptr, new TreeNode(8)));
+
+    m.bstToGst(root);
+    std::cout << "Tree converted to GST (Root value): " << root->val << std::endl;
+}
+
+void Menu::menuParkingSystem() {
+    int b, med, s;
+    std::cout << "1603. Design Parking System\n";
+    std::cout << "Enter big, medium, small slots: ";
+    std::cin >> b >> med >> s;
+
+    ParkingSystem ps(b, med, s);
+
+    int type;
+    std::cout << "Enter car type (1, 2, 3) or 0 to exit: ";
+    while (std::cin >> type && type != 0) {
+        if (ps.addCar(type)) std::cout << "True\n";
+        else std::cout << "False\n";
+    }
+}
+
+void Menu::menuMaxWidthOfVerticalArea() {
+    Mate m;
+    std::cout << "1637. Widest Vertical Area Between Two Points Containing No Points\n";
+    std::vector<std::vector<int>> points = { {8, 7}, {9, 9}, {7, 4}, {9, 7} };
+    std::cout << "Result: " << m.maxWidthOfVerticalArea(points) << std::endl;
 }

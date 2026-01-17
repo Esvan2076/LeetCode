@@ -136,6 +136,7 @@
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="Mate.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="ParkingSystem.h" />
     <ClInclude Include="TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
