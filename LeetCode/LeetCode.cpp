@@ -118,7 +118,8 @@ int main()
 	//m.menuRangeSumBST();
 	//m.menuMirrorDistance();
 	//m.menuFindThePrefixCommonArray();
-	m.menuLargestLocal();
+	//m.menuLargestLocal();
+	m.menuTruncateSentence();
 
 	return 0;
 }

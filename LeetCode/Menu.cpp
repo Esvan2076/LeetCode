@@ -1685,7 +1685,7 @@ void Menu::menuMiddleNode() {
     std::cout << '\n';
 }
 
-void Menu::menuMinOperations() {
+void Menu::menuMinOperationsII() {
     Mate m;
     int n, k, x;
     std::vector<int> nums;
@@ -1704,7 +1704,7 @@ void Menu::menuMinOperations() {
     std::cout << "Give me k: ";
     std::cin >> k;
 
-    int res = m.minOperations(nums, k);
+    int res = m.minOperationsII(nums, k);
     std::cout << "Result: " << res << '\n';
 }
 
@@ -2209,13 +2209,30 @@ void Menu::menuLargestLocal() {
     std::cout << "2373. Largest Local Values in a Matrix\n";
     std::cout << "Size (n x n): "; std::cin >> n;
     std::vector<std::vector<int>> grid(n, std::vector<int>(n));
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j)
             std::cin >> grid[i][j];
+    }
     std::vector<std::vector<int>> res = m.largestLocal(grid);
     std::cout << "Result:\n";
     for (auto row : res) {
         for (int val : row) std::cout << val << " ";
         std::cout << std::endl;
     }
+}
+
+void Menu::menuTruncateSentence() {
+    Mate m;
+    std::string s;
+    int k = 0;
+
+    std::cout << "1816. Truncate Sentence\n";
+    std::cout << "Give me a sentence: ";
+    getline(std::cin, s);
+
+    std::cout << "Give me the K: ";
+    std::cin >> k;
+
+    std::string res = m.truncateSentence(s, k);
+    std::cout << "Result: " << res << '\n';
 }

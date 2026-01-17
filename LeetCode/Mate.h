@@ -94,7 +94,7 @@ public:
 	std::vector<std::vector<int>> spiralMatrix(int m, int n, ListNode* head);
 	int pairSum(ListNode* head);
 	ListNode* middleNode(ListNode* head);
-	int minOperations(std::vector<int>& nums, int k);
+	int minOperationsII(std::vector<int>& nums, int k);
 	int scoreOfString(std::string s);
 	int maxDistinct(std::string s);
 	std::vector<int> transformArray(std::vector<int>& nums);
@@ -128,4 +128,5 @@ public:
 	int mirrorDistance(int n);
 	std::vector<int> findThePrefixCommonArray(std::vector<int>& A, std::vector<int>& B);
 	std::vector<std::vector<int>> largestLocal(std::vector<std::vector<int>>& grid);
+	std::string truncateSentence(std::string s, int k);
 };

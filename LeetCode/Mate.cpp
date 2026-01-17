@@ -1972,7 +1972,7 @@ ListNode* Mate::middleNode(ListNode* head) {
 	return tail;
 }
 
-int Mate::minOperations(std::vector<int>& nums, int k) {
+int Mate::minOperationsII(std::vector<int>& nums, int k) {
 	int total = 0;
 	for (size_t i = 0; i < nums.size(); ++i) {
 		total += nums[i];
@@ -2123,12 +2123,15 @@ std::string toBinary(int num) {
 	return bin;
 }
 
+//end??
 int Mate::minBitFlips(int start, int goal) {
 	std::string strStart = toBinary(start);
 	std::string strGoal = toBinary(goal);
 
 	int sGoal = strGoal.size();
 	int sStart = strStart.size();
+
+	return 1;
 }
 
 std::vector<int> Mate::leftRightDifference(std::vector<int>& nums) {
@@ -2516,4 +2519,19 @@ std::vector<std::vector<int>> Mate::largestLocal(std::vector<std::vector<int>>& 
 	}
 
 	return res;
+}
+
+std::string Mate::truncateSentence(std::string s, int k) {
+	int spaces = 0;
+	for (int i = 0; i < s.size(); ++i) {
+		if (s[i] == ' ') {
+			spaces++;
+		}
+
+		if (k == spaces) {
+			return s.substr(0, i);
+		}
+	}
+
+	return s;
 }

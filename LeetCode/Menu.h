@@ -87,7 +87,7 @@ public:
 	void menuSpiralMatrixIV();
 	void menuPairSum();
 	void menuMiddleNode();
-	void menuMinOperations();
+	void menuMinOperationsII();
 	void menuScoreOfString();
 	void menuMaxDistinct();
 	void menuTransformArray();
@@ -120,4 +120,6 @@ public:
 	void menuMirrorDistance();
 	void menuFindThePrefixCommonArray();
 	void menuLargestLocal();
+	void menuTruncateSentence();
+
 };
