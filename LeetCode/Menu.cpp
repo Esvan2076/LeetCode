@@ -2287,3 +2287,14 @@ void Menu::menuMaxWidthOfVerticalArea() {
     std::vector<std::vector<int>> points = { {8, 7}, {9, 9}, {7, 4}, {9, 7} };
     std::cout << "Result: " << m.maxWidthOfVerticalArea(points) << std::endl;
 }
+
+void Menu::menuConvertToTitle() {
+    Mate m;
+    int res = 0;
+    std::cout << "168. Excel Sheet Column Title\n";
+    std::cout << "Give me a number: ";
+    std::cin >> res;
+
+    std::string res = m.convertToTitle(res);
+    std::cout << "Result: " << res << '\n';
+}

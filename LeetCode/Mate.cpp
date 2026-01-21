@@ -2595,3 +2595,15 @@ int Mate::maxWidthOfVerticalArea(std::vector<std::vector<int>>& points) {
 	return max;
 }
 
+std::string Mate::convertToTitle(int columnNumber) {
+	std::string res = "";
+
+	while (columnNumber > 0) {
+		--columnNumber;
+		char c = (columnNumber % 26) + 'A';
+		res = c + res;
+		columnNumber /= 26;
+	}
+
+	return res;
+}

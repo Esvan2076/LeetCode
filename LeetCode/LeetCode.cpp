@@ -123,7 +123,8 @@ int main()
 	//m.menuDecodeMessage();
 	//m.menuBstToGst();
 	//m.menuParkingSystem();
-	m.menuMaxWidthOfVerticalArea();
+	//m.menuMaxWidthOfVerticalArea();
+	m.menuConvertToTitle();
 
 	return 0;
 }

@@ -125,4 +125,5 @@ public:
 	void menuBstToGst();
 	void menuParkingSystem();
 	void menuMaxWidthOfVerticalArea();
+	void menuConvertToTitle();
 };

@@ -134,4 +134,5 @@ public:
 	std::string decodeMessage(std::string key, std::string message);
 	TreeNode* bstToGst(TreeNode* root);
 	int maxWidthOfVerticalArea(std::vector<std::vector<int>>& points);
+	std::string convertToTitle(int columnNumber);
 };
