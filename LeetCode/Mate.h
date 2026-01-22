@@ -135,4 +135,6 @@ public:
 	TreeNode* bstToGst(TreeNode* root);
 	int maxWidthOfVerticalArea(std::vector<std::vector<int>>& points);
 	std::string convertToTitle(int columnNumber);
+	std::string removeOuterParentheses(std::string s);
+	std::string reversePrefixII(std::string word, char ch);
 };

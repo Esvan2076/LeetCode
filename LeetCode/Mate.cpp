@@ -2607,3 +2607,60 @@ std::string Mate::convertToTitle(int columnNumber) {
 
 	return res;
 }
+
+std::string Mate::removeOuterParentheses(std::string s) {
+	std::string res;
+	int incompletes = 0;
+
+	for (char c : s) {
+		if (incompletes == 0) {
+			incompletes++;
+			continue;
+		}
+
+		if (c == '(') {
+			incompletes++;
+		}
+		else {
+			incompletes--;
+		}
+
+		if (incompletes != 0) {
+			res += c;
+		}
+	}
+
+	return res;
+}
+
+std::string Mate::reversePrefixII(std::string word, char ch) {
+	// First Attempt
+
+	// size_t idx = 0;
+	// for (size_t i = 0; i < word.size(); ++i) {
+	//     if (word[i] == ch) {
+	//         idx = i;
+	//         break;
+	//     }
+	// }
+
+	// if (idx == 0) return word;
+
+	// std::string res = word.substr(0, idx + 1);
+
+	// std::reverse(res.begin(), res.end());
+
+	// for (size_t i = idx + 1; i < word.size(); ++i) {
+	//     res += word[i];
+	// }
+
+	// return res;
+
+	for (size_t i = 0; i < word.size(); ++i) {
+		if (word[i] == ch) {
+			std::reverse(word.begin(), word.begin() + i + 1);
+			break;
+		}
+	}
+	return word;
+}

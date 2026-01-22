@@ -126,4 +126,7 @@ public:
 	void menuParkingSystem();
 	void menuMaxWidthOfVerticalArea();
 	void menuConvertToTitle();
+	void menuMinStack();
+	void menuRemoveOuterParentheses();
+	void menuReversePrefixII();
 };

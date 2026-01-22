@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "Mate.h"
+#include "MinStack.h"
 #include "ParkingSystem.h"
 
 void Menu::menuSumNum() {
@@ -2290,11 +2291,44 @@ void Menu::menuMaxWidthOfVerticalArea() {
 
 void Menu::menuConvertToTitle() {
     Mate m;
-    int res = 0;
+    int num = 0;
     std::cout << "168. Excel Sheet Column Title\n";
     std::cout << "Give me a number: ";
-    std::cin >> res;
+    std::cin >> num;
 
-    std::string res = m.convertToTitle(res);
+    std::string res = m.convertToTitle(num);
     std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuMinStack() {
+    MinStack ms;
+    std::cout << "155. Min Stack\n";
+    ms.push(-2);
+    ms.push(0);
+    ms.push(-3);
+    std::cout << "Min: " << ms.getMin() << std::endl;
+    ms.pop();
+    std::cout << "Top: " << ms.top() << std::endl;
+    std::cout << "Min: " << ms.getMin() << std::endl;
+}
+
+void Menu::menuRemoveOuterParentheses() {
+    Mate m;
+    std::string s;
+    std::cout << "1021. Remove Outermost Parentheses\n";
+    std::cout << "Give me the string: ";
+    std::cin >> s;
+    std::cout << "Result: " << m.removeOuterParentheses(s) << std::endl;
+}
+
+void Menu::menuReversePrefixII() {
+    Mate m;
+    std::string word;
+    char ch;
+    std::cout << "2000. Reverse Prefix of Word\n";
+    std::cout << "Give me the word: ";
+    std::cin >> word;
+    std::cout << "Give me the character: ";
+    std::cin >> ch;
+    std::cout << "Result: " << m.reversePrefixII(word, ch) << std::endl;
 }

@@ -124,7 +124,10 @@ int main()
 	//m.menuBstToGst();
 	//m.menuParkingSystem();
 	//m.menuMaxWidthOfVerticalArea();
-	m.menuConvertToTitle();
+	//m.menuConvertToTitle();
+	//m.menuMinStack();
+	//m.menuRemoveOuterParentheses();
+	m.menuReversePrefixII();
 
 	return 0;
 }
