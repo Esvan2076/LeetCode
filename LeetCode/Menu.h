@@ -129,4 +129,5 @@ public:
 	void menuMinStack();
 	void menuRemoveOuterParentheses();
 	void menuReversePrefixII();
+	void menuReverseList();
 };

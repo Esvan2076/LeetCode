@@ -2664,3 +2664,33 @@ std::string Mate::reversePrefixII(std::string word, char ch) {
 	}
 	return word;
 }
+
+ListNode* Mate::reverseList(ListNode* node) {
+	//First Attempt
+	// if(!node) return nullptr;
+
+	// ListNode* tail = new ListNode();
+	// tail->val = node->val;
+	// node = node->next;
+	// while(node) {
+	//     ListNode* temp = new ListNode();
+	//     temp->val = node->val;
+	//     temp->next = tail;
+	//     tail = temp;
+	//     node = node->next;
+	// }
+	// return tail;
+
+	//Second Attempt
+	ListNode* prev = nullptr;
+	ListNode* next = nullptr;
+
+	while (node) {
+		next = node->next;
+		node->next = prev;
+		prev = node;
+		node = next;
+	}
+
+	return prev;
+}

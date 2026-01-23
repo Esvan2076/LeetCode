@@ -2332,3 +2332,43 @@ void Menu::menuReversePrefixII() {
     std::cin >> ch;
     std::cout << "Result: " << m.reversePrefixII(word, ch) << std::endl;
 }
+
+void Menu::menuReverseList() {
+    Mate m;
+    int num = 0, option = 0;
+
+    ListNode* head = nullptr;
+    ListNode* tail = nullptr;
+
+    std::cout << "206. Reverse Linked List\n";
+    while (true) {
+        std::cout << "-----MENU-----" << std::endl;
+        std::cout << "1. Add Node" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "--------------" << std::endl;
+        std::cin >> option;
+        if (option == 2) break;
+
+        std::cout << "Give the node: ";
+        std::cin >> num;
+
+        // // crear nodo nuevo con el valor ingresado
+        ListNode* node = new ListNode(num);
+
+        if (!head) {            // // primer nodo
+            head = tail = node;
+        }
+        else {                // // push-back
+            tail->next = node;
+            tail = node;
+        }
+    }
+
+    ListNode* result = m.reverseList(head);
+
+    std::cout << "Result: ";
+    for (ListNode* p = result; p; p = p->next) {
+        std::cout << p->val << '-';
+    }
+    std::cout << '\n';
+}

@@ -127,7 +127,8 @@ int main()
 	//m.menuConvertToTitle();
 	//m.menuMinStack();
 	//m.menuRemoveOuterParentheses();
-	m.menuReversePrefixII();
+	//m.menuReversePrefixII();
+	m.menuReverseList();
 
 	return 0;
 }
