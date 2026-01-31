@@ -5,6 +5,7 @@
 #include "Mate.h"
 #include "MinStack.h"
 #include "ParkingSystem.h"
+#include "LinkedList.h"
 
 void Menu::menuSumNum() {
     Mate m;
@@ -2371,4 +2372,65 @@ void Menu::menuReverseList() {
         std::cout << p->val << '-';
     }
     std::cout << '\n';
+}
+
+void Menu::menuDesignLinkedList() {
+    LinkedList* list = new LinkedList();
+    int option = -1;
+    int index, val;
+
+    std::cout << "707. Design Linked List\n";
+    std::cout << "-----------------------\n";
+    std::cout << "1. get(index)\n";
+    std::cout << "2. addAtHead(val)\n";
+    std::cout << "3. addAtTail(val)\n";
+    std::cout << "4. addAtIndex(index, val)\n";
+    std::cout << "5. deleteAtIndex(index)\n";
+    std::cout << "0. Exit\n";
+    std::cout << "-----------------------\n";
+
+    while (true) {
+        std::cout << "Choose operation: ";
+        std::cin >> option;
+
+        if (option == 0) break;
+
+        switch (option) {
+        case 1:
+            std::cout << "Enter index: ";
+            std::cin >> index;
+            std::cout << "Result: " << list->get(index) << "\n";
+            break;
+        case 2:
+            std::cout << "Enter val: ";
+            std::cin >> val;
+            list->addAtHead(val);
+            std::cout << "Done.\n";
+            break;
+        case 3:
+            std::cout << "Enter val: ";
+            std::cin >> val;
+            list->addAtTail(val);
+            std::cout << "Done.\n";
+            break;
+        case 4:
+            std::cout << "Enter index: "; std::cin >> index;
+            std::cout << "Enter val: "; std::cin >> val;
+            list->addAtIndex(index, val);
+            std::cout << "Done.\n";
+            break;
+        case 5:
+            std::cout << "Enter index: ";
+            std::cin >> index;
+            list->deleteAtIndex(index);
+            std::cout << "Done.\n";
+            break;
+        default:
+            std::cout << "Opción no válida, Papu.\n";
+            break;
+        }
+    }
+    // Limpieza básica para no dejar basura, aunque el SO lo limpie al salir.
+    // Asumiendo que MyLinkedList no tiene destructor complejo o que 'delete' funciona.
+    delete list;
 }

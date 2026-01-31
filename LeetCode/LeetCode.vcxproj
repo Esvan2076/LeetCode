@@ -129,11 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LeetCode.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Mate.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MinStack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="Mate.h" />
     <ClInclude Include="Menu.h" />
