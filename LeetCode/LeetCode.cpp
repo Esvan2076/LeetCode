@@ -129,7 +129,8 @@ int main()
 	//m.menuRemoveOuterParentheses();
 	//m.menuReversePrefixII();
 	//m.menuReverseList();
-	m.menuDesignLinkedList();
+	//m.menuDesignLinkedList();
+	m.menuMaximum69Number();
 
 	return 0;
 }

@@ -131,4 +131,5 @@ public:
 	void menuReversePrefixII();
 	void menuReverseList();
 	void menuDesignLinkedList();
+	void menuMaximum69Number();
 };

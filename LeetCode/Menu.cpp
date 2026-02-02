@@ -2430,7 +2430,18 @@ void Menu::menuDesignLinkedList() {
             break;
         }
     }
-    // Limpieza básica para no dejar basura, aunque el SO lo limpie al salir.
-    // Asumiendo que MyLinkedList no tiene destructor complejo o que 'delete' funciona.
     delete list;
+}
+
+void Menu::menuMaximum69Number() {
+    Mate m;
+    std::string s;
+    int num = 0;
+
+    std::cout << "1323. Maximum 69 Number\n";
+    std::cout << "Give me a number [6996]: ";
+    std::cin >> num;
+
+    int res = m.maximum69Number(num);
+    std::cout << "Result: " << res << '\n';
 }

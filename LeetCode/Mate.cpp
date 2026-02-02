@@ -2694,3 +2694,18 @@ ListNode* Mate::reverseList(ListNode* node) {
 
 	return prev;
 }
+
+int Mate::maximum69Number(int num) {
+	int res = 0;
+	std::string str = std::to_string(num);
+	for (char& c : str) {
+		if (c == '6') {
+			c = '9';
+			break;
+		}
+	}
+	res = std::stoi(str);
+	return res;
+}
+
+//836
