@@ -139,4 +139,5 @@ public:
 	std::string reversePrefixII(std::string word, char ch);
 	ListNode* reverseList(ListNode* node);
 	int maximum69Number(int num);
+	int maxProductDifference(std::vector<int>& nums);
 };

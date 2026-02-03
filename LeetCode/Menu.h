@@ -132,4 +132,5 @@ public:
 	void menuReverseList();
 	void menuDesignLinkedList();
 	void menuMaximum69Number();
+	void menuMaxProductDifference();
 };

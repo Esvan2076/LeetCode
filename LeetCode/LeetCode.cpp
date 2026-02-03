@@ -130,7 +130,8 @@ int main()
 	//m.menuReversePrefixII();
 	//m.menuReverseList();
 	//m.menuDesignLinkedList();
-	m.menuMaximum69Number();
+	//m.menuMaximum69Number();
+	m.menuMaxProductDifference();
 
 	return 0;
 }

@@ -2445,3 +2445,23 @@ void Menu::menuMaximum69Number() {
     int res = m.maximum69Number(num);
     std::cout << "Result: " << res << '\n';
 }
+
+void Menu::menuMaxProductDifference() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "1913. Maximum Product Difference Between Two Pairs\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.maxProductDifference(nums);
+    std::cout << "Result: " << res;
+}
