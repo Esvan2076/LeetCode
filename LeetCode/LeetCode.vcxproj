@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BrowserHistory.cpp" />
     <ClCompile Include="LeetCode.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Mate.cpp" />
@@ -135,11 +136,13 @@
     <ClCompile Include="MinStack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BrowserHistory.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="Mate.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MinStack.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="ParkingSystem.h" />
     <ClInclude Include="TreeNode.h" />
   </ItemGroup>

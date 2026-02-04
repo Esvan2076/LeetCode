@@ -133,4 +133,6 @@ public:
 	void menuDesignLinkedList();
 	void menuMaximum69Number();
 	void menuMaxProductDifference();
+	void menuMinElement();
+	void menuBrowserHistory();
 };

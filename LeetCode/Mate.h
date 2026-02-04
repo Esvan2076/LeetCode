@@ -140,4 +140,5 @@ public:
 	ListNode* reverseList(ListNode* node);
 	int maximum69Number(int num);
 	int maxProductDifference(std::vector<int>& nums);
+	int minElement(std::vector<int>& nums);
 };

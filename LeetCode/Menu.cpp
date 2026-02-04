@@ -5,6 +5,7 @@
 #include "Mate.h"
 #include "MinStack.h"
 #include "ParkingSystem.h"
+#include "BrowserHistory.h"
 #include "LinkedList.h"
 
 void Menu::menuSumNum() {
@@ -2464,4 +2465,60 @@ void Menu::menuMaxProductDifference() {
 
     int res = m.maxProductDifference(nums);
     std::cout << "Result: " << res;
+}
+
+void Menu::menuMinElement() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "3300. Minimum Element After Replacement With Digit Sum\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.minElement(nums);
+    std::cout << "Result: " << res;
+}
+
+void Menu::menuBrowserHistory() {
+    std::string home;
+    std::cout << "1472. Design Browser History" << std::endl;
+    std::cout << "Ingrese la pagina de inicio: ";
+    std::cin >> home;
+
+    BrowserHistory* browser = new BrowserHistory(home);
+    int op;
+    std::string url;
+    int steps;
+
+    do {
+        std::cout << "\nActual: " << browser->back(0) << std::endl;
+        std::cout << "1. Visit | 2. Back | 3. Forward | 4. Salir" << std::endl;
+        std::cout << "Opcion: ";
+        std::cin >> op;
+
+        switch (op) {
+        case 1:
+            std::cout << "URL: "; std::cin >> url;
+            browser->visit(url);
+            break;
+        case 2:
+            std::cout << "Pasos: "; std::cin >> steps;
+            std::cout << "-> " << browser->back(steps) << std::endl;
+            break;
+        case 3:
+            std::cout << "Pasos: "; std::cin >> steps;
+            std::cout << "-> " << browser->forward(steps) << std::endl;
+            break;
+        }
+    } while (op != 4);
+
+    delete browser;
 }

@@ -2734,3 +2734,17 @@ int Mate::maxProductDifference(std::vector<int>& nums) {
 
 	return (max1 * max2) - (min1 * min2);
 }
+
+int Mate::minElement(std::vector<int>& nums) {
+	int best = INT_MAX;
+	int curr;
+	for (int n : nums) {
+		curr = 0;
+		while (n > 0) {
+			curr += n % 10;
+			n /= 10;
+		}
+		best = std::min(best, curr);
+	}
+	return best;
+}
