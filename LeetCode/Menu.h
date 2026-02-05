@@ -135,4 +135,6 @@ public:
 	void menuMaxProductDifference();
 	void menuMinElement();
 	void menuBrowserHistory();
+	void menuFindNumbers();
+	void menuRemoveTrailingZeros();
 };

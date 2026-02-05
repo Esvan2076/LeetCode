@@ -2522,3 +2522,32 @@ void Menu::menuBrowserHistory() {
 
     delete browser;
 }
+
+void Menu::menuFindNumbers() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "1295. Find Numbers with Even Number of Digits\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.findNumbers(nums);
+    std::cout << "Result: " << res;
+}
+
+void Menu::menuRemoveTrailingZeros() {
+    Mate m;
+    std::string word;
+    std::cout << "2710. Remove Trailing Zeros From a String\n";
+    std::cout << "Give me the word: ";
+    std::cin >> word;
+    std::cout << "Result: " << m.removeTrailingZeros(word) << std::endl;
+}

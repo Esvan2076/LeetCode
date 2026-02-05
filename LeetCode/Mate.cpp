@@ -2748,3 +2748,42 @@ int Mate::minElement(std::vector<int>& nums) {
 	}
 	return best;
 }
+
+int Mate::findNumbers(std::vector<int>& nums) {
+	int res = 0;
+	int temp;
+	for (int n : nums) {
+		temp = 0;
+		while (n > 0) {
+			++temp;
+			n /= 10;
+		}
+		if (temp % 2 == 0) ++res;
+	}
+	return res;
+}
+
+std::string Mate::removeTrailingZeros(std::string num) {
+	size_t size = num.size();
+	std::string inv;
+	inv.reserve(size);
+
+	for (char c : num) {
+		inv = c + inv;
+	}
+
+	size_t index = 0;
+	for (char c : inv) {
+		if (c != '0') break;
+		++index;
+	}
+
+	std::string res;
+	res.reserve(size);
+
+	for (size_t i = index; i < size; ++i) {
+		res = inv[i] + res;
+	}
+
+	return res;
+}

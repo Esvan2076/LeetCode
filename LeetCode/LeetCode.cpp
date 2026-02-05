@@ -133,7 +133,9 @@ int main()
 	//m.menuMaximum69Number();
 	//m.menuMaxProductDifference();
 	//m.menuMinElement();
-	m.menuBrowserHistory();
+	//m.menuBrowserHistory();
+	//m.menuFindNumbers();
+	m.menuRemoveTrailingZeros();
 
 	return 0;
 }

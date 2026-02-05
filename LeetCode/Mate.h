@@ -141,4 +141,6 @@ public:
 	int maximum69Number(int num);
 	int maxProductDifference(std::vector<int>& nums);
 	int minElement(std::vector<int>& nums);
+	int findNumbers(std::vector<int>& nums);
+	std::string removeTrailingZeros(std::string num);
 };
