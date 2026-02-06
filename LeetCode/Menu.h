@@ -137,4 +137,5 @@ public:
 	void menuBrowserHistory();
 	void menuFindNumbers();
 	void menuRemoveTrailingZeros();
+	void menuCountStudents();
 };

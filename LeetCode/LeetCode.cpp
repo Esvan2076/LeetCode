@@ -135,7 +135,8 @@ int main()
 	//m.menuMinElement();
 	//m.menuBrowserHistory();
 	//m.menuFindNumbers();
-	m.menuRemoveTrailingZeros();
+	//m.menuRemoveTrailingZeros();
+	m.menuCountStudents();
 
 	return 0;
 }

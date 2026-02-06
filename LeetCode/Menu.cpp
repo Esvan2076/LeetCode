@@ -2551,3 +2551,32 @@ void Menu::menuRemoveTrailingZeros() {
     std::cin >> word;
     std::cout << "Result: " << m.removeTrailingZeros(word) << std::endl;
 }
+
+void Menu::menuCountStudents() {
+    Mate m;
+    int n, x;
+    std::vector<int> students, sandwiches;
+
+    std::cout << "1700. Number of Students Unable to Eat Lunch\n";
+    std::cout << "How many students/sandwiches: ";
+    std::cin >> n;
+
+    students.reserve(n);
+    std::cout << "Enter student preferences (0 for circle, 1 for square):\n";
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Student " << i + 1 << ": ";
+        std::cin >> x;
+        students.push_back(x);
+    }
+
+    sandwiches.reserve(n);
+    std::cout << "Enter sandwich types (0 for circle, 1 for square):\n";
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Sandwich " << i + 1 << ": ";
+        std::cin >> x;
+        sandwiches.push_back(x);
+    }
+
+    int res = m.countStudents(students, sandwiches);
+    std::cout << "Result: " << res << " students unable to eat." << std::endl;
+}

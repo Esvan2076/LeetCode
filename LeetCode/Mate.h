@@ -143,4 +143,5 @@ public:
 	int minElement(std::vector<int>& nums);
 	int findNumbers(std::vector<int>& nums);
 	std::string removeTrailingZeros(std::string num);
+	int countStudents(std::vector<int>& students, std::vector<int>& sandwiches);
 };

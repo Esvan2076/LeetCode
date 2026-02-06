@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <numeric>
+#include <queue>
 
 //using namespace std;
 
@@ -2786,4 +2787,24 @@ std::string Mate::removeTrailingZeros(std::string num) {
 	}
 
 	return res;
+}
+
+int Mate::countStudents(std::vector<int>& students, std::vector<int>& sandwiches) {
+	std::vector<int> nums(2, 0);
+
+	for (bool n : students) {
+		++nums[n];
+	}
+
+	for (size_t i = 0; i < sandwiches.size(); ++i) {
+		int& num = nums[sandwiches[i]];
+		--num;
+
+		if (num < 0) {
+			++num;
+			break;
+		}
+	}
+
+	return nums[0] + nums[1];
 }
