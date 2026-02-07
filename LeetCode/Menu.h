@@ -138,4 +138,8 @@ public:
 	void menuFindNumbers();
 	void menuRemoveTrailingZeros();
 	void menuCountStudents();
+	void menuNumberOfBeams();
+	void menuGetFinalState();
+	void menuRunningSum();
+	void menuStableMountains();
 };

@@ -136,7 +136,11 @@ int main()
 	//m.menuBrowserHistory();
 	//m.menuFindNumbers();
 	//m.menuRemoveTrailingZeros();
-	m.menuCountStudents();
+	//m.menuCountStudents();
+	//m.menuNumberOfBeams();
+	//m.menuGetFinalState();
+	//m.menuRunningSum();
+	m.menuStableMountains();
 
 	return 0;
 }

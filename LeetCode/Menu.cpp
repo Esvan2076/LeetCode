@@ -2580,3 +2580,107 @@ void Menu::menuCountStudents() {
     int res = m.countStudents(students, sandwiches);
     std::cout << "Result: " << res << " students unable to eat." << std::endl;
 }
+
+static void printVector(const std::vector<int>& v) {
+    std::cout << "[";
+    for (size_t i = 0; i < v.size(); ++i) {
+        std::cout << v[i];
+        if (i + 1 < v.size()) std::cout << ",";
+    }
+    std::cout << "]";
+}
+
+void Menu::menuNumberOfBeams() {
+    Mate m;
+    int rows = 0;
+    std::vector<std::string> bank;
+    std::string row;
+
+    std::cout << "2125. Number of Laser Beams in a Bank\n";
+    std::cout << "How many rows: ";
+    std::cin >> rows;
+
+    bank.reserve(rows);
+    for (int i = 0; i < rows; ++i) {
+        std::cout << "Row " << i + 1 << ": ";
+        std::cin >> row;
+        bank.push_back(row);
+    }
+
+    int res = m.numberOfBeams(bank);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuGetFinalState() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0, k = 0, multiplier = 0;
+
+    std::cout << "3264. Final Array State After K Multiplication Operations I\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::cout << "k: ";
+    std::cin >> k;
+    std::cout << "multiplier: ";
+    std::cin >> multiplier;
+
+    std::vector<int> res = m.getFinalState(nums, k, multiplier);
+    std::cout << "Result: ";
+    printVector(res);
+    std::cout << '\n';
+}
+
+void Menu::menuRunningSum() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "1480. Running Sum of 1d Array\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::vector<int> res = m.runningSum(nums);
+    std::cout << "Result: ";
+    printVector(res);
+    std::cout << '\n';
+}
+
+void Menu::menuStableMountains() {
+    Mate m;
+    std::vector<int> height;
+    int n = 0, x = 0, threshold = 0;
+
+    std::cout << "3285. Find Indices of Stable Mountains\n";
+    std::cout << "How many mountains: ";
+    std::cin >> n;
+
+    height.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Height " << i + 1 << ": ";
+        std::cin >> x;
+        height.push_back(x);
+    }
+
+    std::cout << "threshold: ";
+    std::cin >> threshold;
+
+    std::vector<int> res = m.stableMountains(height, threshold);
+    std::cout << "Result: ";
+    printVector(res);
+    std::cout << '\n';
+}

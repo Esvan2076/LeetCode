@@ -2808,3 +2808,61 @@ int Mate::countStudents(std::vector<int>& students, std::vector<int>& sandwiches
 
 	return nums[0] + nums[1];
 }
+
+int Mate::numberOfBeams(std::vector<std::string>& bank) {
+	int res = 0;
+	int curr = 0;
+	int temp;
+	for (std::string row : bank) {
+		temp = 0;
+		for (int c : row) {
+			if (c == 49) ++temp;
+		}
+		if (temp != 0) {
+			res += curr * temp;
+			curr = temp;
+		}
+	}
+	return res;
+}
+
+std::vector<int> Mate::getFinalState(std::vector<int>& nums, int k, int multiplier) {
+	int index;
+	int s = nums.size();
+	for (size_t i = 0; i < k; ++i) {
+		index = 0;
+		for (size_t j = 0; j < s; ++j) {
+			if (nums[index] > nums[j]) {
+				index = j;
+			}
+		}
+		nums[index] *= multiplier;
+	}
+	return nums;
+}
+
+std::vector<int> Mate::runningSum(std::vector<int>& nums) {
+	std::vector<int> res;
+	res.reserve(nums.size());
+
+	int curr = 0;
+	for (int n : nums) {
+		curr += n;
+		res.push_back(curr);
+	}
+
+	return res;
+}
+
+std::vector<int> Mate::stableMountains(std::vector<int>& height, int threshold) {
+	std::vector<int> res;
+	res.reserve(height.size());
+
+	int prev = height[0];
+	for (size_t i = 1; i < height.size(); ++i) {
+		if (prev > threshold) res.push_back(i);
+		prev = height[i];
+	}
+
+	return res;
+}

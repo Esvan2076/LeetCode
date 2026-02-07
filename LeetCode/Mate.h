@@ -144,4 +144,8 @@ public:
 	int findNumbers(std::vector<int>& nums);
 	std::string removeTrailingZeros(std::string num);
 	int countStudents(std::vector<int>& students, std::vector<int>& sandwiches);
+	int numberOfBeams(std::vector<std::string>& bank);
+	std::vector<int> getFinalState(std::vector<int>& nums, int k, int multiplier);
+	std::vector<int> runningSum(std::vector<int>& nums);
+	std::vector<int> stableMountains(std::vector<int>& height, int threshold);
 };
