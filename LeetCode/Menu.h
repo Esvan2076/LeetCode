@@ -142,4 +142,5 @@ public:
 	void menuGetFinalState();
 	void menuRunningSum();
 	void menuStableMountains();
+	void menuMinOperations();
 };

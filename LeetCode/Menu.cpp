@@ -2684,3 +2684,26 @@ void Menu::menuStableMountains() {
     printVector(res);
     std::cout << '\n';
 }
+
+void Menu::menuMinOperations() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0, k = 0;
+
+    std::cout << "3065. Minimum Operations to Exceed Threshold Value I\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::cout << "k: ";
+    std::cin >> k;
+
+    int res = m.minOperations(nums, k);
+    std::cout << "Result: " << res << '\n';
+}

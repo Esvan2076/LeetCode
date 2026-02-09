@@ -148,4 +148,5 @@ public:
 	std::vector<int> getFinalState(std::vector<int>& nums, int k, int multiplier);
 	std::vector<int> runningSum(std::vector<int>& nums);
 	std::vector<int> stableMountains(std::vector<int>& height, int threshold);
+	int minOperations(std::vector<int>& nums, int k);
 };

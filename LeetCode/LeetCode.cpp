@@ -140,7 +140,8 @@ int main()
 	//m.menuNumberOfBeams();
 	//m.menuGetFinalState();
 	//m.menuRunningSum();
-	m.menuStableMountains();
+	//m.menuStableMountains();
+	m.menuMinOperations();
 
 	return 0;
 }

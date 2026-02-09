@@ -2866,3 +2866,11 @@ std::vector<int> Mate::stableMountains(std::vector<int>& height, int threshold) 
 
 	return res;
 }
+
+int Mate::minOperations(std::vector<int>& nums, int k) {
+	int res = 0;
+	for (int n : nums) {
+		if (n < k) ++res;
+	}
+	return res;
+}
