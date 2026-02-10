@@ -143,4 +143,5 @@ public:
 	void menuRunningSum();
 	void menuStableMountains();
 	void menuMinOperations();
+	void menuMergeKLists();
 };

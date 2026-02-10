@@ -2874,3 +2874,57 @@ int Mate::minOperations(std::vector<int>& nums, int k) {
 	}
 	return res;
 }
+
+ListNode* Mate::mergeKLists(std::vector<ListNode*>& lists) {
+	using std::vector;
+
+	size_t index = 0;
+	bool nothing = true;
+	for (ListNode* curr : lists) {
+		if (curr) {
+			nothing = false;
+			break;
+		}
+		++index;
+	}
+	if (nothing) {
+		return nullptr;
+	}
+
+	ListNode* head = lists[index];
+
+	for (size_t i = index + 1; i < lists.size(); ++i) {
+		ListNode* newHead = lists[i];
+
+		if (!newHead) continue;
+
+		if (newHead->val < head->val) {
+			std::swap(head, newHead);
+		}
+
+		ListNode* main = head->next;
+		ListNode* prev = head;
+		ListNode* secon = newHead;
+
+		while (main && secon) {
+			if (main->val > secon->val) {
+				prev->next = secon;
+				prev = secon;
+				secon = secon->next;
+				prev->next = main;
+			}
+			else {
+				prev = main;
+				main = main->next;
+			}
+		}
+
+		while (secon) {
+			prev->next = secon;
+			prev = prev->next;
+			secon = secon->next;
+		}
+	}
+
+	return head;
+}

@@ -2707,3 +2707,76 @@ void Menu::menuMinOperations() {
     int res = m.minOperations(nums, k);
     std::cout << "Result: " << res << '\n';
 }
+
+static ListNode* buildListFromInput(int len) {
+    if (len <= 0) return nullptr;
+
+    int x;
+    std::cout << "Value 1: ";
+    std::cin >> x;
+
+    ListNode* head = new ListNode(x);
+    ListNode* tail = head;
+
+    for (int i = 2; i <= len; ++i) {
+        std::cout << "Value " << i << ": ";
+        std::cin >> x;
+        tail->next = new ListNode(x);
+        tail = tail->next;
+    }
+
+    return head;
+}
+
+static void printList(ListNode* head) {
+    std::cout << "[";
+    while (head) {
+        std::cout << head->val;
+        head = head->next;
+        if (head) std::cout << ",";
+    }
+    std::cout << "]";
+}
+
+static void freeList(ListNode* head) {
+    while (head) {
+        ListNode* nxt = head->next;
+        delete head;
+        head = nxt;
+    }
+}
+
+void Menu::menuMergeKLists() {
+    Mate m;
+
+    int k = 0;
+    std::cout << "23. Merge k Sorted Lists\n";
+    std::cout << "How many lists (k): ";
+    std::cin >> k;
+
+    std::vector<ListNode*> lists;
+    lists.reserve(k);
+
+    for (int i = 0; i < k; ++i) {
+        int len = 0;
+        std::cout << "\nList " << i + 1 << " length: ";
+        std::cin >> len;
+
+        if (len <= 0) {
+            lists.push_back(nullptr);
+            continue;
+        }
+
+        std::cout << "Enter " << len << " integers (ideally sorted ascending):\n";
+        ListNode* head = buildListFromInput(len);
+        lists.push_back(head);
+    }
+
+    ListNode* res = m.mergeKLists(lists);
+
+    std::cout << "\nResult: ";
+    printList(res);
+    std::cout << "\n";
+
+    freeList(res);
+}
