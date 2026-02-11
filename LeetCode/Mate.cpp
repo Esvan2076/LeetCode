@@ -2928,3 +2928,38 @@ ListNode* Mate::mergeKLists(std::vector<ListNode*>& lists) {
 
 	return head;
 }
+
+int Mate::minOperations(std::vector<int>& nums, int k) {
+	int res = 0;
+	for (int n : nums) {
+		if (n < k) res++;
+	}
+	return res;
+}
+
+int Mate::sumIndicesWithKSetBits(std::vector<int>& nums, int k) {
+	int setBits;
+	int help;
+	int res = 0;
+
+	for (size_t i = 0; i < nums.size(); ++i) {
+		setBits = 0;
+		help = i;
+		while (help > 0) {
+			setBits += help % 2;
+			help /= 2;
+		}
+		if (setBits == k) res += nums[i];
+	}
+	return res;
+}
+
+int Mate::numberOfSteps(int num) {
+	int res = 0;
+	while (num) {
+		if (num % 2 == 0) num /= 2;
+		else --num;
+		++res;
+	}
+	return res;
+}

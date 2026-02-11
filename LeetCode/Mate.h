@@ -150,4 +150,7 @@ public:
 	std::vector<int> stableMountains(std::vector<int>& height, int threshold);
 	int minOperations(std::vector<int>& nums, int k);
 	ListNode* mergeKLists(std::vector<ListNode*>& lists);
+	int minOperations(std::vector<int>& nums, int k);
+	int sumIndicesWithKSetBits(std::vector<int>& nums, int k);
+	int numberOfSteps(int num);
 };
