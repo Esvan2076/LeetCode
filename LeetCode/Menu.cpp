@@ -1280,20 +1280,6 @@ void Menu::menuConvertTemperature() {
     std::cout << " Fahrenheit: " << res[1];
 }
 
-void Menu::menuMinOperations() {
-    Mate m;
-    std::string s;
-    std::cout << "1769. Minimum Number of Operations to Move All Balls to Each Box\n";
-    std::cout << "Give me a string: ";
-    std::cout << "Example 001001 ";
-    getline(std::cin, s);
-    std::vector<int> res = m.minOperations(s);
-    std::cout << "Result: \n";
-    for (int& num : res) {
-        std::cout << num << "\t";
-    }
-}
-
 void Menu::menuDefangIPaddr() {
     Mate m;
     std::string s;
@@ -2685,29 +2671,6 @@ void Menu::menuStableMountains() {
     std::cout << '\n';
 }
 
-void Menu::menuMinOperations() {
-    Mate m;
-    std::vector<int> nums;
-    int n = 0, x = 0, k = 0;
-
-    std::cout << "3065. Minimum Operations to Exceed Threshold Value I\n";
-    std::cout << "How many numbers: ";
-    std::cin >> n;
-
-    nums.reserve(n);
-    for (int i = 0; i < n; ++i) {
-        std::cout << "Num " << i + 1 << ": ";
-        std::cin >> x;
-        nums.push_back(x);
-    }
-
-    std::cout << "k: ";
-    std::cin >> k;
-
-    int res = m.minOperations(nums, k);
-    std::cout << "Result: " << res << '\n';
-}
-
 static ListNode* buildListFromInput(int len) {
     if (len <= 0) return nullptr;
 
@@ -2836,5 +2799,17 @@ void Menu::menuNumberOfSteps() {
     std::cin >> num;
 
     int res = m.numberOfSteps(num);
+    std::cout << "Result: " << res << '\n';
+}
+
+void Menu::menuNumberOfMatches() {
+    Mate m;
+    int n;
+
+    std::cout << "1688. Count of Matches in Tournament\n";
+    std::cout << "Enter number of teams: ";
+    std::cin >> n;
+
+    int res = m.numberOfMatches(n);
     std::cout << "Result: " << res << '\n';
 }

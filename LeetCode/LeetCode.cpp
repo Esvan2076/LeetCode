@@ -142,9 +142,10 @@ int main()
 	//m.menuRunningSum();
 	//m.menuStableMountains();
 	//m.menuMinOperations();
-	m.menuMinOperations();
-	m.menuSumIndicesWithKSetBits();
-	m.menuNumberOfSteps();
+	//m.menuMinOperations();
+	//m.menuSumIndicesWithKSetBits();
+	//m.menuNumberOfSteps();
+	m.menuNumberOfMatches();
 
 	return 0;
 }

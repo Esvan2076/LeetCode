@@ -2875,66 +2875,105 @@ int Mate::minOperations(std::vector<int>& nums, int k) {
 	return res;
 }
 
-ListNode* Mate::mergeKLists(std::vector<ListNode*>& lists) {
-	using std::vector;
+// First Try 
+//ListNode* Mate::mergeKLists(std::vector<ListNode*>& lists) {
+//	using std::vector;
+//
+//	size_t index = 0;
+//	bool nothing = true;
+//	for (ListNode* curr : lists) {
+//		if (curr) {
+//			nothing = false;
+//			break;
+//		}
+//		++index;
+//	}
+//	if (nothing) {
+//		return nullptr;
+//	}
+//
+//	ListNode* head = lists[index];
+//
+//	for (size_t i = index + 1; i < lists.size(); ++i) {
+//		ListNode* newHead = lists[i];
+//
+//		if (!newHead) continue;
+//
+//		if (newHead->val < head->val) {
+//			std::swap(head, newHead);
+//		}
+//
+//		ListNode* main = head->next;
+//		ListNode* prev = head;
+//		ListNode* secon = newHead;
+//
+//		while (main && secon) {
+//			if (main->val > secon->val) {
+//				prev->next = secon;
+//				prev = secon;
+//				secon = secon->next;
+//				prev->next = main;
+//			}
+//			else {
+//				prev = main;
+//				main = main->next;
+//			}
+//		}
+//
+//		while (secon) {
+//			prev->next = secon;
+//			prev = prev->next;
+//			secon = secon->next;
+//		}
+//	}
+//
+//	return head;
+//}
 
-	size_t index = 0;
-	bool nothing = true;
-	for (ListNode* curr : lists) {
-		if (curr) {
-			nothing = false;
-			break;
+ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+	if (list1 == nullptr) return list2;
+	if (list2 == nullptr) return list1;
+
+	if (list1->val > list2->val) std::swap(list1, list2);
+
+	ListNode* res = list1;
+	ListNode* prev = list1;
+	list1 = list1->next;
+
+	while (list1 && list2) {
+		if (list1->val > list2->val) {
+			prev->next = list2;
+			prev = list2;
+			list2 = list2->next;
+			prev->next = list1;
 		}
-		++index;
+		else {
+			prev = list1;
+			list1 = list1->next;
+		}
 	}
-	if (nothing) {
-		return nullptr;
-	}
 
-	ListNode* head = lists[index];
+	if (list1 == nullptr) prev->next = list2;
 
-	for (size_t i = index + 1; i < lists.size(); ++i) {
-		ListNode* newHead = lists[i];
-
-		if (!newHead) continue;
-
-		if (newHead->val < head->val) {
-			std::swap(head, newHead);
-		}
-
-		ListNode* main = head->next;
-		ListNode* prev = head;
-		ListNode* secon = newHead;
-
-		while (main && secon) {
-			if (main->val > secon->val) {
-				prev->next = secon;
-				prev = secon;
-				secon = secon->next;
-				prev->next = main;
-			}
-			else {
-				prev = main;
-				main = main->next;
-			}
-		}
-
-		while (secon) {
-			prev->next = secon;
-			prev = prev->next;
-			secon = secon->next;
-		}
-	}
-
-	return head;
+	return res;
 }
 
-int Mate::minOperations(std::vector<int>& nums, int k) {
-	int res = 0;
-	for (int n : nums) {
-		if (n < k) res++;
+ListNode* Mate::mergeKLists(std::vector<ListNode*>& lists) {
+	if (lists.empty()) return nullptr;
+
+	size_t k = lists.size();
+	size_t interval = 1;
+
+	while (interval < k) {
+		size_t i = 0;
+		while ((i + interval) < k) {
+			lists[i] = mergeTwoLists(lists[i], lists[i + interval]);
+			i += interval * 2;
+		}
+		interval *= 2;
 	}
-	return res;
+
+	return lists[0];
 }
 
 int Mate::sumIndicesWithKSetBits(std::vector<int>& nums, int k) {
@@ -2962,4 +3001,8 @@ int Mate::numberOfSteps(int num) {
 		++res;
 	}
 	return res;
+}
+
+int Mate::numberOfMatches(int n) {
+	return n - 1;
 }

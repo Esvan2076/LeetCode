@@ -142,9 +142,8 @@ public:
 	void menuGetFinalState();
 	void menuRunningSum();
 	void menuStableMountains();
-	void menuMinOperations();
 	void menuMergeKLists();
-	void menuMinOperations();
 	void menuSumIndicesWithKSetBits();
 	void menuNumberOfSteps();
+	void menuNumberOfMatches();
 };
