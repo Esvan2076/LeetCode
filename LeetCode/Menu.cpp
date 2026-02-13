@@ -2813,3 +2813,36 @@ void Menu::menuNumberOfMatches() {
     int res = m.numberOfMatches(n);
     std::cout << "Result: " << res << '\n';
 }
+
+
+void Menu::menuNumberOfPairs() {
+    Mate m;
+    std::vector<int> nums1, nums2;
+    int n, m_len, x, k;
+
+    std::cout << "3162. Find the Number of Good Pairs I\n";
+
+    std::cout << "How many numbers in nums1: ";
+    std::cin >> n;
+    nums1.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "nums1[" << i << "]: ";
+        std::cin >> x;
+        nums1.push_back(x);
+    }
+
+    std::cout << "How many numbers in nums2: ";
+    std::cin >> m_len;
+    nums2.reserve(m_len);
+    for (int i = 0; i < m_len; ++i) {
+        std::cout << "nums2[" << i << "]: ";
+        std::cin >> x;
+        nums2.push_back(x);
+    }
+
+    std::cout << "Value of k: ";
+    std::cin >> k;
+
+    int res = m.numberOfPairs(nums1, nums2, k);
+    std::cout << "Result: " << res << "\n";
+}

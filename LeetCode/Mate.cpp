@@ -3006,3 +3006,18 @@ int Mate::numberOfSteps(int num) {
 int Mate::numberOfMatches(int n) {
 	return n - 1;
 }
+
+int Mate::numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k) {
+	std::sort(nums2.begin(), nums2.end());
+	for (int& n : nums2) n *= k;
+
+	int res = 0;
+
+	for (int n : nums1) {
+		for (size_t i = 0; i < nums2.size(); ++i) {
+			if (n % nums2[i] == 0) ++res;
+		}
+	}
+
+	return res;
+}

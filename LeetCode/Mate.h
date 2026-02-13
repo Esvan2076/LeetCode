@@ -153,4 +153,5 @@ public:
 	int sumIndicesWithKSetBits(std::vector<int>& nums, int k);
 	int numberOfSteps(int num);
 	int numberOfMatches(int n);
+	int numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k);
 };

@@ -145,7 +145,8 @@ int main()
 	//m.menuMinOperations();
 	//m.menuSumIndicesWithKSetBits();
 	//m.menuNumberOfSteps();
-	m.menuNumberOfMatches();
+	//m.menuNumberOfMatches();
+	m.menuNumberOfPairs();
 
 	return 0;
 }

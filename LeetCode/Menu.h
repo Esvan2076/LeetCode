@@ -146,4 +146,5 @@ public:
 	void menuSumIndicesWithKSetBits();
 	void menuNumberOfSteps();
 	void menuNumberOfMatches();
+	void menuNumberOfPairs();
 };
