@@ -154,4 +154,5 @@ public:
 	int numberOfSteps(int num);
 	int numberOfMatches(int n);
 	int numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k);
+	int prefixCount(std::vector<std::string>& words, std::string pref);
 };

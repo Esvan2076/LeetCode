@@ -2814,7 +2814,6 @@ void Menu::menuNumberOfMatches() {
     std::cout << "Result: " << res << '\n';
 }
 
-
 void Menu::menuNumberOfPairs() {
     Mate m;
     std::vector<int> nums1, nums2;
@@ -2845,4 +2844,29 @@ void Menu::menuNumberOfPairs() {
 
     int res = m.numberOfPairs(nums1, nums2, k);
     std::cout << "Result: " << res << "\n";
+}
+
+void Menu::menuPrefixCount() {
+    Mate m;
+    std::vector<std::string> words;
+    std::string word;
+    std::string pref;
+    int n;
+
+    std::cout << "2185. Counting Words With a Given Prefix\n";
+    std::cout << "How many words: ";
+    std::cin >> n;
+
+    words.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Word " << i + 1 << ": ";
+        std::cin >> word;
+        words.push_back(word);
+    }
+
+    std::cout << "Prefix: ";
+    std::cin >> pref;
+
+    int res = m.prefixCount(words, pref);
+    std::cout << "Result: " << res << '\n';
 }

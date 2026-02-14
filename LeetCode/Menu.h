@@ -147,4 +147,5 @@ public:
 	void menuNumberOfSteps();
 	void menuNumberOfMatches();
 	void menuNumberOfPairs();
+	void menuPrefixCount();
 };

@@ -3021,3 +3021,25 @@ int Mate::numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k)
 
 	return res;
 }
+
+int Mate::prefixCount(std::vector<std::string>& words, std::string pref) {
+	int res = 0;
+	bool hasPrefix;
+
+	for (std::string s : words) {
+		hasPrefix = true;
+
+		if (s.size() < pref.size()) hasPrefix = false;
+
+		for (size_t i = 0; i < pref.size() && hasPrefix; ++i) {
+			if (s[i] != pref[i]) {
+				hasPrefix = false;
+				break;
+			}
+		}
+
+		if (hasPrefix) ++res;
+	}
+
+	return res;
+}
