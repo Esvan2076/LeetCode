@@ -147,7 +147,8 @@ int main()
 	//m.menuNumberOfSteps();
 	//m.menuNumberOfMatches();
 	//m.menuNumberOfPairs();
-	m.menuPrefixCount();
+	//m.menuPrefixCount();
+	m.menuSortPeople();
 
 	return 0;
 }

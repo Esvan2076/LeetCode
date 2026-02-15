@@ -3043,3 +3043,21 @@ int Mate::prefixCount(std::vector<std::string>& words, std::string pref) {
 
 	return res;
 }
+
+std::vector<std::string> Mate::sortPeople(std::vector<std::string>& names, std::vector<int>& heights) {
+	std::vector<size_t> idx(names.size());
+	for (size_t i = 0; i < idx.size(); ++i) idx[i] = i;
+
+	std::sort(idx.begin(), idx.end(), [&](size_t a, size_t b) {
+		return heights[a] > heights[b];
+		});
+
+	std::vector<std::string> res;
+	res.reserve(names.size());
+
+	for (size_t i : idx) {
+		res.push_back(names[i]);
+	}
+
+	return res;
+}

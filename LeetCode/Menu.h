@@ -148,4 +148,5 @@ public:
 	void menuNumberOfMatches();
 	void menuNumberOfPairs();
 	void menuPrefixCount();
+	void menuSortPeople();
 };

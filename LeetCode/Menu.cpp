@@ -2870,3 +2870,39 @@ void Menu::menuPrefixCount() {
     int res = m.prefixCount(words, pref);
     std::cout << "Result: " << res << '\n';
 }
+
+void Menu::menuSortPeople() {
+    Mate m;
+    std::vector<std::string> names;
+    std::vector<int> heights;
+
+    int n;
+    std::cout << "2418. Sort the People\n";
+    std::cout << "How many people: ";
+    std::cin >> n;
+
+    names.reserve(n);
+    heights.reserve(n);
+
+    for (int i = 0; i < n; ++i) {
+        std::string name;
+        int h;
+
+        std::cout << "Name " << i + 1 << ": ";
+        std::cin >> name;
+        names.push_back(name);
+
+        std::cout << "Height " << i + 1 << ": ";
+        std::cin >> h;
+        heights.push_back(h);
+    }
+
+    std::vector<std::string> res = m.sortPeople(names, heights);
+
+    std::cout << "Result: [";
+    for (size_t i = 0; i < res.size(); ++i) {
+        std::cout << res[i];
+        if (i + 1 < res.size()) std::cout << ",";
+    }
+    std::cout << "]\n";
+}
