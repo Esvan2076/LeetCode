@@ -149,4 +149,8 @@ public:
 	void menuNumberOfPairs();
 	void menuPrefixCount();
 	void menuSortPeople();
+	void menuArrayStringsAreEqual();
+	void menuDecompressRLElist();
+	void menuRestoreString();
+	void menuCountBits();
 };

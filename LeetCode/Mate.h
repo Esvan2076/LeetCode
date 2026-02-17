@@ -156,4 +156,8 @@ public:
 	int numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k);
 	int prefixCount(std::vector<std::string>& words, std::string pref);
 	std::vector<std::string> sortPeople(std::vector<std::string>& names, std::vector<int>& heights);
+	bool arrayStringsAreEqual(std::vector<std::string>& word1, std::vector<std::string>& word2);
+	std::vector<int> decompressRLElist(std::vector<int>& nums);
+	std::string restoreString(std::string s, std::vector<int>& indices);
+	std::vector<int> countBits(int n);
 };

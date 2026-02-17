@@ -3061,3 +3061,90 @@ std::vector<std::string> Mate::sortPeople(std::vector<std::string>& names, std::
 
 	return res;
 }
+
+//1662
+
+bool Mate::arrayStringsAreEqual(std::vector<std::string>& word1, std::vector<std::string>& word2) {
+	bool res = true;
+
+	size_t p1 = 0, p2 = 0;
+	size_t idx1 = 0, idx2 = 0;
+
+	size_t s1 = 0;
+	for (std::string s : word1) s1 += s.size();
+
+	size_t s2 = 0;
+	for (std::string s : word2) s2 += s.size();
+
+	if (s2 != s1) return false;
+
+	while (p1 < word1.size() && p2 < word2.size()) {
+
+		if (word1[p1][idx1] != word2[p2][idx2]) {
+			res = false;
+			break;
+		}
+
+		++idx1;
+		++idx2;
+
+		if (idx1 >= word1[p1].size()) {
+			idx1 = 0;
+			++p1;
+		}
+
+		if (idx2 >= word2[p2].size()) {
+			idx2 = 0;
+			++p2;
+		}
+	}
+
+	return res;
+}
+
+//1313
+
+std::vector<int> Mate::decompressRLElist(std::vector<int>& nums) {
+	std::vector<int> res;
+
+	for (size_t i = 0; i < nums.size() - 1; i += 2) {
+		res.insert(res.end(), nums[i], nums[i + 1]);
+	}
+
+	return res;
+}
+
+//1528
+
+std::string Mate::restoreString(std::string s, std::vector<int>& indices) {
+	std::string res;
+	res.resize(s.size());
+
+	size_t j = 0;
+	for (size_t i : indices) {
+		res[i] = s[j];
+		++j;
+	}
+
+	return res;
+}
+
+//338
+
+std::vector<int> Mate::countBits(int n) {
+	std::vector<int> res;
+	res.reserve(n);
+
+	for (size_t i = 0; i <= n; ++i) {
+		int temp = 0;
+		size_t h = i;
+		while (h != 0) {
+			temp += h % 2;
+			h /= 2;
+		}
+		res.push_back(temp);
+	}
+
+	return res;
+}
+

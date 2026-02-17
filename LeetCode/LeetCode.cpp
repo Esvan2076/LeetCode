@@ -148,7 +148,11 @@ int main()
 	//m.menuNumberOfMatches();
 	//m.menuNumberOfPairs();
 	//m.menuPrefixCount();
-	m.menuSortPeople();
+	//m.menuSortPeople();
+	//m.menuArrayStringsAreEqual();
+	//m.menuDecompressRLElist();
+	//m.menuRestoreString();
+	m.menuCountBits();
 
 	return 0;
 }

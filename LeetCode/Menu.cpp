@@ -2906,3 +2906,90 @@ void Menu::menuSortPeople() {
     }
     std::cout << "]\n";
 }
+
+//1662
+void Menu::menuArrayStringsAreEqual() {
+    Mate m;
+    int n1, n2;
+    std::string w;
+
+    std::vector<std::string> word1, word2;
+
+    std::cout << "1662. Check If Two String Arrays are Equivalent\n";
+
+    std::cout << "Size word1: ";
+    std::cin >> n1;
+    word1.reserve(n1);
+    for (int i = 0; i < n1; ++i) {
+        std::cin >> w;
+        word1.push_back(w);
+    }
+
+    std::cout << "Size word2: ";
+    std::cin >> n2;
+    word2.reserve(n2);
+    for (int i = 0; i < n2; ++i) {
+        std::cin >> w;
+        word2.push_back(w);
+    }
+
+    std::cout << "Result: " << (m.arrayStringsAreEqual(word1, word2) ? "true" : "false") << "\n";
+}
+
+//1313
+void Menu::menuDecompressRLElist() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums;
+
+    std::cout << "1313. Decompress Run-Length Encoded List\n";
+    std::cout << "Size: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::vector<int> res = m.decompressRLElist(nums);
+    printVector(res);
+    std::cout << "\n";
+}
+
+//1528
+void Menu::menuRestoreString() {
+    Mate m;
+    std::string s;
+    int n, x;
+    std::vector<int> indices;
+
+    std::cout << "1528. Shuffle String\n";
+    std::cout << "String: ";
+    std::cin >> s;
+
+    n = s.size();
+    indices.reserve(n);
+
+    std::cout << "Indices:\n";
+    for (int i = 0; i < n; ++i) {
+        std::cin >> x;
+        indices.push_back(x);
+    }
+
+    std::cout << "Result: " << m.restoreString(s, indices) << "\n";
+}
+
+//338
+void Menu::menuCountBits() {
+    Mate m;
+    int n;
+
+    std::cout << "338. Counting Bits\n";
+    std::cout << "n: ";
+    std::cin >> n;
+
+    std::vector<int> res = m.countBits(n);
+    printVector(res);
+    std::cout << "\n";
+}
