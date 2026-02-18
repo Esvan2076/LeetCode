@@ -154,4 +154,5 @@ public:
 	void menuRestoreString();
 	void menuCountBits();
 	void menuEarliestTime();
+	void menuIsBalanced();
 };

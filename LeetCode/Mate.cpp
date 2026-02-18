@@ -3161,3 +3161,19 @@ int Mate::earliestTime(std::vector<std::vector<int>>& tasks) {
 
 	return res;
 }
+
+//3340
+
+bool Mate::isBalanced(std::string num) {
+	int even = 0, odd = 0;
+
+	for (size_t i = 0; i < num.size(); i += 2) {
+		even += (num[i] - 48);
+	}
+
+	for (size_t i = 1; i < num.size(); i += 2) {
+		odd += (num[i] - 48);
+	}
+
+	return even == odd;
+}

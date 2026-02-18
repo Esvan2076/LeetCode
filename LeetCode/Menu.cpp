@@ -3019,3 +3019,16 @@ void Menu::menuEarliestTime() {
     int res = m.earliestTime(tasks);
     std::cout << "Result: " << res << "\n";
 }
+
+void Menu::menuIsBalanced() {
+    Mate m;
+    std::string num;
+
+    std::cout << "3340. Check Balanced String\n";
+    std::cout << "Enter numeric string: ";
+    std::cin >> num;
+
+    bool res = m.isBalanced(num);
+
+    std::cout << "Result: " << (res ? "true" : "false") << "\n";
+}

@@ -153,7 +153,8 @@ int main()
 	//m.menuDecompressRLElist();
 	//m.menuRestoreString();
 	//m.menuCountBits();
-	m.menuEarliestTime();
+	//m.menuEarliestTime();
+	m.menuIsBalanced();
 
 	return 0;
 }
