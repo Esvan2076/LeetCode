@@ -160,4 +160,5 @@ public:
 	std::vector<int> decompressRLElist(std::vector<int>& nums);
 	std::string restoreString(std::string s, std::vector<int>& indices);
 	std::vector<int> countBits(int n);
+	int earliestTime(std::vector<std::vector<int>>& tasks);
 };

@@ -153,4 +153,5 @@ public:
 	void menuDecompressRLElist();
 	void menuRestoreString();
 	void menuCountBits();
+	void menuEarliestTime();
 };

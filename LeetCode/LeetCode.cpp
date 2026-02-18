@@ -152,7 +152,8 @@ int main()
 	//m.menuArrayStringsAreEqual();
 	//m.menuDecompressRLElist();
 	//m.menuRestoreString();
-	m.menuCountBits();
+	//m.menuCountBits();
+	m.menuEarliestTime();
 
 	return 0;
 }

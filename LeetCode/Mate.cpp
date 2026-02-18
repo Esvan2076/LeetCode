@@ -3148,3 +3148,16 @@ std::vector<int> Mate::countBits(int n) {
 	return res;
 }
 
+//3683
+
+int Mate::earliestTime(std::vector<std::vector<int>>& tasks) {
+	int res = INT_MAX;
+	int finish;
+
+	for (std::vector<int>& t : tasks) {
+		finish = t[0] + t[1];
+		if (finish < res) res = finish;
+	}
+
+	return res;
+}

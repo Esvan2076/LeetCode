@@ -2993,3 +2993,29 @@ void Menu::menuCountBits() {
     printVector(res);
     std::cout << "\n";
 }
+
+void Menu::menuEarliestTime() {
+    Mate m;
+    int n;
+    int s, t;
+
+    std::vector<std::vector<int>> tasks;
+
+    std::cout << "3683. Earliest Time to Finish One Task\n";
+    std::cout << "How many tasks: ";
+    std::cin >> n;
+
+    tasks.reserve(n);
+
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Task " << i + 1 << " start time: ";
+        std::cin >> s;
+        std::cout << "Task " << i + 1 << " duration: ";
+        std::cin >> t;
+
+        tasks.push_back({ s, t });
+    }
+
+    int res = m.earliestTime(tasks);
+    std::cout << "Result: " << res << "\n";
+}
