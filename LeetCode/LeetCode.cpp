@@ -154,7 +154,10 @@ int main()
 	//m.menuRestoreString();
 	//m.menuCountBits();
 	//m.menuEarliestTime();
-	m.menuIsBalanced();
+	//m.menuIsBalanced();
+	//m.menuDistributeCandies();
+	//m.menuIsThree();
+	m.menuFindMaxConsecutiveOnes();
 
 	return 0;
 }

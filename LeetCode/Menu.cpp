@@ -3032,3 +3032,57 @@ void Menu::menuIsBalanced() {
 
     std::cout << "Result: " << (res ? "true" : "false") << "\n";
 }
+
+static void printBool(bool v) {
+    std::cout << (v ? "true" : "false") << "\n";
+}
+
+//575
+void Menu::menuDistributeCandies() {
+    Mate m;
+    std::vector<int> candyType;
+    int n, x;
+
+    std::cout << "575. Distribute Candies\n";
+    std::cout << "How many candies: ";
+    std::cin >> n;
+
+    candyType.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cin >> x;
+        candyType.push_back(x);
+    }
+
+    std::cout << "Result: " << m.distributeCandies(candyType) << "\n";
+}
+
+//1952
+void Menu::menuIsThree() {
+    Mate m;
+    int n;
+
+    std::cout << "1952. Three Divisors\n";
+    std::cout << "Enter number: ";
+    std::cin >> n;
+
+    printBool(m.isThree(n));
+}
+
+//485
+void Menu::menuFindMaxConsecutiveOnes() {
+    Mate m;
+    std::vector<int> nums;
+    int n, x;
+
+    std::cout << "485. Max Consecutive Ones\n";
+    std::cout << "How many elements: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::cout << "Result: " << m.findMaxConsecutiveOnes(nums) << "\n";
+}

@@ -155,4 +155,7 @@ public:
 	void menuCountBits();
 	void menuEarliestTime();
 	void menuIsBalanced();
+	void menuDistributeCandies();
+	void menuIsThree();
+	void menuFindMaxConsecutiveOnes();
 };

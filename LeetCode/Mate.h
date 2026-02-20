@@ -162,4 +162,7 @@ public:
 	std::vector<int> countBits(int n);
 	int earliestTime(std::vector<std::vector<int>>& tasks);
 	bool isBalanced(std::string num);
+	int distributeCandies(std::vector<int>& candyType);
+	bool isThree(int n);
+	int findMaxConsecutiveOnes(std::vector<int>& nums);
 };

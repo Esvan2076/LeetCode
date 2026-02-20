@@ -3177,3 +3177,49 @@ bool Mate::isBalanced(std::string num) {
 
 	return even == odd;
 }
+
+//575
+
+int Mate::distributeCandies(std::vector<int>& candyType) {
+	std::unordered_set<int> map;
+	map.reserve(candyType.size());
+
+	for (int candy : candyType) {
+		if (!map.contains(candy)) map.insert(candy);
+	}
+
+	int diffCandies = map.size();
+	int n = candyType.size() / 2;
+
+	if (n > diffCandies) return diffCandies;
+	else return n;
+}
+
+//1952
+
+bool Mate::isThree(int n) {
+	int divisors = 2;
+	int s = n / 2;
+
+	for (int i = 2; i <= s; ++i) {
+		if (n % i == 0) ++divisors;
+	}
+
+	return divisors == 3;
+}
+
+//485
+
+int Mate::findMaxConsecutiveOnes(std::vector<int>& nums) {
+	int best = 0;
+	int curr = 0;
+
+	for (bool n : nums) {
+		if (n) curr++;
+		else curr = 0;
+
+		best = std::max(best, curr);
+	}
+
+	return best;
+}
