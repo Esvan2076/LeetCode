@@ -158,4 +158,5 @@ public:
 	void menuDistributeCandies();
 	void menuIsThree();
 	void menuFindMaxConsecutiveOnes();
+	void menuTrailingZeroes();
 };

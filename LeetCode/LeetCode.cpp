@@ -157,7 +157,8 @@ int main()
 	//m.menuIsBalanced();
 	//m.menuDistributeCandies();
 	//m.menuIsThree();
-	m.menuFindMaxConsecutiveOnes();
+	//m.menuFindMaxConsecutiveOnes();
+	m.menuTrailingZeroes();
 
 	return 0;
 }

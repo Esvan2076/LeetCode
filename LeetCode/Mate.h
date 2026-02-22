@@ -165,4 +165,5 @@ public:
 	int distributeCandies(std::vector<int>& candyType);
 	bool isThree(int n);
 	int findMaxConsecutiveOnes(std::vector<int>& nums);
+	int trailingZeroes(int n);
 };

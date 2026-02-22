@@ -3086,3 +3086,14 @@ void Menu::menuFindMaxConsecutiveOnes() {
 
     std::cout << "Result: " << m.findMaxConsecutiveOnes(nums) << "\n";
 }
+
+void Menu::menuTrailingZeroes() {
+    Mate m;
+    int n;
+
+    std::cout << "172. Factorial Trailing Zeroes\n";
+    std::cout << "Enter n: ";
+    std::cin >> n;
+
+    std::cout << "Result: " << m.trailingZeroes(n) << "\n";
+}

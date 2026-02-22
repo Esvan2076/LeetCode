@@ -3223,3 +3223,22 @@ int Mate::findMaxConsecutiveOnes(std::vector<int>& nums) {
 
 	return best;
 }
+
+//172
+
+int Mate::trailingZeroes(int n) {
+	int fives = 0;
+
+	for (int i = 1; i <= n; ++i) {
+		int temp = i;
+		while (temp > 0) {
+			if (temp % 5 == 0) {
+				temp /= 5;
+				++fives;
+			}
+			else break;
+		}
+	}
+
+	return fives;
+}
