@@ -166,4 +166,5 @@ public:
 	bool isThree(int n);
 	int findMaxConsecutiveOnes(std::vector<int>& nums);
 	int trailingZeroes(int n);
+	void sortColors(std::vector<int>& nums);
 };

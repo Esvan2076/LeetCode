@@ -3097,3 +3097,25 @@ void Menu::menuTrailingZeroes() {
 
     std::cout << "Result: " << m.trailingZeroes(n) << "\n";
 }
+
+void Menu::menuSortColors() {
+    Mate m;
+    std::vector<int> nums;
+    int n, x;
+
+    std::cout << "75. Sort Colors\n";
+    std::cout << "How many elements: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    m.sortColors(nums);
+
+    std::cout << "Result: ";
+    printVector(nums);
+    std::cout << "\n";
+}

@@ -159,4 +159,5 @@ public:
 	void menuIsThree();
 	void menuFindMaxConsecutiveOnes();
 	void menuTrailingZeroes();
+	void menuSortColors();
 };

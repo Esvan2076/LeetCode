@@ -158,7 +158,8 @@ int main()
 	//m.menuDistributeCandies();
 	//m.menuIsThree();
 	//m.menuFindMaxConsecutiveOnes();
-	m.menuTrailingZeroes();
+	//m.menuTrailingZeroes();
+	m.menuSortColors();
 
 	return 0;
 }

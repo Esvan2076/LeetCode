@@ -3242,3 +3242,22 @@ int Mate::trailingZeroes(int n) {
 
 	return fives;
 }
+
+//75
+
+void Mate::sortColors(std::vector<int>& nums) {
+	std::vector<int> buckets(3, 0);
+
+	for (int n : nums) {
+		++buckets[n];
+	}
+
+	int index = 0;
+
+	for (int color = 0; color < 3; ++color) {
+		while (buckets[color] > 0) {
+			nums[index++] = color;
+			--buckets[color];
+		}
+	}
+}
