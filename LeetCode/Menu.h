@@ -160,4 +160,6 @@ public:
 	void menuFindMaxConsecutiveOnes();
 	void menuTrailingZeroes();
 	void menuSortColors();
+	void menuSearchMatrix();
+	void menuBinarySearch();
 };

@@ -3119,3 +3119,48 @@ void Menu::menuSortColors() {
     printVector(nums);
     std::cout << "\n";
 }
+
+//74
+void Menu::menuSearchMatrix() {
+    Mate m;
+    int rows, cols, x, target;
+
+    std::cout << "74. Search a 2D Matrix\n";
+    std::cout << "Rows: ";
+    std::cin >> rows;
+    std::cout << "Cols: ";
+    std::cin >> cols;
+
+    std::vector<std::vector<int>> matrix(rows, std::vector<int>(cols));
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cin >> matrix[i][j];
+        }
+    }
+
+    std::cout << "Target: ";
+    std::cin >> target;
+
+    printBool(m.searchMatrix(matrix, target));
+}
+
+//704
+void Menu::menuBinarySearch() {
+    Mate m;
+    int n, x, target;
+
+    std::cout << "704. Binary Search\n";
+    std::cout << "Size: ";
+    std::cin >> n;
+
+    std::vector<int> nums(n);
+    for (int i = 0; i < n; ++i) {
+        std::cin >> nums[i];
+    }
+
+    std::cout << "Target: ";
+    std::cin >> target;
+
+    std::cout << "Result: " << m.binarySearch(nums, target) << "\n";
+}

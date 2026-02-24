@@ -3261,3 +3261,52 @@ void Mate::sortColors(std::vector<int>& nums) {
 		}
 	}
 }
+
+//74
+
+bool Mate::searchMatrix(std::vector<std::vector<int>>& matrix, int target) {
+	int left = 0;
+	int right = (matrix.size() * matrix[0].size()) - 1;
+	int rowSize = matrix[0].size();
+
+	while (left <= right) {
+		int mid = (left + right) / 2;
+		int i = mid / rowSize;
+		int j = mid % rowSize;
+
+		if (matrix[i][j] > target) {
+			right = mid - 1;
+		}
+		else if (matrix[i][j] < target) {
+			left = mid + 1;
+		}
+		else {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+//704
+
+int Mate::binarySearch(std::vector<int>& nums, int target) {
+	int left = 0;
+	int right = nums.size() - 1;
+
+	while (left <= right) {
+		int mid = (left + right) / 2;
+
+		if (nums[mid] > target) {
+			right = mid - 1;
+		}
+		else if (nums[mid] < target) {
+			left = mid + 1;
+		}
+		else {
+			return mid;
+		}
+	}
+
+	return -1;
+}

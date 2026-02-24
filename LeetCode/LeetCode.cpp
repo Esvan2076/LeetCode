@@ -159,7 +159,9 @@ int main()
 	//m.menuIsThree();
 	//m.menuFindMaxConsecutiveOnes();
 	//m.menuTrailingZeroes();
-	m.menuSortColors();
+	//m.menuSortColors();
+	m.menuSearchMatrix();
+	m.menuBinarySearch();
 
 	return 0;
 }

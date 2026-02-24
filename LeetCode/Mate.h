@@ -167,4 +167,6 @@ public:
 	int findMaxConsecutiveOnes(std::vector<int>& nums);
 	int trailingZeroes(int n);
 	void sortColors(std::vector<int>& nums);
+	bool searchMatrix(std::vector<std::vector<int>>& matrix, int target);
+	int binarySearch(std::vector<int>& nums, int target);
 };
