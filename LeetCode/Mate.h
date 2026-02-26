@@ -169,4 +169,5 @@ public:
 	void sortColors(std::vector<int>& nums);
 	bool searchMatrix(std::vector<std::vector<int>>& matrix, int target);
 	int binarySearch(std::vector<int>& nums, int target);
+	int diagonalSum(std::vector<std::vector<int>>& mat);
 };

@@ -162,4 +162,5 @@ public:
 	void menuSortColors();
 	void menuSearchMatrix();
 	void menuBinarySearch();
+	void menuDiagonalSum();
 };

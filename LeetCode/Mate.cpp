@@ -3310,3 +3310,26 @@ int Mate::binarySearch(std::vector<int>& nums, int target) {
 
 	return -1;
 }
+
+// 1572
+
+int Mate::diagonalSum(std::vector<std::vector<int>>& mat) {
+	int res = 0;
+
+	size_t n = mat.size();
+
+	for (size_t i = 0; i < n; ++i) {
+		res += mat[i][i];
+	}
+
+	for (size_t i = 0, j = n - 1; i < n; ++i, --j) {
+		res += mat[i][j];
+	}
+
+	if (n % 2 != 0) {
+		size_t mid = n / 2;
+		res -= mat[mid][mid];
+	}
+
+	return res;
+}

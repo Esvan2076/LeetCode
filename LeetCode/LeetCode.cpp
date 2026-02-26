@@ -160,8 +160,9 @@ int main()
 	//m.menuFindMaxConsecutiveOnes();
 	//m.menuTrailingZeroes();
 	//m.menuSortColors();
-	m.menuSearchMatrix();
-	m.menuBinarySearch();
+	//m.menuSearchMatrix();
+	//m.menuBinarySearch();
+	m.menuDiagonalSum();
 
 	return 0;
 }

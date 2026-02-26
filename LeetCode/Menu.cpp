@@ -3164,3 +3164,25 @@ void Menu::menuBinarySearch() {
 
     std::cout << "Result: " << m.binarySearch(nums, target) << "\n";
 }
+
+void Menu::menuDiagonalSum() {
+    Mate m;
+
+    int n;
+    std::cout << "1572. Matrix Diagonal Sum\n";
+    std::cout << "Matrix size (n x n): ";
+    std::cin >> n;
+
+    std::vector<std::vector<int>> mat(n, std::vector<int>(n));
+
+    std::cout << "Enter matrix values:\n";
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            std::cin >> mat[i][j];
+        }
+    }
+
+    int result = m.diagonalSum(mat);
+
+    std::cout << "Diagonal Sum: " << result << "\n";
+}
