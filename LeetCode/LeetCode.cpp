@@ -162,7 +162,13 @@ int main()
 	//m.menuSortColors();
 	//m.menuSearchMatrix();
 	//m.menuBinarySearch();
-	m.menuDiagonalSum();
+	//m.menuDiagonalSum();
+	//m.menuCountPoints();
+	//m.menuMissingNumber();
+	//m.menuKWeakestRows();
+	//m.menuMaximumCount();
+	//m.menuIntersection();
+	m.menuTargetIndices();
 
 	return 0;
 }

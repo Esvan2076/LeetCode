@@ -170,4 +170,10 @@ public:
 	bool searchMatrix(std::vector<std::vector<int>>& matrix, int target);
 	int binarySearch(std::vector<int>& nums, int target);
 	int diagonalSum(std::vector<std::vector<int>>& mat);
+	std::vector<int> countPoints(std::vector<std::vector<int>>& points, std::vector<std::vector<int>>& queries);
+	int missingNumber(std::vector<int>& nums);
+	std::vector<int> kWeakestRows(std::vector<std::vector<int>>& mat, int k);
+	int maximumCount(std::vector<int>& nums);
+	std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2);
+	std::vector<int> targetIndices(std::vector<int>& nums, int target);
 };

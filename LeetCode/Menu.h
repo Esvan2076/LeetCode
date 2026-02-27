@@ -163,4 +163,10 @@ public:
 	void menuSearchMatrix();
 	void menuBinarySearch();
 	void menuDiagonalSum();
+	void menuCountPoints();
+	void menuMissingNumber();
+	void menuKWeakestRows();
+	void menuMaximumCount();
+	void menuIntersection();
+	void menuTargetIndices();
 };

@@ -3186,3 +3186,166 @@ void Menu::menuDiagonalSum() {
 
     std::cout << "Diagonal Sum: " << result << "\n";
 }
+
+void Menu::menuCountPoints() {
+    Mate m;
+    int p = 0, q = 0;
+    int x = 0, y = 0, r = 0;
+
+    std::vector<std::vector<int>> points;
+    std::vector<std::vector<int>> queries;
+
+    std::cout << "1828. Queries on Number of Points Inside a Circle\n";
+    std::cout << "How many points: ";
+    std::cin >> p;
+
+    points.reserve(p);
+    for (int i = 0; i < p; ++i) {
+        std::cout << "Point " << i + 1 << " (x y): ";
+        std::cin >> x >> y;
+        points.push_back({ x, y });
+    }
+
+    std::cout << "How many queries: ";
+    std::cin >> q;
+
+    queries.reserve(q);
+    for (int i = 0; i < q; ++i) {
+        std::cout << "Query " << i + 1 << " (x y r): ";
+        std::cin >> x >> y >> r;
+        queries.push_back({ x, y, r });
+    }
+
+    std::vector<int> res = m.countPoints(points, queries);
+    std::cout << "Result: ";
+    printVector(res);
+    std::cout << std::endl;
+}
+
+void Menu::menuMissingNumber() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "268. Missing Number\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.missingNumber(nums);
+    std::cout << "Result: " << res << std::endl;
+}
+
+void Menu::menuKWeakestRows() {
+    Mate m;
+    int rows = 0, cols = 0, k = 0;
+    int x = 0;
+
+    std::vector<std::vector<int>> mat;
+
+    std::cout << "1337. The K Weakest Rows in a Matrix\n";
+    std::cout << "Rows: ";
+    std::cin >> rows;
+    std::cout << "Cols: ";
+    std::cin >> cols;
+
+    mat.resize(rows, std::vector<int>(cols, 0));
+    for (int i = 0; i < rows; ++i) {
+        std::cout << "Row " << i + 1 << " (" << cols << " values 0/1):\n";
+        for (int j = 0; j < cols; ++j) {
+            std::cin >> x;
+            mat[i][j] = x;
+        }
+    }
+
+    std::cout << "k: ";
+    std::cin >> k;
+
+    std::vector<int> res = m.kWeakestRows(mat, k);
+    std::cout << "Result: ";
+    printVector(res);
+    std::cout << std::endl;
+}
+
+void Menu::menuMaximumCount() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "2529. Maximum Count of Positive Integer and Negative Integer\n";
+    std::cout << "How many numbers (sorted): ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.maximumCount(nums);
+    std::cout << "Result: " << res << std::endl;
+}
+
+void Menu::menuIntersection() {
+    Mate m;
+    std::vector<int> nums1, nums2;
+    int n1 = 0, n2 = 0, x = 0;
+
+    std::cout << "349. Intersection of Two Arrays\n";
+    std::cout << "How many numbers in nums1: ";
+    std::cin >> n1;
+
+    nums1.reserve(n1);
+    for (int i = 0; i < n1; ++i) {
+        std::cout << "nums1[" << i << "]: ";
+        std::cin >> x;
+        nums1.push_back(x);
+    }
+
+    std::cout << "How many numbers in nums2: ";
+    std::cin >> n2;
+
+    nums2.reserve(n2);
+    for (int i = 0; i < n2; ++i) {
+        std::cout << "nums2[" << i << "]: ";
+        std::cin >> x;
+        nums2.push_back(x);
+    }
+
+    std::vector<int> res = m.intersection(nums1, nums2);
+    std::cout << "Result: ";
+    printVector(res);
+    std::cout << std::endl;
+}
+
+void Menu::menuTargetIndices() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0, target = 0;
+
+    std::cout << "2089. Find Target Indices After Sorting Array\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::cout << "Target: ";
+    std::cin >> target;
+
+    std::vector<int> res = m.targetIndices(nums, target);
+    std::cout << "Result: ";
+    printVector(res);
+    std::cout << std::endl;
+}

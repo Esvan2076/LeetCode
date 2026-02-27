@@ -3333,3 +3333,137 @@ int Mate::diagonalSum(std::vector<std::vector<int>>& mat) {
 
 	return res;
 }
+
+std::vector<int> Mate::countPoints(std::vector<std::vector<int>>& points, std::vector<std::vector<int>>& queries) {
+	std::vector<int> res(queries.size(), 0);
+
+	size_t i = 0;
+	for (const std::vector<int>& circle : queries) {
+		int x = circle[0], y = circle[1], r = circle[2];
+
+		for (const std::vector<int>& point : points) {
+			double d = std::sqrt(
+				std::pow(x - point[0], 2) +
+				std::pow(y - point[1], 2)
+			);
+
+			if (d <= r) ++res[i];
+		}
+
+		++i;
+	}
+
+	return res;
+}
+
+int Mate::missingNumber(std::vector<int>& nums) {
+	std::sort(nums.begin(), nums.end());
+
+	int last = 0;
+	for (int n : nums) {
+		if (n - last > 1) {
+			return last + 1;
+		}
+		last = n;
+	}
+
+	if (nums[nums.size() - 1] == nums.size()) {
+		return 0;
+	}
+
+	return nums.size();
+}
+
+std::vector<int> Mate::kWeakestRows(std::vector<std::vector<int>>& mat, int k) {
+	std::vector<int> rows;
+	rows.reserve(mat.size());
+
+	size_t soldiers;
+	for (std::vector<int>& row : mat) {
+		soldiers = 0;
+		for (int n : row) {
+			if (n == 0) break;
+			else ++soldiers;
+		}
+		rows.push_back(soldiers);
+	}
+
+	std::vector<int> res;
+	res.reserve(k);
+
+	std::unordered_set<int> skips;
+	skips.reserve(k);
+
+	int best;
+	int idxBest = 0;
+
+	while (res.size() < k) {
+		best = 200;
+		for (size_t i = 0; i < rows.size(); ++i) {
+			if (skips.contains(i)) continue;
+			if (best > std::min(best, rows[i])) {
+				best = rows[i];
+				idxBest = i;
+			}
+		}
+		skips.insert(idxBest);
+		res.push_back(idxBest);
+	}
+
+	return res;
+}
+
+int Mate::maximumCount(std::vector<int>& nums) {
+	short pos = 0, neg = 0;
+
+	for (short n : nums) {
+		if (n < 0) ++neg;
+		else if (n > 0) ++pos;
+	}
+
+	return std::max(neg, pos);
+}
+
+std::vector<int> Mate::intersection(std::vector<int>& nums1, std::vector<int>& nums2) {
+	std::unordered_set<int> set1, set2;
+
+	for (int n : nums1) {
+		set1.insert(n);
+	}
+
+	for (int n : nums2) {
+		set2.insert(n);
+	}
+
+	std::vector<int> res;
+
+	for (int n : set1) {
+		if (set2.contains(n)) res.push_back(n);
+	}
+
+	return res;
+}
+
+std::vector<int> Mate::targetIndices(std::vector<int>& nums, int target) {
+	int targets = 0, lessThan = 0;
+
+	// D  <- en tu screenshot aparece una 'D' sola. Así como está NO compila, por eso la dejé como comentario.
+
+	for (int n : nums) {
+		if (n == target) {
+			++targets;
+		}
+		else if (n < target) {
+			++lessThan;
+		}
+	}
+
+	std::vector<int> res;
+	res.reserve(targets);
+
+	for (size_t i = lessThan; i < (lessThan + targets); ++i) {
+		res.push_back(i);
+	}
+
+	return res;
+}
