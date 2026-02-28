@@ -3467,3 +3467,20 @@ std::vector<int> Mate::targetIndices(std::vector<int>& nums, int target) {
 
 	return res;
 }
+
+int Mate::sumOfVariableLengthSubarrays(std::vector<int>& nums) {
+	std::vector<int> prefix(nums.size() + 1, 0);
+
+	for (size_t i = 0; i < nums.size(); ++i) {
+		prefix[i + 1] = prefix[i] + nums[i];
+	}
+
+	int total = 0;
+	for (size_t i = 0; i < nums.size(); ++i) {
+		int start = static_cast<int>(i) - nums[i];
+		if (start < 0) start = 0;
+		total += prefix[i + 1] - prefix[start];
+	}
+
+	return total;
+}

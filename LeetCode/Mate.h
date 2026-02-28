@@ -176,4 +176,5 @@ public:
 	int maximumCount(std::vector<int>& nums);
 	std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2);
 	std::vector<int> targetIndices(std::vector<int>& nums, int target);
+	int sumOfVariableLengthSubarrays(std::vector<int>& nums);
 };

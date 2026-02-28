@@ -169,4 +169,5 @@ public:
 	void menuMaximumCount();
 	void menuIntersection();
 	void menuTargetIndices();
+	void menuSumOfVariableLengthSubarrays();
 };

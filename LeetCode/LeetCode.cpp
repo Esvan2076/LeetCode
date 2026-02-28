@@ -168,7 +168,8 @@ int main()
 	//m.menuKWeakestRows();
 	//m.menuMaximumCount();
 	//m.menuIntersection();
-	m.menuTargetIndices();
+	//m.menuTargetIndices();
+	m.menuSumOfVariableLengthSubarrays();
 
 	return 0;
 }

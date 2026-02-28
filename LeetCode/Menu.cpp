@@ -3349,3 +3349,23 @@ void Menu::menuTargetIndices() {
     printVector(res);
     std::cout << std::endl;
 }
+
+void Menu::menuSumOfVariableLengthSubarrays() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "3427. Sum of Variable Length Subarrays\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.sumOfVariableLengthSubarrays(nums);
+    std::cout << "Result: " << res << std::endl;
+}
