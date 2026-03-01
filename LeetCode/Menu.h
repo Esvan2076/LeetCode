@@ -171,4 +171,5 @@ public:
 	void menuTargetIndices();
 	void menuSumOfVariableLengthSubarrays();
 	void menuSumOfUnique();
+	void menuCountSeniors();
 };

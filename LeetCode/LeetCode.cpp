@@ -170,7 +170,8 @@ int main()
 	//m.menuIntersection();
 	//m.menuTargetIndices();
 	//m.menuSumOfVariableLengthSubarrays();
-	m.menuSumOfUnique();
+	//m.menuSumOfUnique();
+	m.menuCountSeniors();
 
 	return 0;
 }

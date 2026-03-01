@@ -3503,3 +3503,19 @@ int Mate::sumOfUnique(std::vector<int>& nums) {
 
 	return sum;
 }
+
+int Mate::countSeniors(std::vector<std::string>& details) {
+	int seniors = 0;
+
+	int num;
+
+	for (const std::string& s : details) {
+		num = 0;
+		num += (s[11] - 48) * 10;
+		num += (s[12] - 48);
+
+		if (num > 60) ++seniors;
+	}
+
+	return seniors;
+}

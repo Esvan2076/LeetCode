@@ -3389,3 +3389,25 @@ void Menu::menuSumOfUnique() {
     int res = m.sumOfUnique(nums);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuCountSeniors() {
+    Mate m;
+    int n = 0;
+    std::string s;
+
+    std::vector<std::string> details;
+
+    std::cout << "2678. Number of Senior Citizens\n";
+    std::cout << "How many passengers: ";
+    std::cin >> n;
+
+    details.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Detail " << i + 1 << ": ";
+        std::cin >> s;
+        details.push_back(s);
+    }
+
+    int res = m.countSeniors(details);
+    std::cout << "Result: " << res << std::endl;
+}

@@ -178,4 +178,5 @@ public:
 	std::vector<int> targetIndices(std::vector<int>& nums, int target);
 	int sumOfVariableLengthSubarrays(std::vector<int>& nums);
 	int sumOfUnique(std::vector<int>& nums);
+	int countSeniors(std::vector<std::string>& details);
 };
