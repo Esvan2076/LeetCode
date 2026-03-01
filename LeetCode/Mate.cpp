@@ -3484,3 +3484,22 @@ int Mate::sumOfVariableLengthSubarrays(std::vector<int>& nums) {
 
 	return total;
 }
+
+int Mate::sumOfUnique(std::vector<int>& nums) {
+	std::unordered_map<int, int> map;
+	map.reserve(nums.size());
+
+	int sum = 0;
+
+	for (int n : nums) {
+		++map[n];
+	}
+
+	for (const auto& par : map) {
+		if (par.second == 1) {
+			sum += par.first;
+		}
+	}
+
+	return sum;
+}

@@ -170,4 +170,5 @@ public:
 	void menuIntersection();
 	void menuTargetIndices();
 	void menuSumOfVariableLengthSubarrays();
+	void menuSumOfUnique();
 };

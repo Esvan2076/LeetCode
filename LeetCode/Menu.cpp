@@ -3369,3 +3369,23 @@ void Menu::menuSumOfVariableLengthSubarrays() {
     int res = m.sumOfVariableLengthSubarrays(nums);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuSumOfUnique() {
+    Mate m;
+    std::vector<int> nums;
+    int n = 0, x = 0;
+
+    std::cout << "1748. Sum of Unique Elements\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.sumOfUnique(nums);
+    std::cout << "Result: " << res << std::endl;
+}
