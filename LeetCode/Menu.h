@@ -172,4 +172,5 @@ public:
 	void menuSumOfVariableLengthSubarrays();
 	void menuSumOfUnique();
 	void menuCountSeniors();
+	void menuFindGCD();
 };

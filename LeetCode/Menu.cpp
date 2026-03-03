@@ -3411,3 +3411,23 @@ void Menu::menuCountSeniors() {
     int res = m.countSeniors(details);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuFindGCD() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums;
+
+    std::cout << "1979. Find Greatest Common Divisor of Array\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    int res = m.findGCD(nums);
+    std::cout << "GCD: " << res << std::endl;
+}

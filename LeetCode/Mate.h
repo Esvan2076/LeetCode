@@ -179,4 +179,5 @@ public:
 	int sumOfVariableLengthSubarrays(std::vector<int>& nums);
 	int sumOfUnique(std::vector<int>& nums);
 	int countSeniors(std::vector<std::string>& details);
+	int findGCD(std::vector<int>& nums);
 };

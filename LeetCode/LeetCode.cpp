@@ -171,7 +171,8 @@ int main()
 	//m.menuTargetIndices();
 	//m.menuSumOfVariableLengthSubarrays();
 	//m.menuSumOfUnique();
-	m.menuCountSeniors();
+	//m.menuCountSeniors();
+	m.menuFindGCD();
 
 	return 0;
 }

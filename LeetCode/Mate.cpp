@@ -3519,3 +3519,16 @@ int Mate::countSeniors(std::vector<std::string>& details) {
 
 	return seniors;
 }
+
+int Mate::findGCD(std::vector<int>& nums) {
+	int large = *std::max_element(nums.begin(), nums.end());
+	int small = *std::min_element(nums.begin(), nums.end());
+
+	while (small != 0) {
+		int temp = small;
+		small = large % small;
+		large = temp;
+	}
+
+	return large;
+}
