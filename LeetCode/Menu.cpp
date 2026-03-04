@@ -3427,7 +3427,21 @@ void Menu::menuFindGCD() {
         std::cin >> x;
         nums.push_back(x);
     }
-
+    
     int res = m.findGCD(nums);
     std::cout << "GCD: " << res << std::endl;
+}
+
+void Menu::menuSumBase() {
+    Mate m;
+    int n = 0, k = 0;
+
+    std::cout << "1837. Sum of Digits in Base K\n";
+    std::cout << "Enter n: ";
+    std::cin >> n;
+    std::cout << "Enter k: ";
+    std::cin >> k;
+
+    int res = m.sumBase(n, k);
+    std::cout << "Result: " << res << std::endl;
 }

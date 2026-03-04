@@ -173,4 +173,5 @@ public:
 	void menuSumOfUnique();
 	void menuCountSeniors();
 	void menuFindGCD();
+	void menuSumBase();
 };

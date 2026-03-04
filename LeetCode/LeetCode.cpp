@@ -172,7 +172,8 @@ int main()
 	//m.menuSumOfVariableLengthSubarrays();
 	//m.menuSumOfUnique();
 	//m.menuCountSeniors();
-	m.menuFindGCD();
+	//m.menuFindGCD();
+	m.menuSumBase();
 
 	return 0;
 }
