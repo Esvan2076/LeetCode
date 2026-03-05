@@ -3445,3 +3445,34 @@ void Menu::menuSumBase() {
     int res = m.sumBase(n, k);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuSplitWordsBySeparator() {
+    Mate m;
+    int n;
+    char sep;
+    std::string s;
+    std::vector<std::string> words;
+
+    std::cout << "2788. Split Strings by Separator\n";
+    std::cout << "How many strings: ";
+    std::cin >> n;
+
+    words.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Word " << i + 1 << ": ";
+        std::cin >> s;
+        words.push_back(s);
+    }
+
+    std::cout << "Separator: ";
+    std::cin >> sep;
+
+    std::vector<std::string> res = m.splitWordsBySeparator(words, sep);
+
+    std::cout << "Result: [";
+    for (size_t i = 0; i < res.size(); ++i) {
+        std::cout << '"' << res[i] << '"';
+        if (i + 1 < res.size()) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
+}

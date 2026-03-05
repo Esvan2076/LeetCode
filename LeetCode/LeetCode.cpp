@@ -174,6 +174,7 @@ int main()
 	//m.menuCountSeniors();
 	//m.menuFindGCD();
 	m.menuSumBase();
+	m.menuSplitWordsBySeparator();
 
 	return 0;
 }

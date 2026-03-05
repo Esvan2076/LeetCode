@@ -181,4 +181,5 @@ public:
 	int countSeniors(std::vector<std::string>& details);
 	int findGCD(std::vector<int>& nums);
 	int sumBase(int n, int k);
+	std::vector<std::string> splitWordsBySeparator(std::vector<std::string>& words, char separator);
 };

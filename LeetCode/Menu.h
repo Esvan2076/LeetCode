@@ -174,4 +174,5 @@ public:
 	void menuCountSeniors();
 	void menuFindGCD();
 	void menuSumBase();
+	void menuSplitWordsBySeparator();
 };

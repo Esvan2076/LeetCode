@@ -3541,3 +3541,32 @@ int Mate::sumBase(int n, int k) {
 	}
 	return res;
 }
+
+std::vector<std::string> Mate::splitWordsBySeparator(std::vector<std::string>& words, char separator) {
+	std::vector<std::string> helper;
+	helper.reserve(words.size());
+
+	size_t i = 0;
+	for (std::string s : words) {
+
+		helper.push_back("");
+		for (char c : s) {
+			if (c != separator) {
+				helper[i] += c;
+				continue;
+			}
+			helper.push_back("");
+			++i;
+		}
+		++i;
+	}
+
+	std::vector<std::string> res;
+	res.reserve(helper.size());
+
+	for (std::string s : helper) {
+		if (s != "") res.push_back(s);
+	}
+
+	return res;
+}
