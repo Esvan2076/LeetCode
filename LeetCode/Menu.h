@@ -175,4 +175,5 @@ public:
 	void menuFindGCD();
 	void menuSumBase();
 	void menuSplitWordsBySeparator();
+	void menuMinOperations01();
 };

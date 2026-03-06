@@ -173,8 +173,9 @@ int main()
 	//m.menuSumOfUnique();
 	//m.menuCountSeniors();
 	//m.menuFindGCD();
-	m.menuSumBase();
-	m.menuSplitWordsBySeparator();
+	//m.menuSumBase();
+	//m.menuSplitWordsBySeparator();
+	m.menuMinOperations01();
 
 	return 0;
 }

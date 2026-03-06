@@ -3570,3 +3570,24 @@ std::vector<std::string> Mate::splitWordsBySeparator(std::vector<std::string>& w
 
 	return res;
 }
+
+int Mate::minOperations01(std::string s) {
+	size_t n = s.size();
+
+	std::string one(n, 48);
+	std::string two(n, 48);
+
+	for (size_t i = 0; i < n; i += 2) {
+		one[i] = '1';
+		two[i + 1] = '1';
+	}
+
+	int c1 = 0, c2 = 0;
+
+	for (size_t i = 0; i < n; ++i) {
+		if (one[i] != s[i]) ++c1;
+		else ++c2;
+	}
+
+	return std::min(c1, c2);
+}

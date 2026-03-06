@@ -3476,3 +3476,14 @@ void Menu::menuSplitWordsBySeparator() {
     }
     std::cout << "]" << std::endl;
 }
+
+void Menu::menuMinOperations01() {
+    Mate m;
+    std::string s;
+    std::cout << "1758. Minimum Changes To Make Alternating Binary String\n";
+    std::cout << "Enter string: ";
+    std::cin >> s;
+
+    int res = m.minOperations01(s);
+    std::cout << "Minimum changes needed: " << res << std::endl;
+}
