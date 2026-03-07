@@ -3499,3 +3499,17 @@ void Menu::menuMakeFancyString() {
     std::string res = m.makeFancyString(s);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuIsAnagram() {
+    Mate m;
+    std::string s, t;
+
+    std::cout << "242. Valid Anagram\n";
+    std::cout << "Enter first string: ";
+    std::cin >> s;
+    std::cout << "Enter second string: ";
+    std::cin >> t;
+
+    bool res = m.isAnagram(s, t);
+    std::cout << "Result: " << (res ? "true" : "false") << std::endl;
+}

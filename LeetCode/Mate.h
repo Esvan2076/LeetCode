@@ -184,4 +184,5 @@ public:
 	std::vector<std::string> splitWordsBySeparator(std::vector<std::string>& words, char separator);
 	int minOperations01(std::string s);
 	std::string makeFancyString(std::string s);
+	bool isAnagram(std::string s, std::string t);
 };

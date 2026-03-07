@@ -177,4 +177,5 @@ public:
 	void menuSplitWordsBySeparator();
 	void menuMinOperations01();
 	void menuMakeFancyString();
+	void menuIsAnagram();
 };

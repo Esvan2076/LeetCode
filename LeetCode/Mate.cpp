@@ -3617,3 +3617,20 @@ std::string Mate::makeFancyString(std::string s) {
 
 	return res;
 }
+
+bool Mate::isAnagram(std::string s, std::string t) {
+	if (s.size() != t.size()) return false;
+
+	std::vector<int> occurrenceTable(26, 0);
+
+	for (char c : s) {
+		++occurrenceTable[c - 'a'];
+	}
+
+	for (char c : t) {
+		if (occurrenceTable[c - 'a'] == 0) return false;
+		--occurrenceTable[c - 'a'];
+	}
+
+	return true;
+}
