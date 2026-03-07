@@ -175,7 +175,8 @@ int main()
 	//m.menuFindGCD();
 	//m.menuSumBase();
 	//m.menuSplitWordsBySeparator();
-	m.menuMinOperations01();
+	//m.menuMinOperations01();
+	m.menuMakeFancyString();
 
 	return 0;
 }

@@ -176,4 +176,5 @@ public:
 	void menuSumBase();
 	void menuSplitWordsBySeparator();
 	void menuMinOperations01();
+	void menuMakeFancyString();
 };

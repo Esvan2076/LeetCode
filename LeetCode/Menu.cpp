@@ -3487,3 +3487,15 @@ void Menu::menuMinOperations01() {
     int res = m.minOperations01(s);
     std::cout << "Minimum changes needed: " << res << std::endl;
 }
+
+void Menu::menuMakeFancyString() {
+    Mate m;
+    std::string s;
+
+    std::cout << "1957. Delete Characters to Make Fancy String\n";
+    std::cout << "Enter string: ";
+    std::cin >> s;
+
+    std::string res = m.makeFancyString(s);
+    std::cout << "Result: " << res << std::endl;
+}

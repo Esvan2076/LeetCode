@@ -3591,3 +3591,29 @@ int Mate::minOperations01(std::string s) {
 
 	return std::min(c1, c2);
 }
+
+std::string Mate::makeFancyString(std::string s) {
+	char curr = '0';
+	int h = 1;
+
+	std::string res;
+	res.reserve(s.size());
+
+	for (size_t i = 0; i < s.size(); ++i) {
+
+		if (curr == s[i]) {
+			++h;
+		}
+		else {
+			h = 1;
+		}
+		if (h >= 3) {
+			continue;
+		}
+
+		curr = s[i];
+		res.push_back(s[i]);
+	}
+
+	return res;
+}

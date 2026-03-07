@@ -183,4 +183,5 @@ public:
 	int sumBase(int n, int k);
 	std::vector<std::string> splitWordsBySeparator(std::vector<std::string>& words, char separator);
 	int minOperations01(std::string s);
+	std::string makeFancyString(std::string s);
 };
