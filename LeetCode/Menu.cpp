@@ -3513,3 +3513,20 @@ void Menu::menuIsAnagram() {
     bool res = m.isAnagram(s, t);
     std::cout << "Result: " << (res ? "true" : "false") << std::endl;
 }
+
+void Menu::menuSelfDividingNumbers() {
+    Mate m;
+    int left, right;
+    std::cout << "728. Self Dividing Numbers\n";
+    std::cout << "Enter left and right: ";
+    std::cin >> left >> right;
+
+    std::vector<int> res = m.selfDividingNumbers(left, right);
+
+    std::cout << "Result: [";
+    for (size_t i = 0; i < res.size(); ++i) {
+        std::cout << res[i];
+        if (i + 1 < res.size()) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
+}

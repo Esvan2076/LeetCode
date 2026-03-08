@@ -178,4 +178,5 @@ public:
 	void menuMinOperations01();
 	void menuMakeFancyString();
 	void menuIsAnagram();
+	void menuSelfDividingNumbers();
 };

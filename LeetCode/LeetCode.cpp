@@ -177,7 +177,8 @@ int main()
 	//m.menuSplitWordsBySeparator();
 	//m.menuMinOperations01();
 	//m.menuMakeFancyString();
-	m.menuIsAnagram();
+	//m.menuIsAnagram();
+	m.menuSelfDividingNumbers();
 
 	return 0;
 }

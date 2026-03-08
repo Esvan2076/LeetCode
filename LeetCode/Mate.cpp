@@ -3634,3 +3634,31 @@ bool Mate::isAnagram(std::string s, std::string t) {
 
 	return true;
 }
+
+std::vector<int> Mate::selfDividingNumbers(int left, int right) {
+	std::vector<int> numbers;
+
+	int digit;
+	int temp;
+	bool valid;
+
+	for (size_t i = left; i <= right; ++i) {
+		valid = true;
+		temp = i;
+
+		while (temp && valid) {
+			digit = temp % 10;
+			temp = temp / 10;
+
+			if (digit == 0) {
+				valid = false;
+				break;
+			}
+
+			if (i % digit != 0) valid = false;
+		}
+		if (valid) numbers.push_back(i);
+	}
+
+	return numbers;
+}
