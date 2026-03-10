@@ -3530,3 +3530,16 @@ void Menu::menuSelfDividingNumbers() {
     }
     std::cout << "]" << std::endl;
 }
+
+void Menu::menuHammingWeight() {
+    Mate m;
+    int n;
+
+    std::cout << "191. Number of 1 Bits\n";
+    std::cout << "Enter number: ";
+    std::cin >> n;
+
+    int res = m.hammingWeight(n);
+
+    std::cout << "Result: " << res << std::endl;
+}

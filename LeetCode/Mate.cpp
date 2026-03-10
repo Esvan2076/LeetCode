@@ -3662,3 +3662,14 @@ std::vector<int> Mate::selfDividingNumbers(int left, int right) {
 
 	return numbers;
 }
+
+int Mate::hammingWeight(int n) {
+	int setBits = 0;
+
+	while (n > 0) {
+		setBits += n % 2;
+		n = n / 2;
+	}
+
+	return setBits;
+}

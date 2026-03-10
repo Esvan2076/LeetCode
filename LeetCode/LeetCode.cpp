@@ -178,7 +178,8 @@ int main()
 	//m.menuMinOperations01();
 	//m.menuMakeFancyString();
 	//m.menuIsAnagram();
-	m.menuSelfDividingNumbers();
+	//m.menuSelfDividingNumbers();
+	m.menuHammingWeight();
 
 	return 0;
 }

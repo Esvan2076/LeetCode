@@ -186,4 +186,5 @@ public:
 	std::string makeFancyString(std::string s);
 	bool isAnagram(std::string s, std::string t);
 	std::vector<int> selfDividingNumbers(int left, int right);
+	int hammingWeight(int n);
 };

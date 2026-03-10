@@ -179,4 +179,5 @@ public:
 	void menuMakeFancyString();
 	void menuIsAnagram();
 	void menuSelfDividingNumbers();
+	void menuHammingWeight();
 };
