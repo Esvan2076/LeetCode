@@ -3673,3 +3673,22 @@ int Mate::hammingWeight(int n) {
 
 	return setBits;
 }
+
+std::vector<int> Mate::evenOddBit(int n) {
+	std::string bits;
+	std::vector<int> res(2, 0);
+
+	while (n > 0) {
+		bits += char((n % 2) + 48);
+		n = n / 2;
+	}
+
+	for (size_t i = 0; i < bits.size(); i += 2) {
+		res[0] += bits[i] - 48;
+	}
+	for (size_t i = 1; i < bits.size(); i += 2) {
+		res[1] += bits[i] - 48;
+	}
+
+	return res;
+}

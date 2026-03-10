@@ -180,4 +180,5 @@ public:
 	void menuIsAnagram();
 	void menuSelfDividingNumbers();
 	void menuHammingWeight();
+	void menuEvenOddBit();
 };

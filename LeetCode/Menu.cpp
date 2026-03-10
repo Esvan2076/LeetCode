@@ -3543,3 +3543,16 @@ void Menu::menuHammingWeight() {
 
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuEvenOddBit() {
+    Mate m;
+    int n;
+
+    std::cout << "2595. Number of Even and Odd Bits\n";
+    std::cout << "Enter number: ";
+    std::cin >> n;
+
+    std::vector<int> res = m.evenOddBit(n);
+
+    std::cout << "Result: [" << res[0] << ", " << res[1] << "]" << std::endl;
+}

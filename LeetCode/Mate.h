@@ -187,4 +187,5 @@ public:
 	bool isAnagram(std::string s, std::string t);
 	std::vector<int> selfDividingNumbers(int left, int right);
 	int hammingWeight(int n);
+	std::vector<int> evenOddBit(int n);
 };
