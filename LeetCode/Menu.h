@@ -181,4 +181,5 @@ public:
 	void menuSelfDividingNumbers();
 	void menuHammingWeight();
 	void menuEvenOddBit();
+	void menuMoveZeroes();
 };

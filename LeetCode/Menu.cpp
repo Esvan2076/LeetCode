@@ -3556,3 +3556,29 @@ void Menu::menuEvenOddBit() {
 
     std::cout << "Result: [" << res[0] << ", " << res[1] << "]" << std::endl;
 }
+
+void Menu::menuMoveZeroes() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums;
+
+    std::cout << "283. Move Zeroes\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    m.moveZeroes(nums);
+
+    std::cout << "Result: [";
+    for (size_t i = 0; i < nums.size(); ++i) {
+        std::cout << nums[i];
+        if (i + 1 < nums.size()) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
+}

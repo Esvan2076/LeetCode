@@ -180,7 +180,8 @@ int main()
 	//m.menuIsAnagram();
 	//m.menuSelfDividingNumbers();
 	//m.menuHammingWeight();
-	m.menuEvenOddBit();
+	//m.menuEvenOddBit();
+	m.menuMoveZeroes();
 
 	return 0;
 }

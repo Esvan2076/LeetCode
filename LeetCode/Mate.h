@@ -188,4 +188,5 @@ public:
 	std::vector<int> selfDividingNumbers(int left, int right);
 	int hammingWeight(int n);
 	std::vector<int> evenOddBit(int n);
+	void moveZeroes(std::vector<int>& nums);
 };

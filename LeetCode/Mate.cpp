@@ -3692,3 +3692,20 @@ std::vector<int> Mate::evenOddBit(int n) {
 
 	return res;
 }
+
+void Mate::moveZeroes(std::vector<int>& nums) {
+	std::vector<int> res;
+	res.reserve(nums.size());
+
+	int zeros = 0;
+	for (int n : nums) {
+		if (n != 0) res.push_back(n);
+		else ++zeros;
+	}
+
+	for (size_t i = 0; i < zeros; ++i) {
+		res.push_back(0);
+	}
+
+	nums = res;
+}
