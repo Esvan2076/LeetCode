@@ -3582,3 +3582,16 @@ void Menu::menuMoveZeroes() {
     }
     std::cout << "]" << std::endl;
 }
+
+void Menu::menuFib() {
+    Mate m;
+    int n;
+
+    std::cout << "509. Fibonacci Number\n";
+    std::cout << "Enter n: ";
+    std::cin >> n;
+
+    int res = m.fib(n);
+
+    std::cout << "Result: " << res << std::endl;
+}

@@ -182,4 +182,5 @@ public:
 	void menuHammingWeight();
 	void menuEvenOddBit();
 	void menuMoveZeroes();
+	void menuFib();
 };

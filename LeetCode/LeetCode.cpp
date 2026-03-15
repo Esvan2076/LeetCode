@@ -181,7 +181,8 @@ int main()
 	//m.menuSelfDividingNumbers();
 	//m.menuHammingWeight();
 	//m.menuEvenOddBit();
-	m.menuMoveZeroes();
+	//m.menuMoveZeroes();
+	m.menuFib();
 
 	return 0;
 }

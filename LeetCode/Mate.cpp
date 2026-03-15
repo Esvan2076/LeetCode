@@ -3709,3 +3709,19 @@ void Mate::moveZeroes(std::vector<int>& nums) {
 
 	nums = res;
 }
+
+int Mate::fib(int n) {
+	if (n <= 1) return n;
+
+	int last = 0;
+	int res = 1;
+	int temp;
+
+	for (int i = 2; i <= n; ++i) {
+		temp = res;
+		res += last;
+		last = temp;
+	}
+
+	return res;
+}

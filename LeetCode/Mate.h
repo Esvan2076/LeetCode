@@ -189,4 +189,5 @@ public:
 	int hammingWeight(int n);
 	std::vector<int> evenOddBit(int n);
 	void moveZeroes(std::vector<int>& nums);
+	int fib(int n);
 };
