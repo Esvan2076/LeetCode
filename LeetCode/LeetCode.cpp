@@ -183,7 +183,8 @@ int main()
 	//m.menuEvenOddBit();
 	//m.menuMoveZeroes();
 	//m.menuFib();
-	m.menuFindComplement();
+	//m.menuFindComplement();
+	m.menuTranspose();
 
 	return 0;
 }

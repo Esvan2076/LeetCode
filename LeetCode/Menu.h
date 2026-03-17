@@ -184,4 +184,5 @@ public:
 	void menuMoveZeroes();
 	void menuFib();
 	void menuFindComplement();
+	void menuTranspose();
 };

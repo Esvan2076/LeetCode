@@ -3608,3 +3608,34 @@ void Menu::menuFindComplement() {
 
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuTranspose() {
+    Mate m;
+    int rows, cols, x;
+    std::vector<std::vector<int>> matrix;
+
+    std::cout << "867. Transpose Matrix\n";
+    std::cout << "Rows: ";
+    std::cin >> rows;
+    std::cout << "Cols: ";
+    std::cin >> cols;
+
+    matrix.resize(rows, std::vector<int>(cols));
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << "Element [" << i << "][" << j << "]: ";
+            std::cin >> matrix[i][j];
+        }
+    }
+
+    std::vector<std::vector<int>> res = m.transpose(matrix);
+
+    std::cout << "Result:\n";
+    for (const auto& row : res) {
+        for (int val : row) {
+            std::cout << val << " ";
+        }
+        std::cout << '\n';
+    }
+}

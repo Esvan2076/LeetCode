@@ -191,4 +191,5 @@ public:
 	void moveZeroes(std::vector<int>& nums);
 	int fib(int n);
 	int findComplement(int num);
+	std::vector<std::vector<int>> transpose(std::vector<std::vector<int>>& matrix);
 };
