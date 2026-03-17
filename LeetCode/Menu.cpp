@@ -3595,3 +3595,16 @@ void Menu::menuFib() {
 
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuFindComplement() {
+    Mate m;
+    int num;
+
+    std::cout << "476. Number Complement\n";
+    std::cout << "Enter number: ";
+    std::cin >> num;
+
+    int res = m.findComplement(num);
+
+    std::cout << "Result: " << res << std::endl;
+}

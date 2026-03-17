@@ -182,7 +182,8 @@ int main()
 	//m.menuHammingWeight();
 	//m.menuEvenOddBit();
 	//m.menuMoveZeroes();
-	m.menuFib();
+	//m.menuFib();
+	m.menuFindComplement();
 
 	return 0;
 }

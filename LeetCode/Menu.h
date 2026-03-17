@@ -183,4 +183,5 @@ public:
 	void menuEvenOddBit();
 	void menuMoveZeroes();
 	void menuFib();
+	void menuFindComplement();
 };

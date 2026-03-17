@@ -190,4 +190,5 @@ public:
 	std::vector<int> evenOddBit(int n);
 	void moveZeroes(std::vector<int>& nums);
 	int fib(int n);
+	int findComplement(int num);
 };

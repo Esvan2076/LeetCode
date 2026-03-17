@@ -3725,3 +3725,21 @@ int Mate::fib(int n) {
 
 	return res;
 }
+
+int Mate::findComplement(int num) {
+	std::string b;
+
+	while (num > 0) {
+		b += !(num % 2);
+		num /= 2;
+	}
+
+	int res = 0;
+
+	int h = 0;
+	for (size_t i = 0; i < b.size(); ++i, ++h) {
+		res += b[i] * std::pow(2, h);
+	}
+
+	return res;
+}
