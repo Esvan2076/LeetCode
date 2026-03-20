@@ -3755,3 +3755,18 @@ std::vector<std::vector<int>> Mate::transpose(std::vector<std::vector<int>>& mat
 
 	return res;
 }
+
+std::string Mate::largestEven(std::string s) {
+	int idxTwo = -1;
+
+	for (int i = s.size() - 1; i >= 0; --i) {
+		if (s[i] == '2') {
+			idxTwo = i;
+			break;
+		}
+	}
+
+	if (idxTwo == -1) return "";
+
+	return s.substr(0, idxTwo + 1);
+}

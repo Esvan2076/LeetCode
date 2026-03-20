@@ -3639,3 +3639,16 @@ void Menu::menuTranspose() {
         std::cout << '\n';
     }
 }
+
+void Menu::menuLargestEven() {
+    Mate m;
+    std::string s;
+
+    std::cout << "3798. Largest Even Number\n";
+    std::cout << "Enter string: ";
+    std::cin >> s;
+
+    std::string res = m.largestEven(s);
+
+    std::cout << "Result: " << res << std::endl;
+}

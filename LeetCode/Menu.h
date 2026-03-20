@@ -185,4 +185,5 @@ public:
 	void menuFib();
 	void menuFindComplement();
 	void menuTranspose();
+	void menuLargestEven();
 };

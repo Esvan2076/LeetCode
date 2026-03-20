@@ -192,4 +192,5 @@ public:
 	int fib(int n);
 	int findComplement(int num);
 	std::vector<std::vector<int>> transpose(std::vector<std::vector<int>>& matrix);
+	std::string largestEven(std::string s);
 };
