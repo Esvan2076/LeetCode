@@ -186,4 +186,5 @@ public:
 	void menuFindComplement();
 	void menuTranspose();
 	void menuLargestEven();
+	void menuSumOfGoodNumbers();
 };

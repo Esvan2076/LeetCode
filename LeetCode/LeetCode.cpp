@@ -185,7 +185,8 @@ int main()
 	//m.menuFib();
 	//m.menuFindComplement();
 	//m.menuTranspose();
-	m.menuLargestEven();
+	//m.menuLargestEven();
+	m.menuSumOfGoodNumbers();
 
 	return 0;
 }
