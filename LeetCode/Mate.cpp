@@ -3791,3 +3791,37 @@ int Mate::sumOfGoodNumbers(std::vector<int>& nums, int k) {
 
 	return sum;
 }
+
+std::string Mate::clearDigits(std::string s) {
+	std::string res;
+
+	std::vector<bool> banIdx(101, false);
+
+	size_t n = s.size() - 1;
+
+	int idx = n;
+	for (int i = n; i >= 0; --i) {
+		if (banIdx[i]) continue;
+
+		if (s[i] >= 48 && s[i] <= 57) {
+			if (idx > i) idx = i;
+
+			for (int j = idx; j >= 0; --j) {
+				if (banIdx[j]) continue;
+				if (s[j] >= 97 && s[j] <= 122) {
+					banIdx[i] = true;
+					banIdx[j] = true;
+					idx = j;
+					break;
+				}
+			}
+		}
+	}
+
+	for (size_t i = 0; i <= n; ++i) {
+		if (banIdx[i]) continue;
+		res.push_back(s[i]);
+	}
+
+	return res;
+}

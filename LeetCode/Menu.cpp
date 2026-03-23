@@ -3675,3 +3675,15 @@ void Menu::menuSumOfGoodNumbers() {
     int res = m.sumOfGoodNumbers(nums, k);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuClearDigits() {
+    Mate m;
+    std::string s;
+
+    std::cout << "3174. Clear Digits\n";
+    std::cout << "Enter string: ";
+    std::cin >> s;
+
+    std::string res = m.clearDigits(s);
+    std::cout << "Result: " << res << std::endl;
+}

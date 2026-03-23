@@ -194,4 +194,5 @@ public:
 	std::vector<std::vector<int>> transpose(std::vector<std::vector<int>>& matrix);
 	std::string largestEven(std::string s);
 	int sumOfGoodNumbers(std::vector<int>& nums, int k);
+	std::string clearDigits(std::string s);
 };

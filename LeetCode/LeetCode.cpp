@@ -186,7 +186,8 @@ int main()
 	//m.menuFindComplement();
 	//m.menuTranspose();
 	//m.menuLargestEven();
-	m.menuSumOfGoodNumbers();
+	//m.menuSumOfGoodNumbers();
+	m.menuClearDigits();
 
 	return 0;
 }

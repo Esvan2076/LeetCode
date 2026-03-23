@@ -187,4 +187,5 @@ public:
 	void menuTranspose();
 	void menuLargestEven();
 	void menuSumOfGoodNumbers();
+	void menuClearDigits();
 };
