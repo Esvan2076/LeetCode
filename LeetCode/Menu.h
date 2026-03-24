@@ -188,4 +188,6 @@ public:
 	void menuLargestEven();
 	void menuSumOfGoodNumbers();
 	void menuClearDigits();
+	void menuArithmeticTriplets();
+	void menuCreateTargetArray();
 };

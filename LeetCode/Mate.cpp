@@ -3825,3 +3825,31 @@ std::string Mate::clearDigits(std::string s) {
 
 	return res;
 }
+
+int Mate::arithmeticTriplets(std::vector<int>& nums, int diff) {
+	int res = 0;
+
+	size_t n = nums.size() - 1;
+
+	for (int i = n; i >= 0; --i) {
+		for (int j = i - 1; j >= 0; --j) {
+			if (nums[i] - nums[j] != diff) continue;
+			for (int k = j - 1; k >= 0; --k) {
+				if (nums[j] - nums[k] != diff) continue;
+				++res;
+			}
+		}
+	}
+
+	return res;
+}
+
+std::vector<int> Mate::createTargetArray(std::vector<int>& nums, std::vector<int>& index) {
+	std::vector<int> res;
+
+	for (size_t i = 0; i < nums.size(); ++i) {
+		res.insert(res.begin() + index[i], nums[i]);
+	}
+
+	return res;
+}

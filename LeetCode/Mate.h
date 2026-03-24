@@ -195,4 +195,6 @@ public:
 	std::string largestEven(std::string s);
 	int sumOfGoodNumbers(std::vector<int>& nums, int k);
 	std::string clearDigits(std::string s);
+	int arithmeticTriplets(std::vector<int>& nums, int diff);
+	std::vector<int> createTargetArray(std::vector<int>& nums, std::vector<int>& index);
 };

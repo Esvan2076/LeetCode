@@ -187,7 +187,9 @@ int main()
 	//m.menuTranspose();
 	//m.menuLargestEven();
 	//m.menuSumOfGoodNumbers();
-	m.menuClearDigits();
+	//m.menuCreateTargetArray();
+	//m.menuClearDigits();
+	m.menuArithmeticTriplets();
 
 	return 0;
 }

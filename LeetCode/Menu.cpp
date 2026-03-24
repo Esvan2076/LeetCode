@@ -3687,3 +3687,62 @@ void Menu::menuClearDigits() {
     std::string res = m.clearDigits(s);
     std::cout << "Result: " << res << std::endl;
 }
+
+void Menu::menuArithmeticTriplets() {
+    Mate m;
+    int n, x, diff;
+    std::vector<int> nums;
+
+    std::cout << "2367. Number of Arithmetic Triplets\n";
+    std::cout << "How many numbers: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Num " << i + 1 << ": ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::cout << "diff: ";
+    std::cin >> diff;
+
+    int res = m.arithmeticTriplets(nums, diff);
+    std::cout << "Result: " << res << std::endl;
+}
+
+void Menu::menuCreateTargetArray() {
+    Mate m;
+    int n, x;
+    std::vector<int> nums, index;
+
+    std::cout << "1389. Create Target Array in the Given Order\n";
+    std::cout << "How many elements: ";
+    std::cin >> n;
+
+    nums.reserve(n);
+    index.reserve(n);
+
+    std::cout << "Enter nums:\n";
+    for (int i = 0; i < n; ++i) {
+        std::cout << "nums[" << i << "]: ";
+        std::cin >> x;
+        nums.push_back(x);
+    }
+
+    std::cout << "Enter index:\n";
+    for (int i = 0; i < n; ++i) {
+        std::cout << "index[" << i << "]: ";
+        std::cin >> x;
+        index.push_back(x);
+    }
+
+    std::vector<int> res = m.createTargetArray(nums, index);
+
+    std::cout << "Result: [";
+    for (size_t i = 0; i < res.size(); ++i) {
+        std::cout << res[i];
+        if (i + 1 < res.size()) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
+}
