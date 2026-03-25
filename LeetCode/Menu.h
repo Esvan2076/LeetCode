@@ -2,6 +2,8 @@
 class Menu
 {
 public:
+	Mate m;
+
 	void menuSumNum();
 	void menuAddDigits();
 	void menuFirstUniqCharFail();
@@ -190,4 +192,6 @@ public:
 	void menuClearDigits();
 	void menuArithmeticTriplets();
 	void menuCreateTargetArray();
+	void menuGuessNumber();
+	void menuKokoEatingBananas();
 };

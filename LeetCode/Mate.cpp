@@ -3853,3 +3853,60 @@ std::vector<int> Mate::createTargetArray(std::vector<int>& nums, std::vector<int
 
 	return res;
 }
+
+// Implementación de la API externa necesaria para el problema 374
+void Mate::setTargetPick(int pick) {
+	targetPick = pick;
+}
+
+int Mate::guess(int num) {
+	if (num > targetPick) return -1;
+	if (num < targetPick) return 1;
+	return 0;
+}
+
+// 374. Guess Number Higher or Lower
+int Mate::guessNumber(int n) {
+	int left = 1, right = n;
+	int mid, res;
+
+	while (left <= right) {
+		mid = left + ((right - left) / 2);
+		res = guess(mid);
+
+		if (res == 0) return mid;
+		if (res == 1) left = mid + 1;
+		else right = mid - 1;
+	}
+
+	return -1;
+}
+
+// 875. Koko Eating Bananas
+int Mate::minEatingSpeed(std::vector<int>& piles, int h) {
+	int low = 1, high = 0, mid, res = high;
+	long long k;
+
+	for (int n : piles) {
+		high = std::max(high, n);
+	}
+
+	while (low <= high) {
+		k = 0;
+		mid = (low + high) / 2;
+
+		for (int n : piles) {
+			k += n / mid;
+			k += n % mid != 0 ? 1 : 0;
+		}
+
+		if (k <= h) {
+			res = std::min(res, mid);
+			high = mid - 1;
+		}
+		else {
+			low = mid + 1;
+		}
+	}
+	return res;
+}

@@ -8,6 +8,7 @@ class Mate
 {
 public:
 	int currSum = 0;
+	int targetPick;
 
 	int sumNum(int, int);
 	int addDigits(int);
@@ -197,4 +198,10 @@ public:
 	std::string clearDigits(std::string s);
 	int arithmeticTriplets(std::vector<int>& nums, int diff);
 	std::vector<int> createTargetArray(std::vector<int>& nums, std::vector<int>& index);
+	// Auxiliar para que el simulador funcione
+	void setTargetPick(int pick);
+	int guess(int num);
+	// Problemas de LeetCode
+	int guessNumber(int n);
+	int minEatingSpeed(std::vector<int>& piles, int h);
 };

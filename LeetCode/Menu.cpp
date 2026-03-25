@@ -3746,3 +3746,37 @@ void Menu::menuCreateTargetArray() {
     }
     std::cout << "]" << std::endl;
 }
+
+void Menu::menuGuessNumber() {
+    Mate m;
+    int n, pick;
+    std::cout << "--- 374. Guess Number Higher or Lower ---" << std::endl;
+    std::cout << "Introduce el rango (n): ";
+    std::cin >> n;
+    std::cout << "Introduce el numero a adivinar (pick): ";
+    std::cin >> pick;
+
+    m.setTargetPick(pick);
+    int resultado = m.guessNumber(n);
+    std::cout << "El numero encontrado es: " << resultado << std::endl << std::endl;
+}
+
+void Menu::menuKokoEatingBananas() {
+    Mate m;
+    int size, h, temp;
+    std::vector<int> piles;
+
+    std::cout << "--- 875. Koko Eating Bananas ---" << std::endl;
+    std::cout << "Cantidad de pilas: ";
+    std::cin >> size;
+    std::cout << "Introduce los elementos de las pilas:" << std::endl;
+    for (int i = 0; i < size; i++) {
+        std::cin >> temp;
+        piles.push_back(temp);
+    }
+    std::cout << "Horas disponibles (h): ";
+    std::cin >> h;
+
+    int resultado = m.minEatingSpeed(piles, h);
+    std::cout << "Velocidad minima (k): " << resultado << std::endl << std::endl;
+}

@@ -189,7 +189,9 @@ int main()
 	//m.menuSumOfGoodNumbers();
 	//m.menuCreateTargetArray();
 	//m.menuClearDigits();
-	m.menuArithmeticTriplets();
+	//m.menuArithmeticTriplets();
+	//m.menuGuessNumber();
+	m.menuKokoEatingBananas();
 
 	return 0;
 }
