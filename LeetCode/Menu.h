@@ -1,4 +1,6 @@
 #pragma once
+#include "Mate.h"
+
 class Menu
 {
 public:
@@ -194,4 +196,6 @@ public:
 	void menuCreateTargetArray();
 	void menuGuessNumber();
 	void menuKokoEatingBananas();
+	void printInOrder(TreeNode* root);
+	void menuInsertIntoBST();
 };

@@ -204,4 +204,6 @@ public:
 	// Problemas de LeetCode
 	int guessNumber(int n);
 	int minEatingSpeed(std::vector<int>& piles, int h);
+	TreeNode* insertIntoBST(TreeNode* root, int val);
+	void deleteTree(TreeNode* root);
 };

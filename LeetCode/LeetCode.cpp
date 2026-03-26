@@ -191,7 +191,8 @@ int main()
 	//m.menuClearDigits();
 	//m.menuArithmeticTriplets();
 	//m.menuGuessNumber();
-	m.menuKokoEatingBananas();
+	//m.menuKokoEatingBananas();
+	m.menuInsertIntoBST();
 
 	return 0;
 }

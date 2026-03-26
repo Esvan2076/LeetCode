@@ -3910,3 +3910,37 @@ int Mate::minEatingSpeed(std::vector<int>& piles, int h) {
 	}
 	return res;
 }
+
+#include "Mate.h"
+
+// 701. Insert into a Binary Search Tree
+TreeNode* Mate::insertIntoBST(TreeNode* root, int val) {
+	TreeNode* n = new TreeNode(val);
+
+	if (!root) return n;
+
+	TreeNode* curr = root;
+	TreeNode* last;
+
+	while (curr) {
+		last = curr;
+		if (curr->val >= val) {
+			curr = curr->left;
+		}
+		else {
+			curr = curr->right;
+		}
+	}
+
+	if (last->val < val) last->right = n;
+	else last->left = n;
+
+	return root;
+}
+
+void Mate::deleteTree(TreeNode* root) {
+	if (!root) return;
+	deleteTree(root->left);
+	deleteTree(root->right);
+	delete root;
+}

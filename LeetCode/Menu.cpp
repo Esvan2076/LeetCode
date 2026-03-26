@@ -3780,3 +3780,38 @@ void Menu::menuKokoEatingBananas() {
     int resultado = m.minEatingSpeed(piles, h);
     std::cout << "Velocidad minima (k): " << resultado << std::endl << std::endl;
 }
+
+void Menu::printInOrder(TreeNode* root) {
+    if (!root) return;
+    printInOrder(root->left);
+    std::cout << root->val << " ";
+    printInOrder(root->right);
+}
+
+void Menu::menuInsertIntoBST() {
+    int n, val, temp;
+    TreeNode* root = nullptr;
+
+    std::cout << "--- 701. Insert into a Binary Search Tree ---" << std::endl;
+    std::cout << "Cuantos nodos iniciales tiene el BST?: ";
+    std::cin >> n;
+
+    if (n > 0) {
+        std::cout << "Introduce los valores de los nodos (el primero sera la raiz):" << std::endl;
+        for (int i = 0; i < n; i++) {
+            std::cin >> temp;
+            root = m.insertIntoBST(root, temp);
+        }
+    }
+
+    std::cout << "Introduce el valor a insertar: ";
+    std::cin >> val;
+
+    root = m.insertIntoBST(root, val);
+
+    std::cout << "Arbol resultante (In-Order traversal): ";
+    printInOrder(root);
+    std::cout << std::endl << std::endl;
+
+    m.deleteTree(root); // Limpieza de memoria
+}
