@@ -192,7 +192,8 @@ int main()
 	//m.menuArithmeticTriplets();
 	//m.menuGuessNumber();
 	//m.menuKokoEatingBananas();
-	m.menuInsertIntoBST();
+	//m.menuInsertIntoBST();
+	m.menuMaximumOddBinaryNumber();
 
 	return 0;
 }

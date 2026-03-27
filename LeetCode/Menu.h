@@ -198,4 +198,5 @@ public:
 	void menuKokoEatingBananas();
 	void printInOrder(TreeNode* root);
 	void menuInsertIntoBST();
+	void menuMaximumOddBinaryNumber();
 };

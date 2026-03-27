@@ -3815,3 +3815,14 @@ void Menu::menuInsertIntoBST() {
 
     m.deleteTree(root); // Limpieza de memoria
 }
+
+void Menu::menuMaximumOddBinaryNumber() {
+    std::string s;
+    std::cout << "--- 2864. Maximum Odd Binary Number ---" << std::endl;
+    std::cout << "Introduce la cadena binaria (s): ";
+    std::cin >> s;
+
+    std::string resultado = m.maximumOddBinaryNumber(s);
+
+    std::cout << "Resultado maximo impar: " << resultado << std::endl << std::endl;
+}

@@ -206,4 +206,5 @@ public:
 	int minEatingSpeed(std::vector<int>& piles, int h);
 	TreeNode* insertIntoBST(TreeNode* root, int val);
 	void deleteTree(TreeNode* root);
+	std::string maximumOddBinaryNumber(std::string s);
 };

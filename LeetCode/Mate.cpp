@@ -3911,8 +3911,6 @@ int Mate::minEatingSpeed(std::vector<int>& piles, int h) {
 	return res;
 }
 
-#include "Mate.h"
-
 // 701. Insert into a Binary Search Tree
 TreeNode* Mate::insertIntoBST(TreeNode* root, int val) {
 	TreeNode* n = new TreeNode(val);
@@ -3920,7 +3918,7 @@ TreeNode* Mate::insertIntoBST(TreeNode* root, int val) {
 	if (!root) return n;
 
 	TreeNode* curr = root;
-	TreeNode* last;
+	TreeNode* last = curr;
 
 	while (curr) {
 		last = curr;
@@ -3943,4 +3941,27 @@ void Mate::deleteTree(TreeNode* root) {
 	deleteTree(root->left);
 	deleteTree(root->right);
 	delete root;
+}
+
+// 2864. Maximum Odd Binary Number
+std::string Mate::maximumOddBinaryNumber(std::string s) {
+	size_t n = s.size();
+	std::string res(n, '0');
+
+	int ones = 0;
+
+	for (char c : s) {
+		if (c == '1') ++ones;
+	}
+
+	size_t i = 0;
+	while (ones > 1) {
+		res[i] = '1';
+		--ones;
+		++i;
+	}
+
+	res[n - 1] = '1';
+
+	return res;
 }
