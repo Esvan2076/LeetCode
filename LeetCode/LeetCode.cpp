@@ -193,7 +193,8 @@ int main()
 	//m.menuGuessNumber();
 	//m.menuKokoEatingBananas();
 	//m.menuInsertIntoBST();
-	m.menuMaximumOddBinaryNumber();
+	//m.menuMaximumOddBinaryNumber();
+	m.menuBitwiseComplement();
 
 	return 0;
 }

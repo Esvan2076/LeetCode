@@ -3965,3 +3965,19 @@ std::string Mate::maximumOddBinaryNumber(std::string s) {
 
 	return res;
 }
+
+// 1009. Complement of Base 10 Integer
+int Mate::bitwiseComplement(int n) {
+	if (!n) return 1;
+	int mask = 0, h = n;
+
+	while (n) {
+		n = n >> 1;
+		++mask;
+	}
+
+	mask = 1 << mask;
+	--mask;
+
+	return mask ^ h;
+}

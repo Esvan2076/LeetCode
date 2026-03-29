@@ -3826,3 +3826,14 @@ void Menu::menuMaximumOddBinaryNumber() {
 
     std::cout << "Resultado maximo impar: " << resultado << std::endl << std::endl;
 }
+
+void Menu::menuBitwiseComplement() {
+    int n;
+    std::cout << "--- 1009. Complement of Base 10 Integer ---" << std::endl;
+    std::cout << "Introduce el entero (n): ";
+    std::cin >> n;
+
+    int resultado = m.bitwiseComplement(n);
+
+    std::cout << "El complemento de base 10 es: " << resultado << std::endl << std::endl;
+}

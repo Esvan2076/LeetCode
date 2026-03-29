@@ -199,4 +199,5 @@ public:
 	void printInOrder(TreeNode* root);
 	void menuInsertIntoBST();
 	void menuMaximumOddBinaryNumber();
+	void menuBitwiseComplement();
 };
