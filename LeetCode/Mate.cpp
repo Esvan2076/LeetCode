@@ -3981,3 +3981,80 @@ int Mate::bitwiseComplement(int n) {
 
 	return mask ^ h;
 }
+
+// 1844. Replace All Digits with Characters
+std::string Mate::replaceDigits(std::string s) {
+	for (size_t i = 0; i < s.size(); i += 2) {
+		s[i + 1] = s[i] + (s[i + 1] - 48);
+	}
+	return s;
+}
+
+// 2843. Count Symmetric Integers
+int Mate::countSymmetricIntegers(int low, int high) {
+	int res = 0;
+	std::string helper;
+	int left = 0, right = 0, n = 0;
+
+	for (size_t i = low; i <= high; ++i) {
+		left = 0, right = 0;
+		helper = std::to_string(i);
+		size_t s = helper.size();
+		if (s % 2 != 0) continue;
+		n = s / 2;
+
+		for (size_t i = 0; i < n; ++i) {
+			left += helper[i];
+		}
+
+		for (size_t i = n; i < s; ++i) {
+			right += helper[i];
+		}
+
+		if (left == right) ++res;
+	}
+	return res;
+}
+
+// 2839. Check if Strings Can be Made Equal With Operations I
+bool Mate::canBeEqual(std::string s1, std::string s2) {
+	for (size_t i = 0; i < 2; ++i) {
+		if (s1[i] != s2[i]) {
+			std::swap(s1[i + 2], s1[i]);
+			if (s1[i] != s2[i]) return false;
+		}
+	}
+
+	for (size_t i = 2; i < 4; ++i) {
+		if (s1[i] != s2[i]) return false;
+	}
+
+	return true;
+}
+
+// 1475. Final Prices With a Special Discount in a Shop
+std::vector<int> Mate::finalPrices(std::vector<int>& prices) {
+	for (size_t i = 0; i < prices.size(); ++i) {
+		for (size_t j = i + 1; j < prices.size(); ++j) {
+			if (prices[j] <= prices[i]) {
+				prices[i] = prices[i] - prices[j];
+				break;
+			}
+		}
+	}
+	return prices;
+}
+
+// 2315. Count Asterisks
+int Mate::countAsterisks(std::string s) {
+	int res = 0;
+	bool open = false;
+
+	for (size_t i = 0; i < s.size(); ++i) {
+		if (s[i] == '|') open = !open;
+		if (open) continue;
+
+		if (s[i] == '*') ++res;
+	}
+	return res;
+}

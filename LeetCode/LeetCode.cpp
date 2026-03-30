@@ -194,7 +194,12 @@ int main()
 	//m.menuKokoEatingBananas();
 	//m.menuInsertIntoBST();
 	//m.menuMaximumOddBinaryNumber();
-	m.menuBitwiseComplement();
+	//m.menuBitwiseComplement();
+	//m.menuReplaceDigits();
+	//m.menuCountSymmetricIntegers();
+	//m.menuCanBeEqual();
+	//m.menuFinalPrices();
+	m.menuCountAsterisks();
 
 	return 0;
 }

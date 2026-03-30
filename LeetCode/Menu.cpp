@@ -3837,3 +3837,50 @@ void Menu::menuBitwiseComplement() {
 
     std::cout << "El complemento de base 10 es: " << resultado << std::endl << std::endl;
 }
+
+void Menu::menuReplaceDigits() {
+    std::string s;
+    std::cout << "--- 1844. Replace All Digits ---" << std::endl;
+    std::cout << "Introduce la cadena: ";
+    std::cin >> s;
+    std::cout << "Resultado: " << m.replaceDigits(s) << std::endl << std::endl;
+}
+
+void Menu::menuCountSymmetricIntegers() {
+    int low, high;
+    std::cout << "--- 2843. Count Symmetric Integers ---" << std::endl;
+    std::cout << "Low: "; std::cin >> low;
+    std::cout << "High: "; std::cin >> high;
+    std::cout << "Resultado: " << m.countSymmetricIntegers(low, high) << std::endl << std::endl;
+}
+
+void Menu::menuCanBeEqual() {
+    std::string s1, s2;
+    std::cout << "--- 2839. Check if Strings Equal ---" << std::endl;
+    std::cout << "String 1 (longitud 4): "; std::cin >> s1;
+    std::cout << "String 2 (longitud 4): "; std::cin >> s2;
+    std::cout << "Es posible?: " << (m.canBeEqual(s1, s2) ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuFinalPrices() {
+    int n, temp;
+    std::vector<int> prices;
+    std::cout << "--- 1475. Final Prices ---" << std::endl;
+    std::cout << "Cantidad de productos: "; std::cin >> n;
+    std::cout << "Introduce los precios: " << std::endl;
+    for (int i = 0; i < n; ++i) { std::cin >> temp; prices.push_back(temp); }
+
+    std::vector<int> res = m.finalPrices(prices);
+    std::cout << "Precios finales: ";
+    for (int p : res) std::cout << p << " ";
+    std::cout << std::endl << std::endl;
+}
+
+void Menu::menuCountAsterisks() {
+    std::string s;
+    std::cout << "--- 2315. Count Asterisks ---" << std::endl;
+    std::cout << "Introduce la cadena: ";
+    std::cin.ignore();
+    std::getline(std::cin, s);
+    std::cout << "Asteriscos fuera de pares: " << m.countAsterisks(s) << std::endl << std::endl;
+}

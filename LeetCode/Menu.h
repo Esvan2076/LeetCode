@@ -200,4 +200,9 @@ public:
 	void menuInsertIntoBST();
 	void menuMaximumOddBinaryNumber();
 	void menuBitwiseComplement();
+	void menuReplaceDigits();
+	void menuCountSymmetricIntegers();
+	void menuCanBeEqual();
+	void menuFinalPrices();
+	void menuCountAsterisks();
 };

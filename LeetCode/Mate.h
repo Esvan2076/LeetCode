@@ -208,4 +208,18 @@ public:
 	void deleteTree(TreeNode* root);
 	std::string maximumOddBinaryNumber(std::string s);
 	int bitwiseComplement(int n);
+	// 1844. Replace All Digits with Characters
+	std::string replaceDigits(std::string s);
+
+	// 2843. Count Symmetric Integers
+	int countSymmetricIntegers(int low, int high);
+
+	// 2839. Check if Strings Can be Made Equal With Operations I
+	bool canBeEqual(std::string s1, std::string s2);
+
+	// 1475. Final Prices With a Special Discount in a Shop
+	std::vector<int> finalPrices(std::vector<int>& prices);
+
+	// 2315. Count Asterisks
+	int countAsterisks(std::string s);
 };
