@@ -206,4 +206,9 @@ public:
 	void menuFinalPrices();
 	void menuCountAsterisks();
 	void menuFinalPositionOfSnake();
+	void menuCommonFactors();
+	void menuDeleteGreatestValue();
+	void menuDivideArray();
+	void menuSeparateDigits();
+	void menuHalvesAreAlike();
 };

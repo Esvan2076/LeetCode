@@ -200,7 +200,12 @@ int main()
 	//m.menuCanBeEqual();
 	//m.menuFinalPrices();
 	//m.menuCountAsterisks();
-	m.menuFinalPositionOfSnake();
+	//m.menuFinalPositionOfSnake();
+	//m.menuCommonFactors();
+	//m.menuDeleteGreatestValue();
+	//m.menuDivideArray();
+	//m.menuSeparateDigits();
+	m.menuHalvesAreAlike();
 
 	return 0;
 }

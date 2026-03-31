@@ -3907,3 +3907,52 @@ void Menu::menuFinalPositionOfSnake() {
 
     std::cout << "La posicion final de la serpiente es: " << resultado << std::endl << std::endl;
 }
+
+void Menu::menuCommonFactors() {
+    int a, b;
+    std::cout << "--- 2427. Number of Common Factors ---" << std::endl;
+    std::cout << "Introduce a: "; std::cin >> a;
+    std::cout << "Introduce b: "; std::cin >> b;
+    std::cout << "Resultado: " << m.commonFactors(a, b) << std::endl << std::endl;
+}
+
+void Menu::menuDeleteGreatestValue() {
+    int rows, cols, val;
+    std::cout << "--- 2500. Delete Greatest Value ---" << std::endl;
+    std::cout << "Filas: "; std::cin >> rows;
+    std::cout << "Columnas: "; std::cin >> cols;
+    std::vector<std::vector<int>> grid(rows, std::vector<int>(cols));
+    for (int i = 0; i < rows; ++i) {
+        std::cout << "Valores fila " << i << ": ";
+        for (int j = 0; j < cols; ++j) std::cin >> grid[i][j];
+    }
+    std::cout << "Resultado: " << m.deleteGreatestValue(grid) << std::endl << std::endl;
+}
+
+void Menu::menuDivideArray() {
+    int n, temp;
+    std::vector<int> nums;
+    std::cout << "--- 2206. Divide Array Into Equal Pairs ---" << std::endl;
+    std::cout << "Cantidad de elementos (debe ser par): "; std::cin >> n;
+    for (int i = 0; i < n; ++i) { std::cin >> temp; nums.push_back(temp); }
+    std::cout << "Se puede dividir?: " << (m.divideArray(nums) ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuSeparateDigits() {
+    int n, temp;
+    std::vector<int> nums;
+    std::cout << "--- 2553. Separate the Digits in an Array ---" << std::endl;
+    std::cout << "Cantidad de numeros: "; std::cin >> n;
+    for (int i = 0; i < n; ++i) { std::cin >> temp; nums.push_back(temp); }
+    std::vector<int> res = m.separateDigits(nums);
+    std::cout << "Resultado: ";
+    for (int d : res) std::cout << d << " ";
+    std::cout << std::endl << std::endl;
+}
+
+void Menu::menuHalvesAreAlike() {
+    std::string s;
+    std::cout << "--- 1704. Determine if String Halves Are Alike ---" << std::endl;
+    std::cout << "Introduce la cadena (longitud par): "; std::cin >> s;
+    std::cout << "Son parecidas?: " << (m.halvesAreAlike(s) ? "Si" : "No") << std::endl << std::endl;
+}

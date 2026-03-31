@@ -224,4 +224,19 @@ public:
 	int countAsterisks(std::string s);
 
 	int finalPositionOfSnake(int n, std::vector<std::string>& commands);
+
+	// 2427. Number of Common Factors
+	int commonFactors(int a, int b);
+
+	// 2500. Delete Greatest Value in Each Row
+	int deleteGreatestValue(std::vector<std::vector<int>>& grid);
+
+	// 2206. Divide Array Into Equal Pairs
+	bool divideArray(std::vector<int>& nums);
+
+	// 2553. Separate the Digits in an Array
+	std::vector<int> separateDigits(std::vector<int>& nums);
+
+	// 1704. Determine if String Halves Are Alike
+	bool halvesAreAlike(std::string s);
 };

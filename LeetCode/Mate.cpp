@@ -4084,3 +4084,79 @@ int Mate::finalPositionOfSnake(int n, std::vector<std::string>& commands) {
 
 	return res;
 }
+
+// 2427. Number of Common Factors
+int Mate::commonFactors(int a, int b) {
+	int res = 0;
+	int n = std::max(a, b) / 2;
+
+	for (int i = 1; i <= n; ++i) {
+		if (a % i == 0 && b % i == 0) ++res;
+	}
+
+	if (a == b) ++res;
+
+	return res;
+}
+
+// 2500. Delete Greatest Value in Each Row
+int Mate::deleteGreatestValue(std::vector<std::vector<int>>& grid) {
+	for (std::vector<int>& row : grid) {
+		std::sort(row.begin(), row.end());
+	}
+
+	int res = 0, best = -1;
+	size_t i = 0; // Se mantiene declaracion exacta de la imagen
+	for (size_t i = 0; i < grid[0].size(); ++i) {
+		best = -1;
+		for (std::vector<int>& row : grid) {
+			best = std::max(best, row[i]);
+		}
+		res += best;
+	}
+
+	return res;
+}
+
+// 2206. Divide Array Into Equal Pairs
+bool Mate::divideArray(std::vector<int>& nums) {
+	std::sort(nums.begin(), nums.end());
+
+	for (size_t i = 1; i < nums.size(); i += 2) {
+		if (nums[i] != nums[i - 1]) return false;
+	}
+
+	return true;
+}
+
+// 2553. Separate the Digits in an Array
+std::vector<int> Mate::separateDigits(std::vector<int>& nums) {
+	std::vector<int> res;
+	std::string helper;
+	helper.reserve(5);
+
+	for (int n : nums) {
+		helper = std::to_string(n);
+		for (size_t i = 0; i < helper.size(); ++i) {
+			res.push_back(helper[i] - 48);
+		}
+	}
+
+	return res;
+}
+
+// 1704. Determine if String Halves Are Alike
+bool Mate::halvesAreAlike(std::string s) {
+	std::unordered_set<char> vowels = { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
+
+	size_t n = s.size() / 2;
+
+	int left = 0, right = 0;
+	for (size_t i = 0; i < n; ++i) {
+		if (vowels.contains(s[i])) ++left;
+	}
+	for (size_t i = n; i < s.size(); ++i) {
+		if (vowels.contains(s[i])) ++right;
+	}
+	return left == right;
+}
