@@ -222,4 +222,6 @@ public:
 
 	// 2315. Count Asterisks
 	int countAsterisks(std::string s);
+
+	int finalPositionOfSnake(int n, std::vector<std::string>& commands);
 };

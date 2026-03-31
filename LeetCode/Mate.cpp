@@ -4058,3 +4058,29 @@ int Mate::countAsterisks(std::string s) {
 	}
 	return res;
 }
+
+// 3248. Snake in Matrix
+int Mate::finalPositionOfSnake(int n, std::vector<std::string>& commands) {
+	size_t x = 0, y = 0;
+	int res = 0;
+
+	for (std::string& command : commands) {
+		if (command == "UP") {
+			--y;
+		}
+		else if (command == "DOWN") {
+			++y;
+		}
+		else if (command == "RIGHT") {
+			++x;
+		}
+		else {
+			--x;
+		}
+	}
+
+	res = n * y;
+	res += x;
+
+	return res;
+}

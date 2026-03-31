@@ -205,4 +205,5 @@ public:
 	void menuCanBeEqual();
 	void menuFinalPrices();
 	void menuCountAsterisks();
+	void menuFinalPositionOfSnake();
 };

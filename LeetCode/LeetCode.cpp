@@ -199,7 +199,8 @@ int main()
 	//m.menuCountSymmetricIntegers();
 	//m.menuCanBeEqual();
 	//m.menuFinalPrices();
-	m.menuCountAsterisks();
+	//m.menuCountAsterisks();
+	m.menuFinalPositionOfSnake();
 
 	return 0;
 }

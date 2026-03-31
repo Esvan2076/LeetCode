@@ -3884,3 +3884,26 @@ void Menu::menuCountAsterisks() {
     std::getline(std::cin, s);
     std::cout << "Asteriscos fuera de pares: " << m.countAsterisks(s) << std::endl << std::endl;
 }
+
+void Menu::menuFinalPositionOfSnake() {
+    int n, numCommands;
+    std::string command;
+    std::vector<std::string> commands;
+
+    std::cout << "--- 3248. Snake in Matrix ---" << std::endl;
+    std::cout << "Introduce el tamano de la matriz (n): ";
+    std::cin >> n;
+
+    std::cout << "Introduce el numero de comandos: ";
+    std::cin >> numCommands;
+
+    std::cout << "Introduce los comandos (UP, DOWN, LEFT, RIGHT):" << std::endl;
+    for (int i = 0; i < numCommands; ++i) {
+        std::cin >> command;
+        commands.push_back(command);
+    }
+
+    int resultado = m.finalPositionOfSnake(n, commands);
+
+    std::cout << "La posicion final de la serpiente es: " << resultado << std::endl << std::endl;
+}
