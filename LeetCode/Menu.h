@@ -213,4 +213,14 @@ public:
 	void menuHalvesAreAlike();
 	void menuAreOccurrencesEqual();
 	void menuCountGoodRectangles();
+	void menuFindNonMinOrMax();
+	void menuIsAcronym();
+	void menuMapWordWeights();
+	void menuReverseWordsIII();
+	void menuDuplicateNumbersXOR();
+	void menuSmallestNumber();
+	void menuFinalString();
+	void menuFindMissingElements();
+	void menuDestCity();
+	void menuMinimizedStringLength();
 };

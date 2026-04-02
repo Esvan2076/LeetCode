@@ -3985,3 +3985,94 @@ void Menu::menuCountGoodRectangles() {
 
     std::cout << "Cantidad de rectangulos que forman el cuadrado mas grande: " << resultado << std::endl << std::endl;
 }
+
+void Menu::menuFindNonMinOrMax() {
+    int n, val;
+    std::vector<int> nums;
+    std::cout << "--- 2733. Neither Minimum nor Maximum ---" << std::endl;
+    std::cout << "Cantidad de elementos: "; std::cin >> n;
+    for (int i = 0; i < n; ++i) { std::cin >> val; nums.push_back(val); }
+    std::cout << "Resultado: " << m.findNonMinOrMax(nums) << std::endl << std::endl;
+}
+
+void Menu::menuIsAcronym() {
+    int n; std::string s, word;
+    std::vector<std::string> words;
+    std::cout << "--- 2828. Acronym ---" << std::endl;
+    std::cout << "Cant. palabras: "; std::cin >> n;
+    for (int i = 0; i < n; ++i) { std::cin >> word; words.push_back(word); }
+    std::cout << "Acronimo a comparar: "; std::cin >> s;
+    std::cout << "Es acronimo?: " << (m.isAcronym(words, s) ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuMapWordWeights() {
+    int n, weight; std::string word;
+    std::vector<std::string> words;
+    std::vector<int> weights(26);
+    std::cout << "--- 3838. Weighted Word Mapping ---" << std::endl;
+    std::cout << "Introduce los 26 pesos: " << std::endl;
+    for (int i = 0; i < 26; ++i) std::cin >> weights[i];
+    std::cout << "Cant. palabras: "; std::cin >> n;
+    for (int i = 0; i < n; ++i) { std::cin >> word; words.push_back(word); }
+    std::cout << "Resultado: " << m.mapWordWeights(words, weights) << std::endl << std::endl;
+}
+
+void Menu::menuReverseWordsIII() {
+    std::string s;
+    std::cout << "--- 557. Reverse Words III ---" << std::endl;
+    std::cout << "Introduce oracion: ";
+    std::cin.ignore(); std::getline(std::cin, s);
+    std::cout << "Resultado: [" << m.reverseWordsIII(s) << "]" << std::endl << std::endl;
+}
+
+void Menu::menuDuplicateNumbersXOR() {
+    int n, val; std::vector<int> nums;
+    std::cout << "--- 3158. XOR Duplicates ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    for (int i = 0; i < n; ++i) { std::cin >> val; nums.push_back(val); }
+    std::cout << "XOR Result: " << m.duplicateNumbersXOR(nums) << std::endl << std::endl;
+}
+
+void Menu::menuSmallestNumber() {
+    int n;
+    std::cout << "--- 3370. Smallest Number Set Bits ---" << std::endl;
+    std::cout << "n: "; std::cin >> n;
+    std::cout << "Resultado: " << m.smallestNumber(n) << std::endl << std::endl;
+}
+
+void Menu::menuFinalString() {
+    std::string s;
+    std::cout << "--- 2810. Faulty Keyboard ---" << std::endl;
+    std::cout << "Input: "; std::cin >> s;
+    std::cout << "Final: " << m.finalString(s) << std::endl << std::endl;
+}
+
+void Menu::menuFindMissingElements() {
+    int n, val; std::vector<int> nums;
+    std::cout << "--- 3731. Find Missing Elements ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    for (int i = 0; i < n; ++i) { std::cin >> val; nums.push_back(val); }
+    std::vector<int> res = m.findMissingElements(nums);
+    std::cout << "Faltantes: ";
+    for (int v : res) std::cout << v << " ";
+    std::cout << std::endl << std::endl;
+}
+
+void Menu::menuDestCity() {
+    int n; std::string c1, c2;
+    std::vector<std::vector<std::string>> paths;
+    std::cout << "--- 1436. Destination City ---" << std::endl;
+    std::cout << "Cant. rutas: "; std::cin >> n;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> c1 >> c2;
+        paths.push_back({ c1, c2 });
+    }
+    std::cout << "Destino: " << m.destCity(paths) << std::endl << std::endl;
+}
+
+void Menu::menuMinimizedStringLength() {
+    std::string s;
+    std::cout << "--- 2716. Minimize Length ---" << std::endl;
+    std::cout << "String: "; std::cin >> s;
+    std::cout << "Longitud minima: " << m.minimizedStringLength(s) << std::endl << std::endl;
+}

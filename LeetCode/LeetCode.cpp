@@ -207,7 +207,17 @@ int main()
 	//m.menuSeparateDigits();
 	//m.menuHalvesAreAlike();
 	//m.menuAreOccurrencesEqual();
-	m.menuCountGoodRectangles();
+	//m.menuCountGoodRectangles();
+	//m.menuFindNonMinOrMax();
+	//m.menuIsAcronym();
+	//m.menuMapWordWeights();
+	//m.menuReverseWordsIII();
+	//m.menuDuplicateNumbersXOR();
+	//m.menuSmallestNumber();
+	//m.menuFinalString();
+	//m.menuFindMissingElements();
+	//m.menuDestCity();
+	m.menuMinimizedStringLength();
 
 	return 0;
 }

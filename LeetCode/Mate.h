@@ -245,4 +245,15 @@ public:
 
 	// 1725. Number Of Rectangles That Can Form The Largest Square
 	int countGoodRectangles(std::vector<std::vector<int>>& rectangles);
+
+	int findNonMinOrMax(std::vector<int>& nums);
+	bool isAcronym(std::vector<std::string>& words, std::string s);
+	std::string mapWordWeights(std::vector<std::string>& words, std::vector<int>& weights);
+	std::string reverseWordsIII(std::string s);
+	int duplicateNumbersXOR(std::vector<int>& nums);
+	int smallestNumber(int n);
+	std::string finalString(std::string s);
+	std::vector<int> findMissingElements(std::vector<int>& nums);
+	std::string destCity(std::vector<std::vector<std::string>>& paths);
+	int minimizedStringLength(std::string s);
 };

@@ -4195,3 +4195,167 @@ int Mate::countGoodRectangles(std::vector<std::vector<int>>& rectangles) {
 
 	return map[best];
 }
+
+// 2733. Neither Minimum nor Maximum
+int Mate::findNonMinOrMax(std::vector<int>& nums) {
+	if (nums.size() <= 2) return -1;
+
+	int max = INT_MIN;
+	int min = INT_MAX;
+
+	for (int n : nums) {
+		max = std::max(max, n);
+		min = std::min(min, n);
+	}
+
+	for (int n : nums) {
+		if (n != max && n != min) return n;
+	}
+
+	return -1;
+}
+
+// 2828. Check if a String Is an Acronym of Words
+bool Mate::isAcronym(std::vector<std::string>& words, std::string s) {
+	if (words.size() != s.size()) return false;
+
+	size_t i = 0;
+	for (std::string& word : words) {
+		if (word[0] != s[i]) return false;
+		++i;
+	}
+
+	return true;
+}
+
+// 3838. Weighted Word Mapping
+std::string Mate::mapWordWeights(std::vector<std::string>& words, std::vector<int>& weights) {
+	std::string res;
+	res.reserve(words.size());
+
+	int sum;
+	for (std::string& word : words) {
+		sum = 0;
+		for (char c : word) {
+			sum += weights[c - 'a'];
+		}
+		res += 97 + 25 - (sum % 26);
+	}
+
+	return res;
+}
+
+// 557. Reverse Words in a String III
+std::string Mate::reverseWordsIII(std::string s) {
+	std::string res, temp;
+	res.reserve(s.size());
+
+	for (size_t i = 0; i < s.size(); ++i) {
+		temp = "";
+		while (s[i] != ' ' && i < s.size()) {
+			temp = s[i] + temp;
+			++i;
+		}
+		res += temp + " ";
+	}
+
+	res.pop_back();
+
+	return res;
+}
+
+// 3158. Find the XOR of Numbers Which Appear Twice
+int Mate::duplicateNumbersXOR(std::vector<int>& nums) {
+	int res = 0;
+
+	std::sort(nums.begin(), nums.end());
+
+	for (size_t i = 1; i < nums.size(); ++i) {
+		if (nums[i] == nums[i - 1]) res ^= nums[i];
+	}
+
+	return res;
+}
+
+// 3370. Smallest Number With All Set Bits
+int Mate::smallestNumber(int n) {
+	int bits = 0;
+
+	while (n) {
+		n = n >> 1;
+		++bits;
+	}
+
+	bits = 1 << bits;
+	--bits;
+
+	return bits;
+}
+
+// 2810. Faulty Keyboard
+std::string Mate::finalString(std::string s) {
+	std::string res;
+
+	for (char c : s) {
+		if (c == 'i') {
+			std::reverse(res.begin(), res.end());
+		}
+		else {
+			res += c;
+		}
+	}
+
+	return res;
+}
+
+// 3731. Find Missing Elements
+std::vector<int> Mate::findMissingElements(std::vector<int>& nums) {
+	std::sort(nums.begin(), nums.end());
+
+	int last = nums[0];
+
+	std::vector<int> res;
+
+	for (size_t i = 1; i < nums.size(); ++i) {
+		while (nums[i] - last > 1) {
+			++last;
+			res.push_back(last);
+		}
+		last = nums[i];
+	}
+
+	return res;
+}
+
+// 1436. Destination City
+std::string Mate::destCity(std::vector<std::vector<std::string>>& paths) {
+	std::unordered_set<std::string> openCities;
+
+	for (std::vector<std::string>& curr : paths) {
+		openCities.insert(curr[0]);
+	}
+
+	for (std::vector<std::string>& curr : paths) {
+		if (!openCities.contains(curr[1])) return curr[1];
+	}
+
+	return "";
+}
+
+// 2716. Minimize String Length
+int Mate::minimizedStringLength(std::string s) {
+	std::vector<int> arr(26, 0);
+	int res = 0;
+
+	for (int c : s) {
+		++arr[c - 97];
+	}
+
+	for (int n : arr) {
+		if (n > 0) {
+			++res;
+		}
+	}
+
+	return res;
+}
