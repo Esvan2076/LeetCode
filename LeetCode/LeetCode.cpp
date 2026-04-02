@@ -205,7 +205,9 @@ int main()
 	//m.menuDeleteGreatestValue();
 	//m.menuDivideArray();
 	//m.menuSeparateDigits();
-	m.menuHalvesAreAlike();
+	//m.menuHalvesAreAlike();
+	//m.menuAreOccurrencesEqual();
+	m.menuCountGoodRectangles();
 
 	return 0;
 }

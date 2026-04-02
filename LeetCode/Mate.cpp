@@ -4160,3 +4160,38 @@ bool Mate::halvesAreAlike(std::string s) {
 	}
 	return left == right;
 }
+
+// 1941. Check if All Characters Have Equal Number of Occurrences
+bool Mate::areOccurrencesEqual(std::string s) {
+	std::unordered_map<char, int> map;
+
+	for (char c : s) {
+		++map[c];
+	}
+
+	int res = map.begin()->second;
+
+	for (const auto& current : map) {
+		if (res != current.second) return false;
+	}
+
+	return true;
+}
+
+// 1725. Number Of Rectangles That Can Form The Largest Square
+int Mate::countGoodRectangles(std::vector<std::vector<int>>& rectangles) {
+	std::unordered_map<int, int> map;
+	map.reserve(rectangles.size());
+
+	int best = 0;
+	int val = 0;
+
+	for (std::vector<int>& curr : rectangles) {
+		val = std::min(curr[0], curr[1]);
+
+		best = std::max(best, val);
+		++map[val];
+	}
+
+	return map[best];
+}

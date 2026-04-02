@@ -211,4 +211,6 @@ public:
 	void menuDivideArray();
 	void menuSeparateDigits();
 	void menuHalvesAreAlike();
+	void menuAreOccurrencesEqual();
+	void menuCountGoodRectangles();
 };

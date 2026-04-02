@@ -239,4 +239,10 @@ public:
 
 	// 1704. Determine if String Halves Are Alike
 	bool halvesAreAlike(std::string s);
+
+	// 1941. Check if All Characters Have Equal Number of Occurrences
+	bool areOccurrencesEqual(std::string s);
+
+	// 1725. Number Of Rectangles That Can Form The Largest Square
+	int countGoodRectangles(std::vector<std::vector<int>>& rectangles);
 };

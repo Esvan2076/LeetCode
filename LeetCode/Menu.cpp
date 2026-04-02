@@ -3956,3 +3956,32 @@ void Menu::menuHalvesAreAlike() {
     std::cout << "Introduce la cadena (longitud par): "; std::cin >> s;
     std::cout << "Son parecidas?: " << (m.halvesAreAlike(s) ? "Si" : "No") << std::endl << std::endl;
 }
+
+void Menu::menuAreOccurrencesEqual() {
+    std::string s;
+    std::cout << "--- 1941. Check if All Characters Have Equal Occurrences ---" << std::endl;
+    std::cout << "Introduce la cadena (s): ";
+    std::cin >> s;
+
+    bool resultado = m.areOccurrencesEqual(s);
+
+    std::cout << "Es una cadena buena?: " << (resultado ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuCountGoodRectangles() {
+    int n, l, w;
+    std::cout << "--- 1725. Number Of Rectangles That Can Form The Largest Square ---" << std::endl;
+    std::cout << "Cuantos rectangulos vas a ingresar?: ";
+    std::cin >> n;
+
+    std::vector<std::vector<int>> rectangles;
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Rectangulo " << i + 1 << " (largo ancho): ";
+        std::cin >> l >> w;
+        rectangles.push_back({ l, w });
+    }
+
+    int resultado = m.countGoodRectangles(rectangles);
+
+    std::cout << "Cantidad de rectangulos que forman el cuadrado mas grande: " << resultado << std::endl << std::endl;
+}
