@@ -4076,3 +4076,42 @@ void Menu::menuMinimizedStringLength() {
     std::cout << "String: "; std::cin >> s;
     std::cout << "Longitud minima: " << m.minimizedStringLength(s) << std::endl << std::endl;
 }
+
+void Menu::menuDistributeCandies() {
+    int candies, num_people;
+    std::cout << "--- 1103. Distribute Candies to People ---" << std::endl;
+    std::cout << "Introduce la cantidad de caramelos: ";
+    std::cin >> candies;
+    std::cout << "Introduce el numero de personas: ";
+    std::cin >> num_people;
+
+    std::vector<int> resultado = m.distributeCandies(candies, num_people);
+
+    std::cout << "Distribucion: [";
+    for (size_t i = 0; i < resultado.size(); ++i) {
+        std::cout << resultado[i] << (i == resultado.size() - 1 ? "" : ", ");
+    }
+    std::cout << "]" << std::endl << std::endl;
+}
+
+void Menu::menuDivisorGame() {
+    int n;
+    std::cout << "--- 1025. Divisor Game ---" << std::endl;
+    std::cout << "Introduce el numero (n): ";
+    std::cin >> n;
+
+    bool resultado = m.divisorGame(n);
+
+    std::cout << "Gana Alice?: " << (resultado ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuPossibleStringCount() {
+    std::string word;
+    std::cout << "--- 3330. Find the Original Typed String I ---" << std::endl;
+    std::cout << "Introduce la palabra: ";
+    std::cin >> word;
+
+    int resultado = m.possibleStringCount(word);
+
+    std::cout << "Total de posibles cadenas originales: " << resultado << std::endl << std::endl;
+}

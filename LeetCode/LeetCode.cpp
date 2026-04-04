@@ -217,7 +217,10 @@ int main()
 	//m.menuFinalString();
 	//m.menuFindMissingElements();
 	//m.menuDestCity();
-	m.menuMinimizedStringLength();
+	//m.menuMinimizedStringLength();
+	//m.menuDistributeCandies();
+	//m.menuDivisorGame();
+	m.menuPossibleStringCount();
 
 	return 0;
 }

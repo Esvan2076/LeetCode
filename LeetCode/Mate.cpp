@@ -4359,3 +4359,48 @@ int Mate::minimizedStringLength(std::string s) {
 
 	return res;
 }
+
+// 1103. Distribute Candies to People
+std::vector<int> Mate::distributeCandies(int candies, int num_people) {
+	std::vector<int> res(num_people, 0);
+
+	size_t i = 0;
+	int last = 0;
+	while (candies) {
+		if (i >= num_people) i = 0;
+
+		++last;
+		if (last < candies) {
+			res[i] += last;
+			candies -= last;
+		}
+		else {
+			res[i] += candies;
+			candies = 0;
+		}
+		++i;
+	}
+
+	return res;
+}
+
+// 1025. Divisor Game
+bool Mate::divisorGame(int n) {
+	if (n <= 1) return false;
+
+	if (n % 2 == 0) return true;
+	return false;
+}
+
+// 3330. Find the Original Typed String I
+int Mate::possibleStringCount(std::string word) {
+	int res = 0;
+
+	char last = 0;
+	for (char c : word) {
+		if (c == last) ++res;
+		last = c;
+	}
+
+	return res + 1;
+}

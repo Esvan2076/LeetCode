@@ -256,4 +256,13 @@ public:
 	std::vector<int> findMissingElements(std::vector<int>& nums);
 	std::string destCity(std::vector<std::vector<std::string>>& paths);
 	int minimizedStringLength(std::string s);
+
+	// 1103. Distribute Candies to People
+	std::vector<int> distributeCandies(int candies, int num_people);
+
+	// 1025. Divisor Game
+	bool divisorGame(int n);
+
+	// 3330. Find the Original Typed String I
+	int possibleStringCount(std::string word);
 };

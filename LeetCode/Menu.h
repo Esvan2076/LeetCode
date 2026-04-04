@@ -223,4 +223,7 @@ public:
 	void menuFindMissingElements();
 	void menuDestCity();
 	void menuMinimizedStringLength();
+	void menuDistributeCandies();
+	void menuDivisorGame();
+	void menuPossibleStringCount();
 };
