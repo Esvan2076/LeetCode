@@ -265,4 +265,13 @@ public:
 
 	// 3330. Find the Original Typed String I
 	int possibleStringCount(std::string word);
+
+	// 1773. Count Items Matching a Rule
+	int countMatches(std::vector<std::vector<std::string>>& items, std::string ruleKey, std::string ruleValue);
+
+	// 3194. Minimum Average of Smallest and Largest Elements
+	double minimumAverage(std::vector<int>& nums);
+
+	// 3432. Count Partitions with Even Sum Difference
+	int countPartitions(std::vector<int>& nums);
 };

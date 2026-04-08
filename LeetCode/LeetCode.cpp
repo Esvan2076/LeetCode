@@ -220,7 +220,10 @@ int main()
 	//m.menuMinimizedStringLength();
 	//m.menuDistributeCandies();
 	//m.menuDivisorGame();
-	m.menuPossibleStringCount();
+	//m.menuPossibleStringCount();
+	//m.menuCountMatches();
+	//m.menuMinimumAverage();
+	m.menuCountPartitions();
 
 	return 0;
 }

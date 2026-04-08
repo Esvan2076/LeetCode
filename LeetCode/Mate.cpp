@@ -4404,3 +4404,57 @@ int Mate::possibleStringCount(std::string word) {
 
 	return res + 1;
 }
+
+#include "Mate.h"
+
+// 1773. Count Items Matching a Rule
+int Mate::countMatches(std::vector<std::vector<std::string>>& items, std::string ruleKey, std::string ruleValue) {
+	size_t idx = 0;
+	if (ruleKey == "color") idx = 1;
+	else if (ruleKey == "name") idx = 2;
+
+	int res = 0;
+	for (std::vector<std::string>& item : items) {
+		if (item[idx] == ruleValue) ++res;
+	}
+	return res;
+}
+
+// 3194. Minimum Average of Smallest and Largest Elements
+double Mate::minimumAverage(std::vector<int>& nums) {
+	float res = 51.00;
+	size_t n = nums.size() / 2;
+
+	std::sort(nums.begin(), nums.end());
+
+	float temp;
+	for (size_t i = 0, j = nums.size() - 1; i < n; ++i, --j) {
+		temp = (nums[i] + nums[j]) / 2.00;
+		res = std::min(res, temp);
+	}
+
+	return res;
+}
+
+// 3432. Count Partitions with Even Sum Difference
+int Mate::countPartitions(std::vector<int>& nums) {
+	size_t split_idx = 1;
+	size_t n = nums.size();
+	int res = 0;
+
+	int wdLeft = nums[0], wdRight = 0;
+
+	for (size_t i = 1; i < n; ++i) {
+		wdRight += nums[i];
+	}
+
+	while (split_idx < n) {
+		if ((wdLeft - wdRight) % 2 == 0) ++res;
+
+		wdLeft + nums[split_idx];
+		wdRight - nums[split_idx];
+		++split_idx;
+	}
+
+	return res;
+}

@@ -4115,3 +4115,37 @@ void Menu::menuPossibleStringCount() {
 
     std::cout << "Total de posibles cadenas originales: " << resultado << std::endl << std::endl;
 }
+
+void Menu::menuCountMatches() {
+    int n;
+    std::string type, color, name, key, value;
+    std::cout << "--- 1773. Count Items Matching a Rule ---" << std::endl;
+    std::cout << "Numero de items: "; std::cin >> n;
+    std::vector<std::vector<std::string>> items;
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Item " << i + 1 << " (type color name): ";
+        std::cin >> type >> color >> name;
+        items.push_back({ type, color, name });
+    }
+    std::cout << "ruleKey: "; std::cin >> key;
+    std::cout << "ruleValue: "; std::cin >> value;
+    std::cout << "Resultado: " << m.countMatches(items, key, value) << std::endl << std::endl;
+}
+
+void Menu::menuMinimumAverage() {
+    int n, val;
+    std::cout << "--- 3194. Minimum Average ---" << std::endl;
+    std::cout << "Cantidad de elementos (par): "; std::cin >> n;
+    std::vector<int> nums;
+    for (int i = 0; i < n; ++i) { std::cin >> val; nums.push_back(val); }
+    std::cout << "Promedio minimo: " << m.minimumAverage(nums) << std::endl << std::endl;
+}
+
+void Menu::menuCountPartitions() {
+    int n, val;
+    std::cout << "--- 3432. Count Partitions ---" << std::endl;
+    std::cout << "Cantidad de elementos: "; std::cin >> n;
+    std::vector<int> nums;
+    for (int i = 0; i < n; ++i) { std::cin >> val; nums.push_back(val); }
+    std::cout << "Particiones con diferencia par: " << m.countPartitions(nums) << std::endl << std::endl;
+}

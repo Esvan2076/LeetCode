@@ -226,4 +226,7 @@ public:
 	void menuDistributeCandies();
 	void menuDivisorGame();
 	void menuPossibleStringCount();
+	void menuCountMatches();
+	void menuMinimumAverage();
+	void menuCountPartitions();
 };
