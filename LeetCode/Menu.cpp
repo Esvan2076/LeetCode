@@ -4077,7 +4077,7 @@ void Menu::menuMinimizedStringLength() {
     std::cout << "Longitud minima: " << m.minimizedStringLength(s) << std::endl << std::endl;
 }
 
-void Menu::menuDistributeCandies() {
+void Menu::menuDistributeCandiesII() {
     int candies, num_people;
     std::cout << "--- 1103. Distribute Candies to People ---" << std::endl;
     std::cout << "Introduce la cantidad de caramelos: ";
@@ -4148,4 +4148,32 @@ void Menu::menuCountPartitions() {
     std::vector<int> nums;
     for (int i = 0; i < n; ++i) { std::cin >> val; nums.push_back(val); }
     std::cout << "Particiones con diferencia par: " << m.countPartitions(nums) << std::endl << std::endl;
+}
+
+void Menu::menuFlippingAnImage() {
+    int n, val;
+    std::cout << "--- 832. Flipping an Image ---" << std::endl;
+    std::cout << "Introduce el tamaño de la matriz (n x n): ";
+    std::cin >> n;
+
+    std::vector<std::vector<int>> image(n, std::vector<int>(n));
+    std::cout << "Introduce los elementos de la matriz (0 o 1):" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            std::cin >> val;
+            image[i][j] = val;
+        }
+    }
+
+    std::vector<std::vector<int>> resultado = m.flipAndInvertImage(image);
+
+    std::cout << "Imagen resultante (invertida y volteada):" << std::endl;
+    for (const auto& row : resultado) {
+        std::cout << "[ ";
+        for (int cell : row) {
+            std::cout << cell << " ";
+        }
+        std::cout << "]" << std::endl;
+    }
+    std::cout << std::endl;
 }

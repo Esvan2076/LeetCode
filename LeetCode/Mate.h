@@ -274,4 +274,6 @@ public:
 
 	// 3432. Count Partitions with Even Sum Difference
 	int countPartitions(std::vector<int>& nums);
+
+	std::vector<std::vector<int>> flipAndInvertImage(std::vector<std::vector<int>>& image);
 };

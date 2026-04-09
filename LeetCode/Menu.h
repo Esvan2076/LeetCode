@@ -223,10 +223,11 @@ public:
 	void menuFindMissingElements();
 	void menuDestCity();
 	void menuMinimizedStringLength();
-	void menuDistributeCandies();
+	void menuDistributeCandiesII();
 	void menuDivisorGame();
 	void menuPossibleStringCount();
 	void menuCountMatches();
 	void menuMinimumAverage();
 	void menuCountPartitions();
+	void menuFlippingAnImage();
 };

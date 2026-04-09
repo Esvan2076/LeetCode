@@ -223,7 +223,8 @@ int main()
 	//m.menuPossibleStringCount();
 	//m.menuCountMatches();
 	//m.menuMinimumAverage();
-	m.menuCountPartitions();
+	//m.menuCountPartitions();
+	m.menuFlippingAnImage();
 
 	return 0;
 }

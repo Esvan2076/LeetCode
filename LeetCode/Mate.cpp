@@ -4458,3 +4458,17 @@ int Mate::countPartitions(std::vector<int>& nums) {
 
 	return res;
 }
+
+// 832. Flipping an Image
+std::vector<std::vector<int>> Mate::flipAndInvertImage(std::vector<std::vector<int>>& image) {
+	size_t n = image.size();
+	std::vector<std::vector<int>> res(n, std::vector<int>(n, 0));
+
+	for (size_t k = 0; k < n; ++k) {
+		for (size_t i = 0, j = n - 1; i < n; ++i, --j) {
+			res[k][i] = !image[k][j];
+		}
+	}
+
+	return res;
+}
