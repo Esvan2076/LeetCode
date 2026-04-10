@@ -4472,3 +4472,18 @@ std::vector<std::vector<int>> Mate::flipAndInvertImage(std::vector<std::vector<i
 
 	return res;
 }
+
+// 3099. Harshad Number
+int Mate::sumOfTheDigitsOfHarshadNumber(int x) {
+	int res = 0;
+	int temp = x;
+
+	while (temp > 0) {
+		res += temp % 10;
+		temp /= 10;
+	}
+
+	if (x % res == 0) return res;
+
+	return -1;
+}

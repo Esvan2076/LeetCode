@@ -4177,3 +4177,20 @@ void Menu::menuFlippingAnImage() {
     }
     std::cout << std::endl;
 }
+
+void Menu::menuSumOfTheDigitsOfHarshadNumber() {
+    int x;
+    std::cout << "--- 3099. Harshad Number ---" << std::endl;
+    std::cout << "Introduce el numero (x): ";
+    std::cin >> x;
+
+    int resultado = m.sumOfTheDigitsOfHarshadNumber(x);
+
+    if (resultado != -1) {
+        std::cout << "Es un numero Harshad. La suma de sus digitos es: " << resultado << std::endl;
+    }
+    else {
+        std::cout << "No es un numero Harshad (-1)." << std::endl;
+    }
+    std::cout << std::endl;
+}

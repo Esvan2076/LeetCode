@@ -224,7 +224,8 @@ int main()
 	//m.menuCountMatches();
 	//m.menuMinimumAverage();
 	//m.menuCountPartitions();
-	m.menuFlippingAnImage();
+	//m.menuFlippingAnImage();
+	m.menuSumOfTheDigitsOfHarshadNumber();
 
 	return 0;
 }

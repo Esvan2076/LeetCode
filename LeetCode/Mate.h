@@ -276,4 +276,7 @@ public:
 	int countPartitions(std::vector<int>& nums);
 
 	std::vector<std::vector<int>> flipAndInvertImage(std::vector<std::vector<int>>& image);
+
+	// 3099. Harshad Number
+	int sumOfTheDigitsOfHarshadNumber(int x);
 };

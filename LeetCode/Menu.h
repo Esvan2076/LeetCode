@@ -230,4 +230,5 @@ public:
 	void menuMinimumAverage();
 	void menuCountPartitions();
 	void menuFlippingAnImage();
+	void menuSumOfTheDigitsOfHarshadNumber();
 };
