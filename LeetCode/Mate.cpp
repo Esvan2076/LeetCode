@@ -4487,3 +4487,88 @@ int Mate::sumOfTheDigitsOfHarshadNumber(int x) {
 
 	return -1;
 }
+
+// 3492. Maximum Containers on a Ship
+int Mate::maxContainers(int n, int w, int maxWeight) {
+	n = n * n;
+	if (n * w < maxWeight) return n;
+	return maxWeight / w;
+}
+
+// 2278. Percentage of Letter in String
+int Mate::percentageLetter(std::string s, char letter) {
+	int count = 0;
+	for (char c : s) {
+		if (c == letter) count++;
+	}
+	return count * 100 / s.size();
+}
+
+// 1304. Find N Unique Integers Sum up to Zero
+std::vector<int> Mate::sumZero(int n) {
+	std::vector<int> res;
+	res.reserve(n);
+
+	int i = 1;
+
+	while (res.size() < n - 1) {
+		res.push_back(i);
+		res.push_back(i * -1);
+		++i;
+	}
+
+	if (res.size() != n) res.push_back(0);
+
+	return res;
+}
+
+// 1207. Unique Number of Occurrences
+bool Mate::uniqueOccurrences(std::vector<int>& arr) {
+	std::unordered_map<int, int> map;
+
+	for (int n : arr) {
+		++map[n];
+	}
+
+	std::unordered_set<int> set;
+	set.reserve(map.size());
+
+	for (const auto& v : map) {
+		if (set.contains(v.second)) return false;
+		set.insert(v.second);
+	}
+
+	return true;
+}
+
+// 2778. Sum of Squares of Special Elements
+int Mate::sumOfSquares(std::vector<int>& nums) {
+	int res = 0;
+	size_t n = nums.size();
+
+	for (size_t i = 0; i < n; ++i) {
+		if (n % (i + 1) == 0) res += (nums[i] * nums[i]);
+	}
+
+	return res;
+}
+
+// 2119. A Number After a Double Reversal
+bool Mate::isSameAfterReversals(int num) {
+	if (num == 0) return true;
+	return (num % 10 != 0);
+}
+
+// 2169. Count Operations to Obtain Zero
+int Mate::countOperations(int num1, int num2) {
+	int res = 0;
+
+	while (num1 && num2) {
+		if (num1 >= num2) num1 -= num2;
+		else num2 -= num1;
+
+		++res;
+	}
+
+	return res;
+}

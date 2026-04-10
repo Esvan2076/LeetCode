@@ -231,4 +231,11 @@ public:
 	void menuCountPartitions();
 	void menuFlippingAnImage();
 	void menuSumOfTheDigitsOfHarshadNumber();
+	void menuMaxContainers();
+	void menuPercentageLetter();
+	void menuSumZero();
+	void menuUniqueOccurrences();
+	void menuSumOfSquares();
+	void menuIsSameAfterReversals();
+	void menuCountOperations();
 };

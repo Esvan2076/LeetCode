@@ -225,7 +225,14 @@ int main()
 	//m.menuMinimumAverage();
 	//m.menuCountPartitions();
 	//m.menuFlippingAnImage();
-	m.menuSumOfTheDigitsOfHarshadNumber();
+	//m.menuSumOfTheDigitsOfHarshadNumber();
+	//m.menuMaxContainers();
+	//m.menuPercentageLetter();
+	//m.menuSumZero();
+	//m.menuUniqueOccurrences();
+	//m.menuSumOfSquares();
+	//m.menuIsSameAfterReversals();
+	m.menuCountOperations();
 
 	return 0;
 }

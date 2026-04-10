@@ -279,4 +279,25 @@ public:
 
 	// 3099. Harshad Number
 	int sumOfTheDigitsOfHarshadNumber(int x);
+
+	// 3492. Maximum Containers on a Ship
+	int maxContainers(int n, int w, int maxWeight);
+
+	// 2278. Percentage of Letter in String
+	int percentageLetter(std::string s, char letter);
+
+	// 1304. Find N Unique Integers Sum up to Zero
+	std::vector<int> sumZero(int n);
+
+	// 1207. Unique Number of Occurrences
+	bool uniqueOccurrences(std::vector<int>& arr);
+
+	// 2778. Sum of Squares of Special Elements
+	int sumOfSquares(std::vector<int>& nums);
+
+	// 2119. A Number After a Double Reversal
+	bool isSameAfterReversals(int num);
+
+	// 2169. Count Operations to Obtain Zero
+	int countOperations(int num1, int num2);
 };

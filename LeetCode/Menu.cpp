@@ -4194,3 +4194,61 @@ void Menu::menuSumOfTheDigitsOfHarshadNumber() {
     }
     std::cout << std::endl;
 }
+
+void Menu::menuMaxContainers() {
+    int n, w, maxWeight;
+    std::cout << "--- 3492. Maximum Containers on a Ship ---" << std::endl;
+    std::cout << "n: "; std::cin >> n;
+    std::cout << "w: "; std::cin >> w;
+    std::cout << "maxWeight: "; std::cin >> maxWeight;
+    std::cout << "Resultado: " << m.maxContainers(n, w, maxWeight) << std::endl << std::endl;
+}
+
+void Menu::menuPercentageLetter() {
+    std::string s; char letter;
+    std::cout << "--- 2278. Percentage of Letter in String ---" << std::endl;
+    std::cout << "String: "; std::cin >> s;
+    std::cout << "Letter: "; std::cin >> letter;
+    std::cout << "Resultado: " << m.percentageLetter(s, letter) << "%" << std::endl << std::endl;
+}
+
+void Menu::menuSumZero() {
+    int n;
+    std::cout << "--- 1304. Find N Unique Integers Sum up to Zero ---" << std::endl;
+    std::cout << "n: "; std::cin >> n;
+    std::vector<int> res = m.sumZero(n);
+    std::cout << "Array: [ ";
+    for (int v : res) std::cout << v << " ";
+    std::cout << "]" << std::endl << std::endl;
+}
+
+void Menu::menuUniqueOccurrences() {
+    int size, val; std::vector<int> arr;
+    std::cout << "--- 1207. Unique Number of Occurrences ---" << std::endl;
+    std::cout << "Size: "; std::cin >> size;
+    for (int i = 0; i < size; ++i) { std::cin >> val; arr.push_back(val); }
+    std::cout << "Es unico?: " << (m.uniqueOccurrences(arr) ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuSumOfSquares() {
+    int size, val; std::vector<int> nums;
+    std::cout << "--- 2778. Sum of Squares of Special Elements ---" << std::endl;
+    std::cout << "Size: "; std::cin >> size;
+    for (int i = 0; i < size; ++i) { std::cin >> val; nums.push_back(val); }
+    std::cout << "Suma: " << m.sumOfSquares(nums) << std::endl << std::endl;
+}
+
+void Menu::menuIsSameAfterReversals() {
+    int num;
+    std::cout << "--- 2119. A Number After a Double Reversal ---" << std::endl;
+    std::cout << "Numero: "; std::cin >> num;
+    std::cout << "Es igual?: " << (m.isSameAfterReversals(num) ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuCountOperations() {
+    int num1, num2;
+    std::cout << "--- 2169. Count Operations to Obtain Zero ---" << std::endl;
+    std::cout << "num1: "; std::cin >> num1;
+    std::cout << "num2: "; std::cin >> num2;
+    std::cout << "Operaciones: " << m.countOperations(num1, num2) << std::endl << std::endl;
+}
