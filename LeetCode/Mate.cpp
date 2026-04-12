@@ -4572,3 +4572,6 @@ int Mate::countOperations(int num1, int num2) {
 
 	return res;
 }
+
+// 461. Hamming Distance
+int hammingDistance(int x, int y);

@@ -300,4 +300,7 @@ public:
 
 	// 2169. Count Operations to Obtain Zero
 	int countOperations(int num1, int num2);
+
+	// 461. Hamming Distance
+	int hammingDistance(int x, int y);
 };

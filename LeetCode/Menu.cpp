@@ -4252,3 +4252,16 @@ void Menu::menuCountOperations() {
     std::cout << "num2: "; std::cin >> num2;
     std::cout << "Operaciones: " << m.countOperations(num1, num2) << std::endl << std::endl;
 }
+
+void Menu::menuHammingDistance() {
+    int x, y;
+    std::cout << "--- 461. Hamming Distance ---" << std::endl;
+    std::cout << "Introduce el primer entero (x): ";
+    std::cin >> x;
+    std::cout << "Introduce el segundo entero (y): ";
+    std::cin >> y;
+
+    int resultado = m.hammingDistance(x, y);
+
+    std::cout << "La distancia de Hamming es: " << resultado << std::endl << std::endl;
+}

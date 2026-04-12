@@ -232,7 +232,8 @@ int main()
 	//m.menuUniqueOccurrences();
 	//m.menuSumOfSquares();
 	//m.menuIsSameAfterReversals();
-	m.menuCountOperations();
+	//m.menuCountOperations();
+	m.menuHammingDistance();
 
 	return 0;
 }

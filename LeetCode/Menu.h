@@ -238,4 +238,5 @@ public:
 	void menuSumOfSquares();
 	void menuIsSameAfterReversals();
 	void menuCountOperations();
+	void menuHammingDistance();
 };
