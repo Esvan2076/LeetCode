@@ -4573,6 +4573,18 @@ int Mate::countOperations(int num1, int num2) {
 	return res;
 }
 
+// 461. Hamming Distance
+int Mate::hammingDistance(int x, int y) {
+	if (y > x) std::swap(x, y);
+
+	int res = 0;
+	while (y != x) {
+		x = x >> 1;
+		++res;
+	}
+	return res;
+}
+
 // 389. Find the Difference
 char Mate::findTheDifference(std::string s, std::string t) {
     int arr1[26] = { 0 };
@@ -4590,4 +4602,54 @@ char Mate::findTheDifference(std::string s, std::string t) {
     }
 
     return 0;
+}
+
+// 1518. Water Bottles
+int Mate::numWaterBottles(int numBottles, int numExchange) {
+	int emptyBottles = 0, fullBottles = numBottles;
+	int res = 0;
+	while (fullBottles) {
+		res += fullBottles;
+		emptyBottles += fullBottles;
+		fullBottles = emptyBottles / numExchange;
+		emptyBottles %= numExchange;
+	}
+	return res;
+}
+
+// 1047. Remove All Adjacent Duplicates In String
+std::string Mate::removeDuplicates(std::string s) {
+	std::string stack;
+	stack += s[0];
+	for (size_t i = 1; i < s.size(); ++i) {
+		if (!stack.empty() && stack.back() == s[i]) stack.pop_back();
+		else stack.push_back(s[i]);
+	}
+	return stack;
+}
+
+// 2057. Smallest Index With Equal Value
+int Mate::smallestEqual(std::vector<int>& nums) {
+	for (size_t i = 0; i < nums.size(); ++i) {
+		if (i % 10 == nums[i]) return i;
+	}
+	return -1;
+}
+
+// 2124. Check if All A's Appears Before All B's
+bool Mate::checkString(std::string s) {
+	int as = 0;
+	for (char c : s) {
+		if (c == 'a') as++;
+	}
+	for (char c : s) {
+		if (c == 'b' && as != 0) return false;
+		if (c == 'a') --as;
+	}
+	return true;
+}
+
+// 2651. Calculate Delayed Arrival Time
+int Mate::findDelayedArrivalTime(int arrivalTime, int delayedTime) {
+	return (arrivalTime + delayedTime) % 24;
 }

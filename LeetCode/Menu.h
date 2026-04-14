@@ -240,4 +240,9 @@ public:
 	void menuCountOperations();
 	void menuHammingDistance();
 	void menuFindTheDifference();
+	void menuNumWaterBottles();
+	void menuRemoveDuplicates();
+	void menuSmallestEqual();
+	void menuCheckString();
+	void menuFindDelayedArrivalTime();
 };

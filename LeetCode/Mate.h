@@ -306,4 +306,19 @@ public:
 
 	// 389. Find the Difference
 	char findTheDifference(std::string s, std::string t);
+
+	// 1518. Water Bottles
+	int numWaterBottles(int numBottles, int numExchange);
+
+	// 1047. Remove All Adjacent Duplicates In String
+	std::string removeDuplicates(std::string s);
+
+	// 2057. Smallest Index With Equal Value
+	int smallestEqual(std::vector<int>& nums);
+
+	// 2124. Check if All A's Appears Before All B's
+	bool checkString(std::string s);
+
+	// 2651. Calculate Delayed Arrival Time
+	int findDelayedArrivalTime(int arrivalTime, int delayedTime);
 };

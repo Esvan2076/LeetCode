@@ -4286,3 +4286,42 @@ void Menu::menuFindTheDifference() {
     }
     std::cout << std::endl;
 }
+
+void Menu::menuNumWaterBottles() {
+    int n, e;
+    std::cout << "--- 1518. Water Bottles ---" << std::endl;
+    std::cout << "Num. Botellas: "; std::cin >> n;
+    std::cout << "Num. Intercambio: "; std::cin >> e;
+    std::cout << "Resultado: " << m.numWaterBottles(n, e) << std::endl << std::endl;
+}
+
+void Menu::menuRemoveDuplicates() {
+    std::string s;
+    std::cout << "--- 1047. Remove Duplicates ---" << std::endl;
+    std::cout << "Introduce cadena: "; std::cin >> s;
+    std::cout << "Resultado: " << m.removeDuplicates(s) << std::endl << std::endl;
+}
+
+void Menu::menuSmallestEqual() {
+    int n, val;
+    std::cout << "--- 2057. Smallest Index Equal ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    std::vector<int> nums;
+    for (int i = 0; i < n; ++i) { std::cin >> val; nums.push_back(val); }
+    std::cout << "Resultado (Indice): " << m.smallestEqual(nums) << std::endl << std::endl;
+}
+
+void Menu::menuCheckString() {
+    std::string s;
+    std::cout << "--- 2124. Check A's before B's ---" << std::endl;
+    std::cout << "Introduce cadena (solo a y b): "; std::cin >> s;
+    std::cout << "Correcto?: " << (m.checkString(s) ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuFindDelayedArrivalTime() {
+    int a, d;
+    std::cout << "--- 2651. Delayed Arrival Time ---" << std::endl;
+    std::cout << "Hora llegada: "; std::cin >> a;
+    std::cout << "Retraso: "; std::cin >> d;
+    std::cout << "Hora final: " << m.findDelayedArrivalTime(a, d) << std::endl << std::endl;
+}

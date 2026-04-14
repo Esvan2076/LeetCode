@@ -234,7 +234,12 @@ int main()
 	//m.menuIsSameAfterReversals();
 	//m.menuCountOperations();
 	//m.menuHammingDistance();
-	m.menuFindTheDifference();
+	//m.menuFindTheDifference();
+	//m.menuNumWaterBottles();
+	//m.menuRemoveDuplicates();
+	//m.menuSmallestEqual();
+	//m.menuCheckString();
+	m.menuFindDelayedArrivalTime();
 
 	return 0;
 }
