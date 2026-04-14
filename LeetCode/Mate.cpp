@@ -4573,5 +4573,21 @@ int Mate::countOperations(int num1, int num2) {
 	return res;
 }
 
-// 461. Hamming Distance
-int hammingDistance(int x, int y);
+// 389. Find the Difference
+char Mate::findTheDifference(std::string s, std::string t) {
+    int arr1[26] = { 0 };
+    int arr2[26] = { 0 };
+
+    for (int c : s) {
+        ++arr1[c - 97];
+    }
+    for (int c : t) {
+        ++arr2[c - 97];
+    }
+
+    for (size_t i = 0; i < 26; ++i) {
+        if (arr1[i] != arr2[i]) return i + 97;
+    }
+
+    return 0;
+}

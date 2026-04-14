@@ -303,4 +303,7 @@ public:
 
 	// 461. Hamming Distance
 	int hammingDistance(int x, int y);
+
+	// 389. Find the Difference
+	char findTheDifference(std::string s, std::string t);
 };

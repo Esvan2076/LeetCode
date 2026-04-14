@@ -239,4 +239,5 @@ public:
 	void menuIsSameAfterReversals();
 	void menuCountOperations();
 	void menuHammingDistance();
+	void menuFindTheDifference();
 };

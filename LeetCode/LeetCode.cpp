@@ -233,7 +233,8 @@ int main()
 	//m.menuSumOfSquares();
 	//m.menuIsSameAfterReversals();
 	//m.menuCountOperations();
-	m.menuHammingDistance();
+	//m.menuHammingDistance();
+	m.menuFindTheDifference();
 
 	return 0;
 }

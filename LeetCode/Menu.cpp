@@ -4265,3 +4265,24 @@ void Menu::menuHammingDistance() {
 
     std::cout << "La distancia de Hamming es: " << resultado << std::endl << std::endl;
 }
+
+void Menu::menuFindTheDifference() {
+    std::string s, t;
+    std::cout << "--- 389. Find the Difference ---" << std::endl;
+
+    // Se usa cin.ignore() por si vienes de otro menu con saltos de linea
+    std::cout << "Introduce la cadena s: ";
+    std::cin >> s;
+    std::cout << "Introduce la cadena t: ";
+    std::cin >> t;
+
+    char resultado = m.findTheDifference(s, t);
+
+    if (resultado != 0) {
+        std::cout << "El caracter que se añadio es: " << resultado << std::endl;
+    }
+    else {
+        std::cout << "No se encontro diferencia." << std::endl;
+    }
+    std::cout << std::endl;
+}
