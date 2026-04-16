@@ -4653,3 +4653,43 @@ bool Mate::checkString(std::string s) {
 int Mate::findDelayedArrivalTime(int arrivalTime, int delayedTime) {
 	return (arrivalTime + delayedTime) % 24;
 }
+
+// 3898. Find the Degree of Each Vertex
+std::vector<int> Mate::findDegrees(std::vector<std::vector<int>>& matrix) {
+	size_t n = matrix.size();
+
+	std::vector<int> res;
+	res.reserve(n);
+
+	int temp;
+	for (std::vector<int>& vertex : matrix) {
+		temp = 0;
+		for (int num : vertex) {
+			temp += num;
+		}
+		res.push_back(temp);
+	}
+
+	return res;
+}
+
+// 1394. Find Lucky Integer in an Array
+int Mate::findLucky(std::vector<int>& arr) {
+	std::unordered_map<int, int> map;
+
+	for (int num : arr) {
+		++map[num];
+	}
+
+	int best = 0;
+
+	for (const auto& reg : map) {
+		if (reg.first == reg.second) {
+			best = std::max(best, reg.first);
+		}
+	}
+
+	if (best > 0) return best;
+
+	return -1;
+}

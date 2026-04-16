@@ -321,4 +321,10 @@ public:
 
 	// 2651. Calculate Delayed Arrival Time
 	int findDelayedArrivalTime(int arrivalTime, int delayedTime);
+
+	// 3898. Find the Degree of Each Vertex
+	std::vector<int> findDegrees(std::vector<std::vector<int>>& matrix);
+
+	// 1394. Find Lucky Integer in an Array
+	int findLucky(std::vector<int>& arr);
 };

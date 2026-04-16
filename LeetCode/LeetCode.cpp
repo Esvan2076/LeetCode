@@ -239,7 +239,9 @@ int main()
 	//m.menuRemoveDuplicates();
 	//m.menuSmallestEqual();
 	//m.menuCheckString();
-	m.menuFindDelayedArrivalTime();
+	//m.menuFindDelayedArrivalTime();
+	//m.menuFindDegrees();
+	m.menuFindLucky();
 
 	return 0;
 }

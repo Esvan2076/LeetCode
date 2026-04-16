@@ -4325,3 +4325,41 @@ void Menu::menuFindDelayedArrivalTime() {
     std::cout << "Retraso: "; std::cin >> d;
     std::cout << "Hora final: " << m.findDelayedArrivalTime(a, d) << std::endl << std::endl;
 }
+
+void Menu::menuFindDegrees() {
+    int n, val;
+    std::cout << "--- 3898. Find the Degree of Each Vertex ---" << std::endl;
+    std::cout << "Introduce el numero de vertices (n): ";
+    std::cin >> n;
+
+    std::vector<std::vector<int>> matrix(n, std::vector<int>(n));
+    std::cout << "Introduce los elementos de la matriz de adyacencia (" << n << "x" << n << "):" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            std::cin >> matrix[i][j];
+        }
+    }
+
+    std::vector<int> resultado = m.findDegrees(matrix);
+
+    std::cout << "Grados de los vertices: [ ";
+    for (int d : resultado) std::cout << d << " ";
+    std::cout << "]" << std::endl << std::endl;
+}
+
+void Menu::menuFindLucky() {
+    int n, val;
+    std::cout << "--- 1394. Find Lucky Integer in an Array ---" << std::endl;
+    std::cout << "Cantidad de elementos: ";
+    std::cin >> n;
+
+    std::vector<int> arr;
+    std::cout << "Introduce los elementos:" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> val;
+        arr.push_back(val);
+    }
+
+    int resultado = m.findLucky(arr);
+    std::cout << "El Lucky Integer mas grande es: " << resultado << std::endl << std::endl;
+}

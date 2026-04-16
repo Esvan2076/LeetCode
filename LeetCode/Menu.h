@@ -245,4 +245,6 @@ public:
 	void menuSmallestEqual();
 	void menuCheckString();
 	void menuFindDelayedArrivalTime();
+	void menuFindDegrees();
+	void menuFindLucky();
 };
