@@ -334,4 +334,16 @@ public:
 	// 733. Flood Fill
 	void recursiveFlood(std::vector<std::vector<int>>& image, int x, int y, int oldColor, int newColor);
 	std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int y, int x, int newColor);
+
+	// 3210. Find the Encrypted String
+	std::string getEncryptedString(std::string s, int k);
+
+	// 746. Min Cost Climbing Stairs
+	int minCostClimbingStairs(std::vector<int>& cost);
+
+	// 2706. Buy Two Chocolates
+	int buyChoco(std::vector<int>& prices, int money);
+
+	// 1624. Largest Substring Between Two Equal Characters
+	int maxLengthBetweenEqualCharacters(std::string s);
 };

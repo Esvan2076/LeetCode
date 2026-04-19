@@ -4737,3 +4737,65 @@ std::vector<std::vector<int>> Mate::floodFill(std::vector<std::vector<int>>& ima
 
 	return image;
 }
+
+// 3210. Find the Encrypted String
+std::string Mate::getEncryptedString(std::string s, int k) {
+	std::string res;
+	size_t n = s.size();
+
+	for (size_t i = 0; i < n; ++i) {
+		res += s[(i + k) % n];
+	}
+
+	return res;
+}
+
+// 746. Min Cost Climbing Stairs
+int Mate::minCostClimbingStairs(std::vector<int>& cost) {
+	for (int i = cost.size() - 3; i >= 0; --i) {
+		cost[i] += std::min(cost[i + 1], cost[i + 2]);
+	}
+
+	return std::min(cost[0], cost[1]);
+}
+
+// 2706. Buy Two Chocolates
+int Mate::buyChoco(std::vector<int>& prices, int money) {
+	std::sort(prices.begin(), prices.end());
+
+	if (prices[0] + prices[1] <= money) {
+		return money - prices[1] - prices[0];
+	}
+
+	return money;
+}
+
+// 1624. Largest Substring Between Two Equal Characters
+int Mate::maxLengthBetweenEqualCharacters(std::string s) {
+	std::vector<int> left_to_right(26, -1);
+	std::vector<int> right_to_left(26, -1);
+
+	size_t n = s.size();
+
+	size_t idx = 0;
+	for (int i = 0; i < n; ++i) {
+		idx = s[i] - 97;
+		if (left_to_right[idx] == -1) {
+			left_to_right[idx] = i;
+		}
+	}
+
+	for (int i = n - 1; i >= 0; --i) {
+		idx = s[i] - 97;
+		if (right_to_left[idx] == -1) {
+			right_to_left[idx] = i;
+		}
+	}
+
+	int best = 0;
+	for (size_t i = 0; i < 26; ++i) {
+		best = std::max(best, right_to_left[i] - left_to_right[i]);
+	}
+
+	return best - 1;
+}

@@ -249,4 +249,8 @@ public:
 	void menuFindLucky();
 	void menuCapitalizeTitle();
 	void menuFloodFill();
+	void menuFindEncryptedString();
+	void menuMinCostClimbingStairs();
+	void menuBuyTwoChocolates();
+	void menuMaxLengthBetweenEqualCharacters();
 };

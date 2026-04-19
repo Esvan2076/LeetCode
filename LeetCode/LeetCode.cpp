@@ -243,7 +243,11 @@ int main()
 	//m.menuFindDegrees();
 	//m.menuFindLucky();
 	//m.menuCapitalizeTitle();
-	m.menuFloodFill();
+	//m.menuFloodFill();
+	//m.menuFindEncryptedString();
+	//m.menuMinCostClimbingStairs();
+	//m.menuBuyTwoChocolates();
+	m.menuMaxLengthBetweenEqualCharacters();
 
 	return 0;
 }

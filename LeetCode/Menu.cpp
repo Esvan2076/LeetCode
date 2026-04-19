@@ -4402,3 +4402,52 @@ void Menu::menuFloodFill() {
     }
     std::cout << std::endl;
 }
+
+void Menu::menuFindEncryptedString() {
+    std::string s;
+    int k;
+    std::cout << "--- 3210. Find the Encrypted String ---" << std::endl;
+    std::cout << "Introduce la cadena: ";
+    std::cin >> s;
+    std::cout << "Introduce k: ";
+    std::cin >> k;
+    std::cout << "Resultado: " << m.getEncryptedString(s, k) << std::endl << std::endl;
+}
+
+void Menu::menuMinCostClimbingStairs() {
+    int n, temp;
+    std::cout << "--- 746. Min Cost Climbing Stairs ---" << std::endl;
+    std::cout << "Cantidad de escalones: ";
+    std::cin >> n;
+    std::vector<int> cost;
+    std::cout << "Introduce los costos:" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> temp;
+        cost.push_back(temp);
+    }
+    std::cout << "Costo minimo: " << m.minCostClimbingStairs(cost) << std::endl << std::endl;
+}
+
+void Menu::menuBuyTwoChocolates() {
+    int n, temp, money;
+    std::cout << "--- 2706. Buy Two Chocolates ---" << std::endl;
+    std::cout << "Cantidad de chocolates: ";
+    std::cin >> n;
+    std::vector<int> prices;
+    std::cout << "Introduce los precios:" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> temp;
+        prices.push_back(temp);
+    }
+    std::cout << "Dinero inicial: ";
+    std::cin >> money;
+    std::cout << "Dinero restante: " << m.buyChoco(prices, money) << std::endl << std::endl;
+}
+
+void Menu::menuMaxLengthBetweenEqualCharacters() {
+    std::string s;
+    std::cout << "--- 1624. Largest Substring Between Two Equal Characters ---" << std::endl;
+    std::cout << "Introduce la cadena: ";
+    std::cin >> s;
+    std::cout << "Longitud maxima: " << m.maxLengthBetweenEqualCharacters(s) << std::endl << std::endl;
+}
