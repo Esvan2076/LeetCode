@@ -241,7 +241,9 @@ int main()
 	//m.menuCheckString();
 	//m.menuFindDelayedArrivalTime();
 	//m.menuFindDegrees();
-	m.menuFindLucky();
+	//m.menuFindLucky();
+	//m.menuCapitalizeTitle();
+	m.menuFloodFill();
 
 	return 0;
 }

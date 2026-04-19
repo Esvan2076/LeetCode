@@ -247,4 +247,6 @@ public:
 	void menuFindDelayedArrivalTime();
 	void menuFindDegrees();
 	void menuFindLucky();
+	void menuCapitalizeTitle();
+	void menuFloodFill();
 };

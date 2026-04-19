@@ -327,4 +327,11 @@ public:
 
 	// 1394. Find Lucky Integer in an Array
 	int findLucky(std::vector<int>& arr);
+
+	// 2129. Capitalize the Title
+	std::string capitalizeTitle(std::string title);
+
+	// 733. Flood Fill
+	void recursiveFlood(std::vector<std::vector<int>>& image, int x, int y, int oldColor, int newColor);
+	std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int y, int x, int newColor);
 };

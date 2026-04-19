@@ -4363,3 +4363,42 @@ void Menu::menuFindLucky() {
     int resultado = m.findLucky(arr);
     std::cout << "El Lucky Integer mas grande es: " << resultado << std::endl << std::endl;
 }
+
+void Menu::menuCapitalizeTitle() {
+    std::string title;
+    std::cout << "--- 2129. Capitalize the Title ---" << std::endl;
+    std::cout << "Introduce el titulo: ";
+    std::cin.ignore();
+    std::getline(std::cin, title);
+
+    std::string resultado = m.capitalizeTitle(title);
+    std::cout << "Resultado: " << resultado << std::endl << std::endl;
+}
+
+void Menu::menuFloodFill() {
+    int filas, columnas, sr, sc, color;
+    std::cout << "--- 733. Flood Fill ---" << std::endl;
+    std::cout << "Filas: "; std::cin >> filas;
+    std::cout << "Columnas: "; std::cin >> columnas;
+
+    std::vector<std::vector<int>> image(filas, std::vector<int>(columnas));
+    std::cout << "Introduce los valores de la matriz:" << std::endl;
+    for (int i = 0; i < filas; ++i) {
+        for (int j = 0; j < columnas; ++j) {
+            std::cin >> image[i][j];
+        }
+    }
+
+    std::cout << "Fila inicial (sr): "; std::cin >> sr;
+    std::cout << "Columna inicial (sc): "; std::cin >> sc;
+    std::cout << "Nuevo color: "; std::cin >> color;
+
+    std::vector<std::vector<int>> res = m.floodFill(image, sr, sc, color);
+
+    std::cout << "Imagen resultante:" << std::endl;
+    for (const auto& row : res) {
+        for (int val : row) std::cout << val << " ";
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+}

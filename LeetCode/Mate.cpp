@@ -4693,3 +4693,47 @@ int Mate::findLucky(std::vector<int>& arr) {
 
 	return -1;
 }
+
+// 2129. Capitalize the Title
+std::string Mate::capitalizeTitle(std::string title) {
+	size_t i = 0, j = 1;
+	size_t n = title.size();
+
+	while (i < n) {
+		if (title[j] == ' ' || j >= n) {
+			title[i] = j - i > 2 ? std::toupper(title[i]) : std::tolower(title[i]);
+			i = j + 1;
+			j = i + 1;
+		}
+		else {
+			title[j] = std::tolower(title[j]);
+			++j;
+		}
+	}
+
+	return title;
+}
+
+// 733. Flood Fill
+void Mate::recursiveFlood(std::vector<std::vector<int>>& image, int x, int y, int oldColor, int newColor) {
+	if (x >= image[0].size() || y >= image.size()) return;
+	if (x < 0 || y < 0) return;
+	if (image[y][x] != oldColor || image[y][x] == newColor) {
+		return;
+	}
+
+	image[y][x] = newColor;
+
+	recursiveFlood(image, x, y + 1, oldColor, newColor);
+	recursiveFlood(image, x + 1, y, oldColor, newColor);
+	recursiveFlood(image, x, y - 1, oldColor, newColor);
+	recursiveFlood(image, x - 1, y, oldColor, newColor);
+}
+
+std::vector<std::vector<int>> Mate::floodFill(std::vector<std::vector<int>>& image, int y, int x, int newColor) {
+	int oldColor = image[y][x];
+
+	recursiveFlood(image, x, y, oldColor, newColor);
+
+	return image;
+}
