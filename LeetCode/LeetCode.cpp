@@ -249,7 +249,11 @@ int main()
 	//m.menuBuyTwoChocolates();
 	//m.menuMaxLengthBetweenEqualCharacters();
 	//m.menuConstruct2DArray();
-	m.menuMinimumIndex();
+	//m.menuMinimumIndex();
+	//m.menuTrimMean();
+	//m.menuNumRookCaptures();
+	//m.menuMinOperations10();
+	m.menuCountCharacters();
 
 	return 0;
 }

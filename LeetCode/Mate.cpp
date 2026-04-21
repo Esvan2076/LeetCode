@@ -4843,3 +4843,106 @@ int Mate::minimumIndex(std::vector<int>& capacity, int itemSize) {
 
 	return minimumIdx;
 }
+
+// 1619. Mean of Array After Removing Some Elements
+double Mate::trimMean(std::vector<int>& arr) {
+	std::sort(arr.begin(), arr.end());
+
+	double res = 0.0000;
+	int k = arr.size() / 20;
+
+	for (size_t i = k; i < (arr.size() - k); ++i) {
+		res += arr[i];
+	}
+
+	return res / (arr.size() - 2 * k);
+}
+
+// 999. Available Captures for Rook
+int Mate::numRookCaptures(std::vector<std::vector<char>>& board) {
+	int rook_row = -1, rook_col = -1;
+
+	for (int i = 0; i < 8; ++i) {
+		for (int j = 0; j < 8; ++j) {
+			if (board[i][j] == 'R') {
+				rook_row = i; rook_col = j;
+				break;
+			}
+		}
+		if (rook_row != -1) break;
+	}
+
+	int res = 0;
+	for (int row = rook_row; row >= 0; --row) {
+		if (board[row][rook_col] == 'B') break;
+		if (board[row][rook_col] == 'p') {
+			++res;
+			break;
+		}
+	}
+	for (int row = rook_row; row < 8; ++row) {
+		if (board[row][rook_col] == 'B') break;
+		if (board[row][rook_col] == 'p') {
+			++res;
+			break;
+		}
+	}
+	for (int col = rook_col; col >= 0; --col) {
+		if (board[rook_row][col] == 'B') break;
+		if (board[rook_row][col] == 'p') {
+			++res;
+			break;
+		}
+	}
+	for (int col = rook_col; col < 8; ++col) {
+		if (board[rook_row][col] == 'B') break;
+		if (board[rook_row][col] == 'p') {
+			++res;
+			break;
+		}
+	}
+
+	return res;
+}
+
+// 1598. Crawler Log Folder
+int Mate::minOperations(std::vector<std::string>& logs) {
+	int res = 0;
+
+	for (std::string& log : logs) {
+		if (log == "../") {
+			if (res != 0) --res;
+		}
+		else if (log != "./") {
+			++res;
+		}
+	}
+
+	return res;
+}
+
+// 1160. Find Words That Can Be Formed by Characters
+int Mate::countCharacters(std::vector<std::string>& words, std::string chars) {
+	int res = 0;
+	std::vector<int> letters_available(26, 0);
+
+	for (int c : chars) {
+		++letters_available[c - 'a'];
+	}
+
+	bool isGood = true;
+	for (std::string& word : words) {
+		std::vector<int> temp_vec = letters_available;
+		isGood = true;
+
+		for (char c : word) {
+			if (temp_vec[c - 'a'] == 0) {
+				isGood = false;
+				break;
+			}
+			--temp_vec[c - 'a'];
+		}
+		if (isGood) res += word.size();
+	}
+	return res;
+}

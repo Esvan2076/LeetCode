@@ -4502,3 +4502,58 @@ void Menu::menuMinimumIndex() {
     int res = m.minimumIndex(capacity, itemSize);
     std::cout << "Indice de la caja optima: " << res << std::endl << std::endl;
 }
+
+void Menu::menuTrimMean() {
+    int size, temp;
+    std::cout << "--- 1619. Mean of Array After Removing Some Elements ---" << std::endl;
+    std::cout << "Cantidad de elementos (multiplo de 20): ";
+    std::cin >> size;
+    std::vector<int> arr;
+    for (int i = 0; i < size; i++) {
+        std::cin >> temp;
+        arr.push_back(temp);
+    }
+    std::cout << "Media recortada: " << m.trimMean(arr) << std::endl << std::endl;
+}
+
+void Menu::menuNumRookCaptures() {
+    std::vector<std::vector<char>> board(8, std::vector<char>(8));
+    std::cout << "--- 999. Available Captures for Rook ---" << std::endl;
+    std::cout << "Introduce el tablero 8x8 (R=Torre, p=Peon, B=Alfil, .=Vacio):" << std::endl;
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            std::cin >> board[i][j];
+        }
+    }
+    std::cout << "Peones capturables: " << m.numRookCaptures(board) << std::endl << std::endl;
+}
+
+void Menu::menuMinOperations10() {
+    int n;
+    std::string log;
+    std::cout << "--- 1598. Crawler Log Folder ---" << std::endl;
+    std::cout << "Cantidad de operaciones: ";
+    std::cin >> n;
+    std::vector<std::string> logs;
+    for (int i = 0; i < n; i++) {
+        std::cin >> log;
+        logs.push_back(log);
+    }
+    std::cout << "Operaciones para volver a main: " << m.minOperations(logs) << std::endl << std::endl;
+}
+
+void Menu::menuCountCharacters() {
+    int n;
+    std::string word, chars;
+    std::cout << "--- 1160. Find Words That Can Be Formed by Characters ---" << std::endl;
+    std::cout << "Introduce los caracteres disponibles: ";
+    std::cin >> chars;
+    std::cout << "Cantidad de palabras a probar: ";
+    std::cin >> n;
+    std::vector<std::string> words;
+    for (int i = 0; i < n; i++) {
+        std::cin >> word;
+        words.push_back(word);
+    }
+    std::cout << "Suma de longitudes de palabras buenas: " << m.countCharacters(words, chars) << std::endl << std::endl;
+}

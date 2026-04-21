@@ -255,4 +255,8 @@ public:
 	void menuMaxLengthBetweenEqualCharacters();
 	void menuConstruct2DArray();
 	void menuMinimumIndex();
+	void menuTrimMean();
+	void menuNumRookCaptures();
+	void menuMinOperations10();
+	void menuCountCharacters();
 };

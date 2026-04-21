@@ -352,4 +352,16 @@ public:
 
 	// 3861. Minimum Capacity Box
 	int minimumIndex(std::vector<int>& capacity, int itemSize);
+
+	// 1619. Mean of Array After Removing Some Elements
+	double trimMean(std::vector<int>& arr);
+
+	// 999. Available Captures for Rook
+	int numRookCaptures(std::vector<std::vector<char>>& board);
+
+	// 1598. Crawler Log Folder
+	int minOperations(std::vector<std::string>& logs);
+
+	// 1160. Find Words That Can Be Formed by Characters
+	int countCharacters(std::vector<std::string>& words, std::string chars);
 };
