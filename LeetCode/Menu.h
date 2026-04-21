@@ -253,4 +253,6 @@ public:
 	void menuMinCostClimbingStairs();
 	void menuBuyTwoChocolates();
 	void menuMaxLengthBetweenEqualCharacters();
+	void menuConstruct2DArray();
+	void menuMinimumIndex();
 };

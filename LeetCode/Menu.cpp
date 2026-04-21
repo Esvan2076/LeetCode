@@ -4451,3 +4451,54 @@ void Menu::menuMaxLengthBetweenEqualCharacters() {
     std::cin >> s;
     std::cout << "Longitud maxima: " << m.maxLengthBetweenEqualCharacters(s) << std::endl << std::endl;
 }
+
+void Menu::menuConstruct2DArray() {
+    size_t size, rows, cols;
+    std::cout << "--- 2022. Convert 1D Array Into 2D Array ---" << std::endl;
+    std::cout << "Tamano del arreglo original: ";
+    std::cin >> size;
+
+    std::vector<int> original(size);
+    std::cout << "Introduce los elementos:" << std::endl;
+    for (size_t i = 0; i < size; ++i) {
+        std::cin >> original[i];
+    }
+
+    std::cout << "Filas (m): "; std::cin >> rows;
+    std::cout << "Columnas (n): "; std::cin >> cols;
+
+    std::vector<std::vector<int>> res = m.construct2DArray(original, rows, cols);
+
+    if (res.empty() && size != 0) {
+        std::cout << "Resultado: [] (Imposible construir)" << std::endl;
+    }
+    else {
+        std::cout << "Matriz resultante:" << std::endl;
+        for (const auto& row : res) {
+            std::cout << "[ ";
+            for (int val : row) std::cout << val << " ";
+            std::cout << "]" << std::endl;
+        }
+    }
+    std::cout << std::endl;
+}
+
+void Menu::menuMinimumIndex() {
+    size_t size;
+    int itemSize;
+    std::cout << "--- 3861. Minimum Capacity Box ---" << std::endl;
+    std::cout << "Cantidad de cajas: ";
+    std::cin >> size;
+
+    std::vector<int> capacity(size);
+    std::cout << "Capacidades de las cajas:" << std::endl;
+    for (size_t i = 0; i < size; ++i) {
+        std::cin >> capacity[i];
+    }
+
+    std::cout << "Tamano del item: ";
+    std::cin >> itemSize;
+
+    int res = m.minimumIndex(capacity, itemSize);
+    std::cout << "Indice de la caja optima: " << res << std::endl << std::endl;
+}

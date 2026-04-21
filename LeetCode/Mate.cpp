@@ -4799,3 +4799,47 @@ int Mate::maxLengthBetweenEqualCharacters(std::string s) {
 
 	return best - 1;
 }
+
+// 2022. Convert 1D Array Into 2D Array
+std::vector<std::vector<int>> Mate::construct2DArray(std::vector<int>& original, size_t m, size_t n) {
+	if (original.size() != m * n) return {};
+
+	std::vector<std::vector<int>> res;
+	res.reserve(m);
+
+	size_t j = 0;
+	for (size_t i = 0; i < original.size(); ++i) {
+		std::vector<int> row;
+		row.reserve(n);
+
+		j = i;
+		while (j < (n + i)) {
+			row.push_back(original[j]);
+			++j;
+		}
+		i = j - 1;
+
+		res.push_back(row);
+	}
+
+	return res;
+}
+
+// 3861. Minimum Capacity Box
+int Mate::minimumIndex(std::vector<int>& capacity, int itemSize) {
+	int minimumIdx = -1;
+	int best = INT_MAX;
+
+	size_t i = 0;
+	for (int box : capacity) {
+		if (box >= itemSize) {
+			if (best != std::min(best, box)) {
+				minimumIdx = i;
+			}
+			best = std::min(best, box);
+		}
+		++i;
+	}
+
+	return minimumIdx;
+}

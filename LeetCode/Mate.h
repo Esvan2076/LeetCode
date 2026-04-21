@@ -346,4 +346,10 @@ public:
 
 	// 1624. Largest Substring Between Two Equal Characters
 	int maxLengthBetweenEqualCharacters(std::string s);
+
+	// 2022. Convert 1D Array Into 2D Array
+	std::vector<std::vector<int>> construct2DArray(std::vector<int>& original, size_t m, size_t n);
+
+	// 3861. Minimum Capacity Box
+	int minimumIndex(std::vector<int>& capacity, int itemSize);
 };

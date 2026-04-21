@@ -247,7 +247,9 @@ int main()
 	//m.menuFindEncryptedString();
 	//m.menuMinCostClimbingStairs();
 	//m.menuBuyTwoChocolates();
-	m.menuMaxLengthBetweenEqualCharacters();
+	//m.menuMaxLengthBetweenEqualCharacters();
+	//m.menuConstruct2DArray();
+	m.menuMinimumIndex();
 
 	return 0;
 }
