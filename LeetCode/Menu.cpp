@@ -4557,3 +4557,55 @@ void Menu::menuCountCharacters() {
     }
     std::cout << "Suma de longitudes de palabras buenas: " << m.countCharacters(words, chars) << std::endl << std::endl;
 }
+
+void Menu::menuBinaryGap() {
+    int n;
+    std::cout << "--- 868. Binary Gap ---" << std::endl;
+    std::cout << "Introduce n: "; std::cin >> n;
+    std::cout << "Resultado: " << m.binaryGap(n) << std::endl << std::endl;
+}
+
+void Menu::menuCountPrefixes() {
+    int n; std::string word, s;
+    std::vector<std::string> words;
+    std::cout << "--- 2255. Count Prefixes ---" << std::endl;
+    std::cout << "Cant. palabras: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> word; words.push_back(word); }
+    std::cout << "String s: "; std::cin >> s;
+    std::cout << "Resultado: " << m.countPrefixes(words, s) << std::endl << std::endl;
+}
+
+void Menu::menuRowAndMaximumOnes() {
+    int r, c, val;
+    std::cout << "--- 2643. Row Max Ones ---" << std::endl;
+    std::cout << "Filas y Columnas: "; std::cin >> r >> c;
+    std::vector<std::vector<int>> mat(r, std::vector<int>(c));
+    for (int i = 0; i < r; i++) for (int j = 0; j < c; j++) std::cin >> mat[i][j];
+    std::vector<int> res = m.rowAndMaximumOnes(mat);
+    std::cout << "Fila: " << res[0] << ", Cantidad: " << res[1] << std::endl << std::endl;
+}
+
+void Menu::menuReturnToBoundaryCount() {
+    int n, val; std::vector<int> nums;
+    std::cout << "--- 3028. Ant on the Boundary ---" << std::endl;
+    std::cout << "Cant. movimientos: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> val; nums.push_back(val); }
+    std::cout << "Retornos: " << m.returnToBoundaryCount(nums) << std::endl << std::endl;
+}
+
+void Menu::menuIslandPerimeter() {
+    int r, c;
+    std::cout << "--- 463. Island Perimeter ---" << std::endl;
+    std::cout << "Filas y Columnas: "; std::cin >> r >> c;
+    std::vector<std::vector<int>> grid(r, std::vector<int>(c));
+    for (int i = 0; i < r; i++) for (int j = 0; j < c; j++) std::cin >> grid[i][j];
+    std::cout << "Perimetro: " << m.islandPerimeter(grid) << std::endl << std::endl;
+}
+
+void Menu::menuFindMaxK() {
+    int n, val; std::vector<int> nums;
+    std::cout << "--- 2441. Largest Positive Integer ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> val; nums.push_back(val); }
+    std::cout << "K: " << m.findMaxK(nums) << std::endl << std::endl;
+}

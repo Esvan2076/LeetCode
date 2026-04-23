@@ -259,4 +259,10 @@ public:
 	void menuNumRookCaptures();
 	void menuMinOperations10();
 	void menuCountCharacters();
+	void menuBinaryGap();
+	void menuCountPrefixes();
+	void menuRowAndMaximumOnes();
+	void menuReturnToBoundaryCount();
+	void menuIslandPerimeter();
+	void menuFindMaxK();
 };

@@ -4946,3 +4946,136 @@ int Mate::countCharacters(std::vector<std::string>& words, std::string chars) {
 	}
 	return res;
 }
+
+// 868. Binary Gap
+int Mate::binaryGap(int n) {
+	int best = 0;
+
+	bool open = false;
+	int d = 0;
+
+	while (n != 0) {
+		if (n % 2 == 1) {
+			if (open == true) {
+				best = std::max(best, d);
+			}
+			else {
+				open = true;
+			}
+			d = 0;
+		}
+		n = n >> 1;
+		++d;
+	}
+
+	return best;
+}
+
+// 2255. Count Prefixes of a Given String
+int Mate::countPrefixes(std::vector<std::string>& words, std::string s) {
+	int res = 0;
+	bool isPrefix;
+
+	for (std::string& word : words) {
+		isPrefix = true;
+		for (size_t i = 0; i < word.size(); ++i) {
+			if (word[i] != s[i]) {
+				isPrefix = false;
+				break;
+			}
+		}
+		if (isPrefix) ++res;
+	}
+
+	return res;
+}
+
+// 2643. Row With Maximum Ones
+std::vector<int> Mate::rowAndMaximumOnes(std::vector<std::vector<int>>& mat) {
+	int best = 0, temp;
+	size_t best_row = 0;
+	size_t idx_row = 0;
+	for (std::vector<int>& row : mat) {
+		temp = 0;
+		for (int n : row) {
+			temp += n;
+		}
+		if (best != std::max(best, temp)) {
+			best = temp;
+			best_row = idx_row;
+		}
+		idx_row++;
+	}
+
+	std::vector<int> res(2, 0);
+	res[0] = best_row;
+	res[1] = best;
+
+	return res;
+}
+
+// 3028. Ant on the Boundary
+int Mate::returnToBoundaryCount(std::vector<int>& nums) {
+	int res = 0;
+	int position = 0;
+
+	for (int num : nums) {
+		position += num;
+		if (position == 0) ++res;
+	}
+
+	return res;
+}
+
+// 463. Island Perimeter
+int Mate::recursiveIsland(std::vector<std::vector<int>>& grid, int row, int col) {
+	if (row < 0 || col < 0) return 1;
+	if (row >= grid.size() || col >= grid[0].size()) return 1;
+	if (grid[row][col] == 0) return 1;
+	if (grid[row][col] == -1) return 0;
+
+	int res = 0;
+	grid[row][col] = -1;
+	res += recursiveIsland(grid, row + 1, col);
+	res += recursiveIsland(grid, row, col + 1);
+	res += recursiveIsland(grid, row - 1, col);
+	res += recursiveIsland(grid, row, col - 1);
+
+	return res;
+}
+
+int Mate::islandPerimeter(std::vector<std::vector<int>>& grid) {
+	int island_row = 0, island_col = -1;
+
+	int idx_col = 0;
+	for (std::vector<int>& row : grid) {
+		idx_col = 0;
+		for (int col : row) {
+			if (col == 1) {
+				island_col = idx_col;
+				break;
+			}
+			++idx_col;
+		}
+		if (island_col != -1) break;
+		++island_row;
+	}
+
+	return recursiveIsland(grid, island_row, island_col);
+}
+
+// 2441. Largest Positive Integer That Exists With Its Negative
+int Mate::findMaxK(std::vector<int>& nums) {
+	std::unordered_set<int> set;
+
+	int best = -1, temp;
+	for (int num : nums) {
+		temp = -1 * num;
+		set.insert(num);
+		if (set.contains(temp)) {
+			best = std::max(best, std::abs(num));
+		}
+	}
+
+	return best;
+}

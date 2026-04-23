@@ -364,4 +364,23 @@ public:
 
 	// 1160. Find Words That Can Be Formed by Characters
 	int countCharacters(std::vector<std::string>& words, std::string chars);
+
+	// 868. Binary Gap
+	int binaryGap(int n);
+
+	// 2255. Count Prefixes of a Given String
+	int countPrefixes(std::vector<std::string>& words, std::string s);
+
+	// 2643. Row With Maximum Ones
+	std::vector<int> rowAndMaximumOnes(std::vector<std::vector<int>>& mat);
+
+	// 3028. Ant on the Boundary
+	int returnToBoundaryCount(std::vector<int>& nums);
+
+	// 463. Island Perimeter
+	int recursiveIsland(std::vector<std::vector<int>>& grid, int row, int col);
+	int islandPerimeter(std::vector<std::vector<int>>& grid);
+
+	// 2441. Largest Positive Integer That Exists With Its Negative
+	int findMaxK(std::vector<int>& nums);
 };

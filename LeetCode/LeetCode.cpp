@@ -253,7 +253,13 @@ int main()
 	//m.menuTrimMean();
 	//m.menuNumRookCaptures();
 	//m.menuMinOperations10();
-	m.menuCountCharacters();
+	//m.menuCountCharacters();
+	//m.menuBinaryGap();
+	//m.menuCountPrefixes();
+	//m.menuRowAndMaximumOnes();
+	//m.menuReturnToBoundaryCount();
+	//m.menuIslandPerimeter();
+	m.menuFindMaxK();
 
 	return 0;
 }
