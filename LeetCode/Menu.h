@@ -270,4 +270,8 @@ public:
 	void menuResultArray();
 	void menuMinimumOperations10();
 	void menuMinSubsequence();
+	void menuCountCommas();
+	void menuCanMakeArithmeticProgression();
+	void menuAlternateDigitSum();
+	void menuModifiedMatrix();
 };

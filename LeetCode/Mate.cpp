@@ -5176,3 +5176,71 @@ std::vector<int> Mate::minSubsequence(std::vector<int>& nums) {
 
 	return res;
 }
+
+// 3870. Count Commas in Range
+int Mate::countCommas(int n) {
+	int res = 0;
+
+	if (n < 1000) return res;
+
+	while (n >= 1000) {
+		++res;
+		--n;
+	}
+
+	return res;
+}
+
+// 1502. Can Make Arithmetic Progression From Sequence
+bool Mate::canMakeArithmeticProgression(std::vector<int>& arr) {
+	std::sort(arr.begin(), arr.end());
+
+	int diff = arr[1] - arr[0];
+
+	for (size_t i = 2; i < arr.size(); ++i) {
+		if (arr[i] - diff != arr[i - 1]) return false;
+	}
+
+	return true;
+}
+
+// 2544. Alternating Digit Sum
+int Mate::alternateDigitSum(int num) {
+	int tam = 0;
+	int temp = num;
+	while (temp) {
+		temp /= 10;
+		++tam;
+	}
+
+	int sign = -1;
+	if (tam % 2 != 0) {
+		sign *= -1;
+	}
+
+	temp = 0;
+	while (num) {
+		temp += (num % 10) * sign;
+		sign *= -1;
+		num /= 10;
+	}
+
+	return temp;
+}
+
+// 3033. Modify the Matrix
+std::vector<std::vector<int>> Mate::modifiedMatrix(std::vector<std::vector<int>>& matrix) {
+	int best;
+
+	for (size_t i = 0; i < matrix[0].size(); ++i) {
+		best = -1;
+		for (size_t j = 0; j < matrix.size(); ++j) {
+			best = std::max(best, matrix[j][i]);
+		}
+		for (size_t j = 0; j < matrix.size(); ++j) {
+			if (matrix[j][i] == -1) matrix[j][i] = best;
+		}
+	}
+
+	return matrix;
+}

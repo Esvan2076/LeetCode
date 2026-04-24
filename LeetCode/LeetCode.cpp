@@ -264,7 +264,11 @@ int main()
 	//m.menuMaximumValue();
 	//m.menuResultArray();
 	//m.menuMinimumOperations();
-	m.menuMinSubsequence();
+	//m.menuMinSubsequence();
+	//m.menuCountCommas();
+	//m.menuCanMakeArithmeticProgression();
+	//m.menuAlternateDigitSum();
+	m.menuModifiedMatrix();
 
 	return 0;
 }

@@ -399,4 +399,16 @@ public:
 
 	// 1403. Minimum Subsequence in Non-Increasing Order
 	std::vector<int> minSubsequence(std::vector<int>& nums);
+
+	// 3870. Count Commas in Range
+	int countCommas(int n);
+
+	// 1502. Can Make Arithmetic Progression From Sequence
+	bool canMakeArithmeticProgression(std::vector<int>& arr);
+
+	// 2544. Alternating Digit Sum
+	int alternateDigitSum(int num);
+
+	// 3033. Modify the Matrix
+	std::vector<std::vector<int>> modifiedMatrix(std::vector<std::vector<int>>& matrix);
 };

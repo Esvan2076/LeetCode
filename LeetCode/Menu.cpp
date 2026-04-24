@@ -4659,3 +4659,54 @@ void Menu::menuMinSubsequence() {
     for (int v : res) std::cout << v << " ";
     std::cout << "]" << std::endl << std::endl;
 }
+
+void Menu::menuCountCommas() {
+    int n;
+    std::cout << "--- 3870. Count Commas in Range ---" << std::endl;
+    std::cout << "Introduce n: ";
+    std::cin >> n;
+    std::cout << "Total de comas: " << m.countCommas(n) << std::endl << std::endl;
+}
+
+void Menu::menuCanMakeArithmeticProgression() {
+    int size, val;
+    std::cout << "--- 1502. Arithmetic Progression ---" << std::endl;
+    std::cout << "Cant. elementos: ";
+    std::cin >> size;
+    std::vector<int> arr;
+    for (int i = 0; i < size; i++) {
+        std::cin >> val;
+        arr.push_back(val);
+    }
+    std::cout << "Es progresion?: " << (m.canMakeArithmeticProgression(arr) ? "Si" : "No") << std::endl << std::endl;
+}
+
+void Menu::menuAlternateDigitSum() {
+    int num;
+    std::cout << "--- 2544. Alternating Digit Sum ---" << std::endl;
+    std::cout << "Introduce numero: ";
+    std::cin >> num;
+    std::cout << "Suma alternada: " << m.alternateDigitSum(num) << std::endl << std::endl;
+}
+
+void Menu::menuModifiedMatrix() {
+    int r, c;
+    std::cout << "--- 3033. Modify the Matrix ---" << std::endl;
+    std::cout << "Filas y Columnas: ";
+    std::cin >> r >> c;
+    std::vector<std::vector<int>> matrix(r, std::vector<int>(c));
+    std::cout << "Introduce la matriz (-1 para celdas a modificar):" << std::endl;
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            std::cin >> matrix[i][j];
+        }
+    }
+
+    std::vector<std::vector<int>> res = m.modifiedMatrix(matrix);
+    std::cout << "Matriz resultante:" << std::endl;
+    for (const auto& row : res) {
+        for (int val : row) std::cout << val << " ";
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+}
