@@ -259,7 +259,12 @@ int main()
 	//m.menuRowAndMaximumOnes();
 	//m.menuReturnToBoundaryCount();
 	//m.menuIslandPerimeter();
-	m.menuFindMaxK();
+	//m.menuFindMaxK();
+	//m.menuVowelStrings();
+	//m.menuMaximumValue();
+	//m.menuResultArray();
+	//m.menuMinimumOperations();
+	m.menuMinSubsequence();
 
 	return 0;
 }

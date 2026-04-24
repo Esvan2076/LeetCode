@@ -265,4 +265,9 @@ public:
 	void menuReturnToBoundaryCount();
 	void menuIslandPerimeter();
 	void menuFindMaxK();
+	void menuVowelStrings();
+	void menuMaximumValue();
+	void menuResultArray();
+	void menuMinimumOperations10();
+	void menuMinSubsequence();
 };

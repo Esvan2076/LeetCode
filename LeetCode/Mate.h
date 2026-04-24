@@ -383,4 +383,20 @@ public:
 
 	// 2441. Largest Positive Integer That Exists With Its Negative
 	int findMaxK(std::vector<int>& nums);
+
+	// 2586. Count the Number of Vowel Strings in Range
+	bool isVowel(char c);
+	int vowelStrings(std::vector<std::string>& words, int left, int right);
+
+	// 2496. Maximum Value of a String in an Array
+	int maximumValue(std::vector<std::string>& strs);
+
+	// 3069. Distribute Elements Into Two Arrays I
+	std::vector<int> resultArray(std::vector<int>& nums);
+
+	// 2357. Make Array Zero by Subtracting Equal Amounts
+	int minimumOperations10(std::vector<int>& nums);
+
+	// 1403. Minimum Subsequence in Non-Increasing Order
+	std::vector<int> minSubsequence(std::vector<int>& nums);
 };

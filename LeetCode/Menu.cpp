@@ -4609,3 +4609,53 @@ void Menu::menuFindMaxK() {
     for (int i = 0; i < n; i++) { std::cin >> val; nums.push_back(val); }
     std::cout << "K: " << m.findMaxK(nums) << std::endl << std::endl;
 }
+
+void Menu::menuVowelStrings() {
+    int n, l, r; std::string word;
+    std::vector<std::string> words;
+    std::cout << "--- 2586. Vowel Strings in Range ---" << std::endl;
+    std::cout << "Cant. palabras: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> word; words.push_back(word); }
+    std::cout << "Left: "; std::cin >> l;
+    std::cout << "Right: "; std::cin >> r;
+    std::cout << "Resultado: " << m.vowelStrings(words, l, r) << std::endl << std::endl;
+}
+
+void Menu::menuMaximumValue() {
+    int n; std::string str;
+    std::vector<std::string> strs;
+    std::cout << "--- 2496. Max Value of String ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> str; strs.push_back(str); }
+    std::cout << "Valor maximo: " << m.maximumValue(strs) << std::endl << std::endl;
+}
+
+void Menu::menuResultArray() {
+    int n, val; std::vector<int> nums;
+    std::cout << "--- 3069. Distribute Elements ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> val; nums.push_back(val); }
+    std::vector<int> res = m.resultArray(nums);
+    std::cout << "Resultado: [ ";
+    for (int v : res) std::cout << v << " ";
+    std::cout << "]" << std::endl << std::endl;
+}
+
+void Menu::menuMinimumOperations10() {
+    int n, val; std::vector<int> nums;
+    std::cout << "--- 2357. Make Array Zero ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> val; nums.push_back(val); }
+    std::cout << "Operaciones: " << m.minimumOperations10(nums) << std::endl << std::endl;
+}
+
+void Menu::menuMinSubsequence() {
+    int n, val; std::vector<int> nums;
+    std::cout << "--- 1403. Minimum Subsequence ---" << std::endl;
+    std::cout << "Cant. elementos: "; std::cin >> n;
+    for (int i = 0; i < n; i++) { std::cin >> val; nums.push_back(val); }
+    std::vector<int> res = m.minSubsequence(nums);
+    std::cout << "Subsecuencia: [ ";
+    for (int v : res) std::cout << v << " ";
+    std::cout << "]" << std::endl << std::endl;
+}

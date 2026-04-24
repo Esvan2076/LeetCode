@@ -5079,3 +5079,100 @@ int Mate::findMaxK(std::vector<int>& nums) {
 
 	return best;
 }
+
+// 2586. Count the Number of Vowel Strings in Range
+bool Mate::isVowel(char c) {
+	return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+}
+
+int Mate::vowelStrings(std::vector<std::string>& words, int left, int right) {
+	int res = 0;
+
+	for (size_t i = left; i <= right; ++i) {
+		if (isVowel(words[i][0]) && isVowel(words[i][words[i].size() - 1])) {
+			++res;
+		}
+	}
+
+	return res;
+}
+
+// 2496. Maximum Value of a String in an Array
+int Mate::maximumValue(std::vector<std::string>& strs) {
+	int best = 0;
+
+	bool onlyDigits;
+
+	for (std::string& str : strs) {
+		onlyDigits = true;
+		for (char c : str) {
+			if (c < '0' || c > '9') {
+				onlyDigits = false;
+			}
+		}
+		best = std::max(best, onlyDigits ? std::stoi(str) : (int)str.size());
+	}
+
+	return best;
+}
+
+// 3069. Distribute Elements Into Two Arrays I
+std::vector<int> Mate::resultArray(std::vector<int>& nums) {
+	std::vector<int> arr1, arr2;
+	arr1.reserve(nums.size());
+
+	arr1.push_back(nums[0]);
+	arr2.push_back(nums[1]);
+
+	for (size_t i = 2; i < nums.size(); ++i) {
+		if (arr1.back() > arr2.back()) {
+			arr1.push_back(nums[i]);
+		}
+		else {
+			arr2.push_back(nums[i]);
+		}
+	}
+
+	for (int num : arr2) {
+		arr1.push_back(num);
+	}
+
+	return arr1;
+}
+
+// 2357. Make Array Zero by Subtracting Equal Amounts
+int Mate::minimumOperations10(std::vector<int>& nums) {
+	int op = 0, substraction = 0;
+
+	std::sort(nums.begin(), nums.end());
+
+	for (int num : nums) {
+		if (num - substraction <= 0) continue;
+
+		substraction += (num - substraction);
+		++op;
+	}
+
+	return op;
+}
+
+// 1403. Minimum Subsequence in Non-Increasing Order
+std::vector<int> Mate::minSubsequence(std::vector<int>& nums) {
+	std::sort(nums.rbegin(), nums.rend());
+
+	int total = 0;
+	for (int num : nums) {
+		total += num;
+	}
+
+	int curr = 0;
+	std::vector<int> res;
+
+	for (int num : nums) {
+		curr += num;
+		res.push_back(num);
+		if (curr > total - curr) break;
+	}
+
+	return res;
+}
