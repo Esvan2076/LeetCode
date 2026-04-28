@@ -268,7 +268,8 @@ int main()
 	//m.menuCountCommas();
 	//m.menuCanMakeArithmeticProgression();
 	//m.menuAlternateDigitSum();
-	m.menuModifiedMatrix();
+	//m.menuModifiedMatrix();
+	m.menuNumberOfPairs();
 
 	return 0;
 }

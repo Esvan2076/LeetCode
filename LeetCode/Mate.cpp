@@ -5244,3 +5244,21 @@ std::vector<std::vector<int>> Mate::modifiedMatrix(std::vector<std::vector<int>>
 
 	return matrix;
 }
+
+// 2341. Maximum Number of Pairs in Array
+std::vector<int> Mate::numberOfPairs(std::vector<int>& nums) {
+	int arr[101] = { 0 };
+
+	for (int num : nums) {
+		++arr[num];
+	}
+
+	std::vector<int> res(2, 0);
+
+	for (int num : arr) {
+		res[0] += num / 2;
+		res[1] += num % 2;
+	}
+
+	return res;
+}

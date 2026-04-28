@@ -411,4 +411,7 @@ public:
 
 	// 3033. Modify the Matrix
 	std::vector<std::vector<int>> modifiedMatrix(std::vector<std::vector<int>>& matrix);
+
+	// 2341. Maximum Number of Pairs in Array
+	std::vector<int> numberOfPairs(std::vector<int>& nums);
 };

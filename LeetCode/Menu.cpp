@@ -4710,3 +4710,22 @@ void Menu::menuModifiedMatrix() {
     }
     std::cout << std::endl;
 }
+
+void Menu::menuNumberOfPairs() {
+    int n, val;
+    std::cout << "--- 2341. Maximum Number of Pairs in Array ---" << std::endl;
+    std::cout << "Cantidad de elementos: ";
+    std::cin >> n;
+
+    std::vector<int> nums;
+    std::cout << "Introduce los numeros (0-100):" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> val;
+        nums.push_back(val);
+    }
+
+    std::vector<int> resultado = m.numberOfPairs(nums);
+
+    std::cout << "Resultado: [" << resultado[0] << ", " << resultado[1] << "]" << std::endl;
+    std::cout << "Explicacion: " << resultado[0] << " pares y " << resultado[1] << " sobrantes." << std::endl << std::endl;
+}

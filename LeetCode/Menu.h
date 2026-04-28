@@ -274,4 +274,5 @@ public:
 	void menuCanMakeArithmeticProgression();
 	void menuAlternateDigitSum();
 	void menuModifiedMatrix();
+	void menuNumberOfPairs();
 };
