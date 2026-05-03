@@ -269,7 +269,9 @@ int main()
 	//m.menuCanMakeArithmeticProgression();
 	//m.menuAlternateDigitSum();
 	//m.menuModifiedMatrix();
-	m.menuNumberOfPairs();
+	//m.menuNumberOfPairs();
+	//m.menuMaximumBinaryTree();
+	m.menuDeepestLeavesSum();
 
 	return 0;
 }

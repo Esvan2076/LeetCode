@@ -414,4 +414,17 @@ public:
 
 	// 2341. Maximum Number of Pairs in Array
 	std::vector<int> numberOfPairs(std::vector<int>& nums);
+
+	// 654. Maximum Binary Tree
+	TreeNode* constructBinaryTree(std::vector<int>& nums, int left, int right);
+	TreeNode* constructMaximumBinaryTree(std::vector<int>& nums);
+
+	// 1302. Deepest Leaves Sum
+	int sum = 0; // Se mantiene según la lógica de tu imagen
+	int getHeight(TreeNode* node);
+	void recSum(TreeNode* node, int height);
+	int deepestLeavesSum(TreeNode* root);
+
+	// Auxiliar para limpieza de memoria
+	void deleteTree(TreeNode* root);
 };

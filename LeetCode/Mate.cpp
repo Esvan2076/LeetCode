@@ -5262,3 +5262,63 @@ std::vector<int> Mate::numberOfPairs(std::vector<int>& nums) {
 
 	return res;
 }
+
+// 654. Maximum Binary Tree - Lógica exacta de la imagen
+TreeNode* Mate::constructBinaryTree(std::vector<int>& nums, int left, int right) {
+	if (left > right) return nullptr;
+
+	int best = -1;
+	int idx = 0;
+
+	for (int i = left; i <= right; ++i) {
+		if (nums[i] > best) {
+			best = nums[i];
+			idx = i;
+		}
+	}
+
+	TreeNode* node = new TreeNode(best);
+	node->left = constructBinaryTree(nums, left, idx - 1);
+	node->right = constructBinaryTree(nums, idx + 1, right);
+
+	return node;
+}
+
+TreeNode* Mate::constructMaximumBinaryTree(std::vector<int>& nums) {
+	return constructBinaryTree(nums, 0, nums.size() - 1);
+}
+
+// 1302. Deepest Leaves Sum - Lógica exacta de la imagen
+int Mate::getHeight(TreeNode* node) {
+	if (node == nullptr) return 0;
+
+	int left = 1 + getHeight(node->left);
+	int right = 1 + getHeight(node->right);
+
+	return std::max(left, right);
+}
+
+void Mate::recSum(TreeNode* node, int height) {
+	if (node == nullptr) return;
+	--height;
+
+	if (height == 0) sum += node->val;
+
+	recSum(node->left, height);
+	recSum(node->right, height);
+}
+
+int Mate::deepestLeavesSum(TreeNode* root) {
+	sum = 0; // Reiniciamos para permitir múltiples llamadas
+	int height = getHeight(root);
+	recSum(root, height);
+	return sum;
+}
+
+// Auxiliar para liberar memoria
+void Mate::deleteTree(TreeNode* root) {
+	if (!root) return;
+	deleteTree(root->left);
+	deleteTree(root->right);
+	delete root;
+}

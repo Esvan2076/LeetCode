@@ -4729,3 +4729,47 @@ void Menu::menuNumberOfPairs() {
     std::cout << "Resultado: [" << resultado[0] << ", " << resultado[1] << "]" << std::endl;
     std::cout << "Explicacion: " << resultado[0] << " pares y " << resultado[1] << " sobrantes." << std::endl << std::endl;
 }
+
+void Menu::printPreOrder(TreeNode* node) {
+    if (!node) return;
+    std::cout << node->val << " ";
+    printPreOrder(node->left);
+    printPreOrder(node->right);
+}
+
+void Menu::menuMaximumBinaryTree() {
+    int n, val;
+    std::cout << "--- 654. Maximum Binary Tree ---" << std::endl;
+    std::cout << "Cantidad de elementos: ";
+    std::cin >> n;
+    std::vector<int> nums;
+    for (int i = 0; i < n; i++) {
+        std::cout << "Elemento [" << i << "]: ";
+        std::cin >> val;
+        nums.push_back(val);
+    }
+
+    TreeNode* root = m.constructMaximumBinaryTree(nums);
+    std::cout << "Arbol construido (Pre-order): ";
+    printPreOrder(root);
+    std::cout << std::endl << std::endl;
+    m.deleteTree(root);
+}
+
+void Menu::menuDeepestLeavesSum() {
+    int n, val;
+    std::cout << "--- 1302. Deepest Leaves Sum ---" << std::endl;
+    std::cout << "Para probar, crearemos un Maximum Binary Tree primero." << std::endl;
+    std::cout << "Cantidad de elementos: ";
+    std::cin >> n;
+    std::vector<int> nums;
+    for (int i = 0; i < n; i++) {
+        std::cin >> val;
+        nums.push_back(val);
+    }
+
+    TreeNode* root = m.constructMaximumBinaryTree(nums);
+    int res = m.deepestLeavesSum(root);
+    std::cout << "La suma de las hojas mas profundas es: " << res << std::endl << std::endl;
+    m.deleteTree(root);
+}

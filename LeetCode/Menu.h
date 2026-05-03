@@ -275,4 +275,8 @@ public:
 	void menuAlternateDigitSum();
 	void menuModifiedMatrix();
 	void menuNumberOfPairs();
+	void menuMaximumBinaryTree();
+	void menuDeepestLeavesSum();
+
+	void printPreOrder(TreeNode* node); // Auxiliar para ver el árbol
 };
